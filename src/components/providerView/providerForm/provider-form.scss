@@ -1,0 +1,23 @@
+.provider-form {
+  padding: $space-s;
+  border-radius: 10px;
+  margin-top: $space-s;
+  background-color: $secondary-100;
+  font-size: $font-medium;
+  text-align: center;
+
+  &__data {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-bottom: $space-xs;
+  }
+
+  &__actions-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: $space-xs;
+    gap: $space-xs;
+  }
+}

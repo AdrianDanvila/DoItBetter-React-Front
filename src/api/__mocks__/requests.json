@@ -1,0 +1,56 @@
+{
+  "content": [
+   [
+     {
+       "id": 1,
+       "wasteType": "Plastico",
+       "wasteWeight": "35 Kg",
+       "wasteAddress": "Avenida del Plastico 456",
+       "requestDateArrival": "20/04/2024",
+       "contactName": "Reciclados S.A.",
+       "supplier": "Sin Proveedor",
+       "status": "received"
+     },
+     {
+       "id": 2,
+       "wasteType": "Papel",
+       "wasteWeight": "100 Kg",
+       "wasteAddress": "Calle del Papel 123",
+       "requestDateArrival": "20/04/2024",
+       "contactName": "EcoPrint S.L.",
+       "supplier": "Sin Proveedor",
+       "status": "received"
+     },
+     {
+       "id": 3,
+       "wasteType": "Vidrio",
+       "wasteWeight": "10 Kg",
+       "wasteAddress": "Plaza del vidrio 789",
+       "requestDateArrival": "20/04/2024",
+       "contactName": "Glass Eco S.R.L",
+       "supplier": "Sin Proveedor",
+       "status": "received"
+     },
+     {
+       "id": 4,
+       "wasteType": "Vidrio",
+       "wasteWeight": "50 Kg",
+       "wasteAddress": "Plaza del Vidrio 789",
+       "requestDateArrival": "20/04/2024",
+       "contactName": "Glass Eco S.R.L",
+       "supplier": "Sin Proveedor",
+       "status": "received"
+     },
+     {
+       "id": 5,
+       "wasteType": "Metal",
+       "wasteWeight": "5 T",
+       "wasteAddress": "Calle del Metal 123",
+       "requestDateArrival": "20/04/2024",
+       "contactName": "EcoMetal Solutions",
+       "supplier": "Sin Proveedor",
+       "status": "received"
+     }
+   ]
+  ]
+}

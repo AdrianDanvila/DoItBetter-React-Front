@@ -1,0 +1,16 @@
+.provider-header {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-2xs;
+  margin-top: $space-s;
+  font-size: $font-medium;
+  font-weight: bold;
+  gap: $space-s;
+
+  &__title {
+    font-size: $font-large;
+  }
+}

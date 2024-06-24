@@ -1,0 +1,254 @@
+{
+  "actives": [
+    [
+      {
+        "id": 1,
+        "businessName": "Girteka",
+        "cif": "B–76365788",
+        "address": "Madrid",
+        "province": "Madrid",
+        "contact": "Andres Martinez",
+        "phoneNumber": "+34 644498775",
+        "email": "Andres.Martinez@Girteka.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 2,
+        "businessName": "MRW",
+        "cif": "B–92738267",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Alberto Alvarado",
+        "phoneNumber": "+34 672546792",
+        "email": "Alberto.A@MRW.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 3,
+        "businessName": "Correos",
+        "cif": "B–10947837",
+        "province": "Madrid",
+        "address": "Almeria",
+        "contact": "Juan Alberto",
+        "phoneNumber": "+34 662739283",
+        "email": "Juan.Correos@hotmail.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 4,
+        "businessName": "SEUR",
+        "cif": "B–84763540",
+        "address": "La coruna",
+        "province": "Madrid",
+        "contact": "Victor Fuentes",
+        "phoneNumber": "+34 662928401",
+        "email": "Victor.Fuen@SEUR.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 5,
+        "businessName": "Mensajeria Sl",
+        "cif": "B–94732540",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Adrian Lopez",
+        "phoneNumber": "+34 664234586",
+        "email": "Adrian.l@gmail.com.com",
+        "sector": "Mensajeria",
+        "active": true
+      }
+    ],
+    [
+      {
+        "id": 6,
+        "businessName": "Girteka-2",
+        "cif": "B–76365788",
+        "address": "Madrid",
+        "province": "Madrid",
+        "contact": "Andres Martinez",
+        "phoneNumber": "+34 644498775",
+        "email": "Andres.Martinez@Girteka.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 7,
+        "businessName": "MRW-2",
+        "cif": "B–92738267",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Alberto Alvarado",
+        "phoneNumber": "+34 672546792",
+        "email": "Alberto.A@MRW.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 8,
+        "businessName": "Correos-2",
+        "cif": "B–10947837",
+        "address": "Almeria",
+        "province": "Madrid",
+        "contact": "Juan Alberto",
+        "phoneNumber": "+34 662739283",
+        "email": "Juan.Correos@hotmail.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 9,
+        "businessName": "SEUR-2",
+        "cif": "B–84763540",
+        "address": "La coruna",
+        "province": "Madrid",
+        "contact": "Victor Fuentes",
+        "phoneNumber": "+34 662928401",
+        "email": "Victor.Fuen@SEUR.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 10,
+        "businessName": "Mensajeria Sl-2",
+        "cif": "B–94732540",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Adrian Lopez",
+        "phoneNumber": "+34 664234586",
+        "email": "Adrian.l@gmail.com.com",
+        "sector": "Mensajeria",
+        "active": true
+      }
+    ]
+  ],
+  "inactives": [
+    [
+      {
+        "id": 1,
+        "businessName": "Girteka",
+        "cif": "B–76365788",
+        "address": "Madrid",
+        "province": "Madrid",
+        "contact": "Andres Martinez",
+        "phoneNumber": "+34 644498775",
+        "email": "Andres.Martinez@Girteka.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 2,
+        "businessName": "MRW",
+        "cif": "B–92738267",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Alberto Alvarado",
+        "phoneNumber": "+34 672546792",
+        "email": "Alberto.A@MRW.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 3,
+        "businessName": "Correos",
+        "cif": "B–10947837",
+        "province": "Madrid",
+        "address": "Almeria",
+        "contact": "Juan Alberto",
+        "phoneNumber": "+34 662739283",
+        "email": "Juan.Correos@hotmail.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 4,
+        "businessName": "SEUR",
+        "cif": "B–84763540",
+        "address": "La coruna",
+        "province": "Madrid",
+        "contact": "Victor Fuentes",
+        "phoneNumber": "+34 662928401",
+        "email": "Victor.Fuen@SEUR.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 5,
+        "businessName": "Mensajeria Sl",
+        "cif": "B–94732540",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Adrian Lopez",
+        "phoneNumber": "+34 664234586",
+        "email": "Adrian.l@gmail.com.com",
+        "sector": "Mensajeria",
+        "active": true
+      }
+    ],
+    [
+      {
+        "id": 6,
+        "businessName": "Girteka-2",
+        "cif": "B–76365788",
+        "address": "Madrid",
+        "province": "Madrid",
+        "contact": "Andres Martinez",
+        "phoneNumber": "+34 644498775",
+        "email": "Andres.Martinez@Girteka.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 7,
+        "businessName": "MRW-2",
+        "cif": "B–92738267",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Alberto Alvarado",
+        "phoneNumber": "+34 672546792",
+        "email": "Alberto.A@MRW.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 8,
+        "businessName": "Correos-2",
+        "cif": "B–10947837",
+        "address": "Almeria",
+        "province": "Madrid",
+        "contact": "Juan Alberto",
+        "phoneNumber": "+34 662739283",
+        "email": "Juan.Correos@hotmail.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 9,
+        "businessName": "SEUR-2",
+        "cif": "B–84763540",
+        "address": "La coruna",
+        "province": "Madrid",
+        "contact": "Victor Fuentes",
+        "phoneNumber": "+34 662928401",
+        "email": "Victor.Fuen@SEUR.com",
+        "sector": "Transporte",
+        "active": true
+      },
+      {
+        "id": 10,
+        "businessName": "Mensajeria Sl-2",
+        "cif": "B–94732540",
+        "address": "Valencia",
+        "province": "Madrid",
+        "contact": "Adrian Lopez",
+        "phoneNumber": "+34 664234586",
+        "email": "Adrian.l@gmail.com.com",
+        "sector": "Mensajeria",
+        "active": true
+      }
+    ]
+  ]
+}

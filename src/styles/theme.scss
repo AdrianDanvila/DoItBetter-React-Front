@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@radix-ui/themes/styles.css';
+
+:root,
+.light,
+.light-theme {
+  --mimRed-1: #f4f1f1;
+  --mimRed-2: #f4ecec;
+  --mimRed-3: #f3ddde;
+  --mimRed-4: #f7cfd0;
+  --mimRed-5: #f4c0c1;
+  --mimRed-6: #edb0b2;
+  --mimRed-7: #e49c9f;
+  --mimRed-8: #c8c8c8;
+  --mimRed-9: #cc0540;
+  --mimRed-10: #fe0650;
+  --mimRed-11: #bf0036;
+  --mimRed-12: #681222;
+  --mimRed-a1: #f4641d07;
+  --mimRed-a2: #f4360e0c;
+  --mimRed-a3: #eb0a021a;
+  --mimRed-a4: #ff6b6946;
+  --mimRed-a5: #f5040238;
+  --mimRed-a6: #dc010348;
+  --mimRed-a7: #c901065d;
+  --mimRed-a8: #be010979;
+  --mimRed-a9: #cb003cfa;
+  --mimRed-a10: #ba0033;
+  --mimRed-a11: #bf0036;
+  --mimRed-a12: #5e0112ed;
+  --mimRed-contrast: #fff;
+  --mimRed-surface: #f4eaeacc;
+  --mimRed-indicator: #cc0540;
+  --mimRed-track: #cc0540;
+  --mimGray-1: #f2f2f2;
+  --mimGray-2: #ededed;
+  --mimGray-3: #e4e4e4;
+  --mimGray-4: #dbdbdb;
+  --mimGray-5: #d3d3d3;
+  --mimGray-6: #cbcbcb;
+  --mimGray-7: #bfbfbf;
+  --mimGray-8: #acacac;
+  --mimGray-9: #7e7e7e;
+  --mimGray-10: #737373;
+  --mimGray-11: #555;
+  --mimGray-12: #202020;
+  --mimGray-a1: #a0762306;
+  --mimGray-a2: #523c100b;
+  --mimGray-a3: #281d0514;
+  --mimGray-a4: #1911011d;
+  --mimGray-a5: #17110626;
+  --mimGray-a6: #110d042e;
+  --mimGray-a7: #0a08013a;
+  --mimGray-a8: #0907024e;
+  --mimGray-a9: #0403017d;
+  --mimGray-a10: #04040289;
+  --mimGray-a11: #030202a8;
+  --mimGray-a12: #000000de;
+  --mimGray-contrast: #fff;
+  --mimGray-surface: #fffc;
+  --mimGray-indicator: #7e7e7e;
+  --mimGray-track: #7e7e7e;
+}
+
+.radix-themes {
+  --red-1: var(--mimRed-1);
+  --red-2: var(--mimRed-2);
+  --red-3: var(--mimRed-3);
+  --red-4: var(--mimRed-4);
+  --red-5: var(--mimRed-5);
+  --red-6: var(--mimRed-6);
+  --red-7: var(--mimRed-7);
+  --red-8: var(--mimRed-8);
+  --red-9: var(--mimRed-9);
+  --red-10: var(--mimRed-10);
+  --red-11: var(--mimRed-11);
+  --red-12: var(--mimRed-12);
+  --red-a1: var(--mimRed-a1);
+  --red-a2: var(--mimRed-a2);
+  --red-a3: var(--mimRed-a3);
+  --red-a4: var(--mimRed-a4);
+  --red-a5: var(--mimRed-a5);
+  --red-a6: var(--mimRed-a6);
+  --red-a7: var(--mimRed-a7);
+  --red-a8: var(--mimRed-a8);
+  --red-a9: var(--mimRed-a9);
+  --red-a10: var(--mimRed-a10);
+  --red-a11: var(--mimRed-a11);
+  --red-a12: var(--mimRed-a12);
+  --red-surface: var(--mimRed-surface);
+  --red-indicator: var(--mimRed-indicator);
+  --red-track: var(--mimRed-track);
+  --red-contrast: var(--mimRed-contrast);
+  --gray-1: var(--mimGray-1);
+  --gray-2: var(--mimGray-2);
+  --gray-3: var(--mimGray-3);
+  --gray-4: var(--mimGray-4);
+  --gray-5: var(--mimGray-5);
+  --gray-6: var(--mimGray-6);
+  --gray-7: var(--mimGray-7);
+  --gray-8: var(--mimGray-8);
+  --gray-9: var(--mimGray-9);
+  --gray-10: var(--mimGray-10);
+  --gray-11: var(--mimGray-11);
+  --gray-12: var(--mimGray-12);
+  --gray-a1: var(--mimGray-a1);
+  --gray-a2: var(--mimGray-a2);
+  --gray-a3: var(--mimGray-a3);
+  --gray-a4: var(--mimGray-a4);
+  --gray-a5: var(--mimGray-a5);
+  --gray-a6: var(--mimGray-a6);
+  --gray-a7: var(--mimGray-a7);
+  --gray-a8: var(--mimGray-a8);
+  --gray-a9: var(--mimGray-a9);
+  --gray-a10: var(--mimGray-a10);
+  --gray-a11: var(--mimGray-a11);
+  --gray-a12: var(--mimGray-a12);
+  --gray-surface: var(--mimGray-surface);
+  --gray-indicator: var(--mimGray-indicator);
+  --gray-track: var(--mimGray-track);
+  --gray-contrast: var(--mimGray-contrast);
+  --cursor-button: pointer;
+
+  .rt-Badge {
+    display: flex;
+    height: fit-content;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-family: var(--default-font-family);
+    font-size: $font-small;
+    font-style: normal;
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+    white-space: normal;
+
+    &--help {
+      border: 1px solid $help-dark;
+      background-color: $help-light;
+    }
+
+    &--warning {
+      border: 1px solid $warning-dark;
+      background-color: $warning-light;
+    }
+
+    &--info {
+      border: 1px solid $info-dark;
+      background-color: $info-light;
+    }
+
+    &--undefined {
+      border: 1px solid $undefined-dark;
+      background-color: rgb($undefined-light, 0.1);
+    }
+
+    &--success {
+      border: 1px solid rgb($success-dark, 0.6);
+      background-color: rgb($success-light, 0.05);
+    }
+  }
+
+  .rt-TableRow {
+    border-bottom: 1px solid $secondary-400;
+  }
+
+  .rt-TableCell {
+    box-shadow: none;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}

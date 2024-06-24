@@ -1,0 +1,59 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "wasteType": "Plastico",
+      "wasteWeight": "35",
+      "wasteActionStatus": "arrivedPlant"
+    },
+    {
+      "id": 2,
+      "wasteType": "Papel",
+      "wasteWeight": "100",
+      "wasteActionStatus": "recycling"
+    },
+    {
+      "id": 3,
+      "wasteType": "Vidrio",
+      "wasteWeight": "10",
+      "wasteActionStatus": "pendingLandfillTransport"
+    },
+    {
+      "id": 4,
+      "wasteType": "Vidrio",
+      "wasteWeight": "50",
+      "wasteActionStatus": "pendingLandfillTransport"
+    },
+    {
+      "id": 5,
+      "wasteType": "Metal",
+      "wasteWeight": "5",
+      "wasteActionStatus": "refining"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 5,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": true,
+  "totalPages": 2,
+  "totalElements": 5,
+  "size": 5,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "first": true,
+  "numberOfElements": 5,
+  "empty": false
+}

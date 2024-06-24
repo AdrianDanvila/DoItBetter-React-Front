@@ -1,0 +1,89 @@
+{
+  "content": [
+    {
+      "id": 204,
+      "businessName": "AgroInnov",
+      "cif": "841GHI039",
+      "province": "Madrid",
+      "address": "Calle Colón 3, Despacho 6. 09:00 hasta las 18:00",
+      "contact": "María López García",
+      "phoneNumber": "+34 630901234",
+      "email": "contact@agroinnov2.com",
+      "sector": "cajas",
+      "active": true
+    },
+    {
+      "id": 8,
+      "businessName": "AgroInnov",
+      "cif": "841GHIK45",
+      "province": "Valencia",
+      "address": "Calle Colón 3, Despacho 6. 09:00 hasta las 18:00",
+      "contact": "María López García",
+      "phoneNumber": "+34 630901234",
+      "email": "contact@agroinnov.com",
+      "sector": "cajas",
+      "active": true
+    },
+    {
+      "id": 3,
+      "businessName": "BioHealth",
+      "cif": "384LMNO47",
+      "province": "Barcelona",
+      "address": "Rambla de Catalunya 5, Segundo piso, puerta 4. 09:00 hasta las 17:00",
+      "contact": "Carlos Martinez Ortega",
+      "phoneNumber": "+34 619456789",
+      "email": "support@biohealth.com",
+      "sector": "cajas",
+      "active": true
+    },
+    {
+      "id": 2,
+      "businessName": "ElectroSol",
+      "cif": "A99999999",
+      "province": "Madrid",
+      "address": "Calle Gran Vía 45, Oficina 3A. 10:00 hasta las 18:00",
+      "contact": "Beatriz Sánchez Lopez",
+      "phoneNumber": "+34 617894563",
+      "email": "contact@electrosol.com",
+      "sector": "cajas",
+      "active": true
+    },
+    {
+      "id": 1,
+      "businessName": "Infortek",
+      "cif": "163FAJB39",
+      "province": "Mallorca",
+      "address": "Av/Pablo Iglesias 17, llame a la puerta y pregunte por persona de contacto. 09:30 hasta las 17:30",
+      "contact": "Alvaro Ronco Acebal",
+      "phoneNumber": "+34 612323223",
+      "email": "info@tek.com",
+      "sector": "cajas",
+      "active": true
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 5,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 5,
+  "size": 5,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "first": true,
+  "numberOfElements": 5,
+  "empty": false
+}

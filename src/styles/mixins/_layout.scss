@@ -1,0 +1,45 @@
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet-breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop-breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: #{$large-breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin container {
+  border: 0.1rem solid $secondary-400;
+  border-radius: $space-2xs;
+  margin: $space-2xs;
+  background-color: $secondary-100;
+}
+
+@mixin table-view {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: $space-s;
+}
+
+@mixin table-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: start;
+  justify-content: space-between;
+  margin: 0.5rem;
+  font-size: $font-large;
+  font-weight: bold;
+  gap: $space-s;
+}

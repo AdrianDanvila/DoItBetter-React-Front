@@ -1,0 +1,1 @@
+//Interfaces or types needed in the component , the can be used outside if needed

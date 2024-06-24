@@ -1,0 +1,21 @@
+[
+  {"comment":"put here the mocked fetch calls and responses for stubby4node mocked data"},
+  {
+    "request": {
+      "url": "^/suppliers/",
+      "method": "GET",
+      "query": {
+        "offset": "0",
+        "active": "0"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "latency": 1000,
+      "file": "./data/suppliersInactive.json"
+    }
+  }
+]
