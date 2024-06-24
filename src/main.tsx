@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import axios from 'axios'
-import { Theme } from '@radix-ui/themes'
 
 import { index } from '@store'
 
@@ -16,10 +15,6 @@ axios.defaults.baseURL = BASE_URL
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={index}>
-    <Theme
-      accentColor="red"
-      grayColor="gray">
-      <App />
-    </Theme>
+    <App />
   </Provider>,
 )

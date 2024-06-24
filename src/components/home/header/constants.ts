@@ -1,22 +1,21 @@
-import { providersText } from '@locales/es.json'
 
 import type { ConstantObjectData } from '@customTypes/interfaces.ts'
 
 export const TABLE_DATA: ConstantObjectData[] = [
   {
     reference: 'businessName',
-    title: providersText.header.business,
+    title: "",
   },
   {
     reference: 'province',
-    title: providersText.header.province,
+    title: "",
   },
   {
     reference: 'contact',
-    title: providersText.header.contact,
+    title: "",
   },
   {
     reference: 'sector',
-    title: providersText.header.sector,
+    title: "",
   },
 ]

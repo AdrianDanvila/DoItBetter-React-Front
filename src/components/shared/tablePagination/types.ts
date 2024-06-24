@@ -1,13 +1,6 @@
-import { ActionCreatorWithPayload, AsyncThunk } from '@reduxjs/toolkit'
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 
 import {
-  ProductsPayloadAction,
-  ProvidersPayloadAction,
-  RequestsPayloadAction,
-} from '@store/types.ts'
-
-import {
-  AsyncThunkConfig,
   ProductsPayloadParams,
   ProvidersPayloadParams,
   RequestsPayloadParams,
@@ -20,9 +13,7 @@ export type Action =
   | ActionCreatorWithPayload<
       number | ProvidersPayloadParams | RequestsPayloadParams | ProductsPayloadParams
     >
-  | AsyncThunk<ProvidersPayloadAction, ProvidersPayloadParams, AsyncThunkConfig>
-  | AsyncThunk<RequestsPayloadAction, RequestsPayloadParams, AsyncThunkConfig>
-  | AsyncThunk<ProductsPayloadAction, ProductsPayloadParams, AsyncThunkConfig>
+ 
 
 export interface TablePaginationProps {
   action: Action
