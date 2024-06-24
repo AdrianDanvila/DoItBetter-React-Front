@@ -1,21 +1,8 @@
-
 import type { ConstantObjectData } from '@customTypes/interfaces.ts'
 
-export const TABLE_DATA: ConstantObjectData[] = [
+export const HEADER_LINKS: ConstantObjectData[] = [
   {
-    reference: 'businessName',
-    title: "",
-  },
-  {
-    reference: 'province',
-    title: "",
-  },
-  {
-    reference: 'contact',
-    title: "",
-  },
-  {
-    reference: 'sector',
-    title: "",
+    reference: 'WhoWeAre',
+    title: 'home.header.who_we_are',
   },
 ]

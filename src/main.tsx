@@ -6,6 +6,8 @@ import { index } from '@store'
 
 import { BASE_URL } from '@constants/server.ts'
 
+import './i18n'
+
 import '@styles/theme.scss'
 import '@styles/main.scss'
 
