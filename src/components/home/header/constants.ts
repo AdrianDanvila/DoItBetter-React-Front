@@ -5,4 +5,16 @@ export const HEADER_LINKS: ConstantObjectData[] = [
     reference: 'WhoWeAre',
     title: 'home.header.who_we_are',
   },
+  {
+    reference: 'WhoWeAre',
+    title: 'home.header.who_we_are',
+  },
+  {
+    reference: 'WhoWeAre',
+    title: 'home.header.who_we_are',
+  },
+  {
+    reference: 'WhoWeAre',
+    title: 'home.header.who_we_are',
+  },
 ]

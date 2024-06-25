@@ -1,0 +1,45 @@
+/*Generic component scss file*/
+
+.p-dropdown {
+  padding: $space-2xs $space-xs;
+  border-radius: 20px;
+  background-color: transparent;
+  color: $secondary-11;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $secondary-12, $alpha: 0.1);
+    color: $secondary-contrast;
+  }
+}
+
+.p-dropdown-panel {
+  /*override prime react classes*/
+  color: $secondary-11;
+}
+
+.p-dropdown-items {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: $font-small;
+  /*override prime react classes*/
+}
+
+.p-dropdown-item {
+  padding: $space-2xs $space-xs;
+  border-radius: 20px;
+  /*override prime react classes*/
+
+  &:hover {
+    background-color: rgba($color: $secondary-12, $alpha: 0.1);
+    color: $secondary-contrast;
+  }
+
+  &[aria-selected='true'] {
+    border-bottom: $secondary-contrast;
+    color: $secondary-contrast;
+  }
+}
+
+.p-inputtext {
+  margin-right: 10px;
+}
