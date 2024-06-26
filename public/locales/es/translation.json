@@ -2,7 +2,10 @@
     "home": {
         "title":"Hola Mundo",
         "header":{
-            "who_we_are":"¿Quienes somos?"
+            "introduction":"Introducción",
+            "who_we_are":"¿Quienes somos?",
+            "info":"Informacion",
+            "login":"Inicia Sesion"
         }
     }
 }

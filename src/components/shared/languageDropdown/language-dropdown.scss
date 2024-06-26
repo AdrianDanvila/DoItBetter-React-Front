@@ -1,37 +1,38 @@
 /*Generic component scss file*/
 
 .p-dropdown {
-  padding: $space-2xs $space-xs;
+  align-items: center;
+  padding: $space-3xs $space-2xs;
   border-radius: 20px;
   background-color: transparent;
   color: $secondary-11;
   cursor: pointer;
 
   &:hover {
-    background-color: rgba($color: $secondary-12, $alpha: 0.1);
-    color: $secondary-contrast;
+    @include home-item-hover;
   }
 }
 
 .p-dropdown-panel {
   /*override prime react classes*/
+  border-radius: 5px;
+  margin-top: 11px;
+  background-color: rgba($color: $secondary-12, $alpha: 0.1);
   color: $secondary-11;
 }
 
 .p-dropdown-items {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: $font-small;
   /*override prime react classes*/
 }
 
 .p-dropdown-item {
-  padding: $space-2xs $space-xs;
-  border-radius: 20px;
+  padding: $space-2xs $space-2xs;
   /*override prime react classes*/
 
   &:hover {
-    background-color: rgba($color: $secondary-12, $alpha: 0.1);
-    color: $secondary-contrast;
+    @include home-item-hover;
   }
 
   &[aria-selected='true'] {

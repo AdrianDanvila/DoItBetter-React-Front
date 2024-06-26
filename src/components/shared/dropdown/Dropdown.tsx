@@ -3,7 +3,6 @@
 import { Dropdown as PrimeDropDown } from 'primereact/dropdown'
 
 import { DropdownProps } from './types'
-
 export const Dropdown = ({
   className,
   options,
@@ -12,6 +11,7 @@ export const Dropdown = ({
 }: DropdownProps) => (
   <>
     <PrimeDropDown
+      focusOnHover={true}
       className={className ? className : 'default-select'}
       value={defaultValue}
       optionLabel="label"

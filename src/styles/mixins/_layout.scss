@@ -16,6 +16,30 @@
   }
 }
 
+@mixin home-item-hover {
+  background-color: rgba($color: $secondary-12, $alpha: 0.1);
+  color: $secondary-contrast;
+  transition: background-color 0.5s ease;
+}
+
+@mixin home-links {
+  display: flex;
+  align-items: center;
+  padding: $space-3xs $space-2xs;
+  border-radius: 15px;
+  margin: $space-3xs $space-3xs;
+  @include tablet {
+    padding: $space-3xs $space-2xs;
+    margin: 0 $space-2xs;
+  }
+  color: $secondary-11;
+  text-decoration: none;
+
+  &:hover {
+    @include home-item-hover;
+  }
+}
+
 @mixin container {
   border: 0.1rem solid $secondary-400;
   border-radius: $space-2xs;
