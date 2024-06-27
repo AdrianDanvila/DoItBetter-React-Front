@@ -1,0 +1,49 @@
+.navbar-container {
+  /**/
+
+  .navigation {
+    padding: $space-xs 0;
+    border-top: 1px solid $secondary-contrast;
+    border-bottom: 1px solid $secondary-contrast;
+    background-color: transparent;
+
+    &__title {
+      height: 48px;
+      margin: $space-3xs;
+      color: $secondary-contrast;
+    }
+
+    &__link {
+      padding: $space-2xs $space-2xs;
+      border-radius: 0px;
+      border-left: 0px solid $primary-indicator;
+      margin: $space-2xs 0;
+      color: $secondary-11;
+      font-size: $font-medium;
+      font-weight: bold;
+      text-decoration: none;
+      transition: border 0.5s ease-in-out;
+
+      &--selected {
+        border-left: 2px solid $primary-indicator;
+        color: $primary-indicator;
+
+        &:hover {
+          border-left: 5px solid $primary-indicator;
+          color: $primary-indicator;
+          transition: border 0.5s ease;
+        }
+      }
+
+      &:hover {
+        border-left: 10px solid $primary-indicator;
+        background-color: transparent;
+        background-color: rgba($color: $primary-indicator, $alpha: 0.2);
+        color: $primary-indicator;
+        color: $primary-indicator;
+        transition: color box-shadow background-color 0.5s ease-in-out;
+        transition: border 0.5s ease-in-out;
+      }
+    }
+  }
+}

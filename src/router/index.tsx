@@ -7,16 +7,28 @@ import {
 import { Home } from '@pages/home/Home.tsx'
 
 import { RoutePath } from './constants.ts'
-import { Layout } from './Layout.tsx'
+import { PrivateLayout } from './PrivateLayout.tsx'
+import { PublicLayout } from './PublicLayout.tsx'
+
+import { Routines } from '@/pages/routines/Routines.tsx'
 
 export const getRouter = () =>
   createBrowserRouter(
     createRoutesFromElements(
-      <Route Component={Layout}>
-        <Route
-          path={RoutePath.home}
-          Component={Home}
-        />
+      <Route>
+        <Route Component={PublicLayout}>
+          <Route
+            path={RoutePath.home}
+            Component={Home}
+          />
+        </Route>
+
+        <Route Component={PrivateLayout}>
+          <Route
+            path={RoutePath.main}
+            Component={Routines}
+          />
+        </Route>
       </Route>,
     ),
   )
