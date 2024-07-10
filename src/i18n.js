@@ -10,6 +10,15 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'es',
+    react: {
+      bindI18n: 'loaded languageChanged',
+      bindI18nStore: 'added',
+      useSuspense: true,
+    },
+    i18n: {
+      reloadOnLanguageChange: true,
+      onlanguagechange:true
+    },
   })
 
 export default i18n

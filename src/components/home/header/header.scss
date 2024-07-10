@@ -3,92 +3,59 @@
   z-index: 2;
   top: 0;
   left: 0;
-  display: flex;
+
+  display: grid;
   width: 100%;
-  width: 100%;
+  align-items: center;
   padding: $space-2xs 0;
   font-size: $font-small;
+  grid-template-columns: 30% 70%;
+
+  @include tablet {
+    grid-template-columns: 20% 60% 20%;
+  }
 
   &--scrolled {
     border-bottom: $secondary-6 solid 0.5px;
     background-color: $color-background;
   }
 
-  &__container {
-    display: grid;
-    width: 100%;
-    align-items: center;
-    grid-template-columns: 30% 70%;
+  &__logo {
+    width: 125px;
+    height: 50px;
+    padding-left: $space-2xs;
+  }
 
-    @include tablet {
-      grid-template-columns: 20% 60% 20%;
-    }
+  &__options-container {
+    display: flex;
+    justify-content: end;
+    padding-right: $space-3xs;
 
-    &__logo {
-      padding-left: $space-2xs;
-      color: $secondary-contrast;
-    }
+    .menu-button {
+      width: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: transparent;
+      color: $secondary-11;
+      font-size: $font-large;
+      visibility: visible;
 
-    &__nav {
-      position: absolute;
-      top: 49px;
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      padding: $space-3xs 0;
-      background-color: $color-background;
+      .icon {
+        width: 15px;
+        height: 15px;
+      }
 
-      &--invisible {
-        position: fixed;
+      &:hover {
+        @include home-item-hover;
+      }
+      @include tablet {
+        display: none;
         visibility: hidden;
       }
-
-      @include tablet {
-        position: relative;
-        top: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: 0;
-        background-color: transparent;
-      }
-
-      &__link {
-        @include home-links;
-      }
     }
 
-    &__options-container {
-      display: flex;
-      justify-content: end;
-      padding-right: $space-3xs;
-
-      .menu-button {
-        width: 40px;
-        border: none;
-        border-radius: 5px;
-        background-color: transparent;
-        color: $secondary-11;
-        font-size: $font-large;
-        visibility: visible;
-
-        .icon {
-          width: 15px;
-          height: 15px;
-        }
-
-        &:hover {
-          @include home-item-hover;
-        }
-        @include tablet {
-          display: none;
-          visibility: hidden;
-        }
-      }
-
-      .login-link {
-        @include home-links;
-      }
+    .login-link {
+      @include home-links;
     }
   }
 }

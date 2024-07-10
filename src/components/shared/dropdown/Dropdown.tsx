@@ -1,8 +1,7 @@
-// Generic component tsx file
-
 import { Dropdown as PrimeDropDown } from 'primereact/dropdown'
 
 import { DropdownProps } from './types'
+
 export const Dropdown = ({
   className,
   options,

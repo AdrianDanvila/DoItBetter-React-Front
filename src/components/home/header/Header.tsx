@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'primereact/button'
 import { RowsIcon } from '@radix-ui/react-icons'
 
-import { ConstantObjectData } from '@customTypes/interfaces'
+import logo from '@assets/logo.png'
 
-import { HEADER_LINKS } from './constants'
+import { Navbar } from './components/navbar/Navbar'
 
 import './header.scss'
 
@@ -18,6 +18,7 @@ export const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(
     window.innerWidth > BREAKPOINTS.tablet,
   )
+
   const [isHeaderScrolled, setisHeaderScrolled] = useState(window.scrollY > 75)
 
   const handleClickButton = () => {
@@ -46,37 +47,26 @@ export const Header = () => {
     <>
       <header
         className={`header ${isHeaderScrolled ? 'header--scrolled' : ''}`}>
-        <div className="header__container">
-          <div className="header__container__logo">logo/burger</div>
-          <nav
-            className={
-              isNavOpen
-                ? 'header__container__nav'
-                : 'header__container__nav--invisible'
-            }>
-            {HEADER_LINKS.map((elemnt: ConstantObjectData) => (
-              <a
-                className="header__container__nav__link"
-                key={elemnt.reference}
-                href={elemnt.reference}>
-                {t(elemnt.title)}
-              </a>
-            ))}
-          </nav>
-          <div className="header__container__options-container">
-            <LanguageDropdown />
+        <div className="header__logo">
+          <img
+            className="header__logo"
+            src={logo}></img>
+        </div>
+        <Navbar isOpen={isNavOpen} />
 
-            <NavLink
-              className="login-link"
-              to="/login">
-              {t('home.header.login')}
-            </NavLink>
-            <Button
-              icon={<RowsIcon className="icon" />}
-              className="menu-button"
-              onClick={handleClickButton}
-            />
-          </div>
+        <div className="header__options-container">
+          <LanguageDropdown />
+
+          <NavLink
+            className="login-link"
+            to="/login">
+            {t('home.header.login')}
+          </NavLink>
+          <Button
+            icon={<RowsIcon className="icon" />}
+            className="menu-button"
+            onClick={handleClickButton}
+          />
         </div>
       </header>
     </>

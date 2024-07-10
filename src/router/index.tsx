@@ -6,9 +6,10 @@ import {
 
 import { Home } from '@pages/home/Home.tsx'
 
+import { PrivateLayout } from '../layouts/privateLayout/PrivateLayout.tsx'
+import { PublicLayout } from '../layouts/publicLayout/PublicLayout.tsx'
+
 import { RoutePath } from './constants.ts'
-import { PrivateLayout } from './PrivateLayout.tsx'
-import { PublicLayout } from './PublicLayout.tsx'
 
 import { Routines } from '@/pages/routines/Routines.tsx'
 
@@ -26,6 +27,10 @@ export const getRouter = () =>
         <Route Component={PrivateLayout}>
           <Route
             path={RoutePath.main}
+            Component={Routines}
+          />
+          <Route
+            path={RoutePath.routines}
             Component={Routines}
           />
         </Route>

@@ -1,0 +1,26 @@
+.routines-table {
+  overflow: scroll;
+  width: max;
+  max-width: calc(100% - 20px);
+  padding-top: $space-2xs;
+  border-radius: 15px 15px 0px 0px;
+
+  &__header {
+    border-bottom: 2px solid $secondary-3;
+
+    background-color: $secondary-3;
+
+    &[data-p-highlight='true'] {
+      background-color: $primary-5;
+      color: $primary-9;
+    }
+  }
+
+  &__cell {
+    width: 100px;
+    min-width: 100px;
+    padding: $space-2xs;
+    padding-left: 5px;
+    border-bottom: 1px solid $secondary-5;
+  }
+}

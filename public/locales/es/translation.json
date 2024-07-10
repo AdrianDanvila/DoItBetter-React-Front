@@ -1,11 +1,34 @@
 {
-    "home": {
-        "title":"Hola Mundo",
-        "header":{
-            "introduction":"Introducción",
-            "who_we_are":"¿Quienes somos?",
-            "info":"Informacion",
-            "login":"Inicia Sesion"
-        }
+  "home": {
+    "title": "Hola Mundo",
+    "header": {
+      "introduction": "Introducción",
+      "who_we_are": "¿Quienes somos?",
+      "info": "Informacion",
+      "login": "Inicia Sesion"
     }
+  },
+
+  "main": {
+    "title": "Hola Mundo",
+    "header": {
+      "introduction": "Introducción"
+    },
+    "navigation": {
+      "home": "Pagina Principal",
+      "routines": "Rutinas",
+      "profile": "Perfil"
+    },
+    "routines": {
+      "table": {
+        "title": "Tus Rutinas",
+        "headers": {
+          "name": "Nombre",
+          "description": "Descripcion",
+          "date_created": "Fecha de creacion",
+          "actions": "Acciones"
+        }
+      }
+    }
+  }
 }

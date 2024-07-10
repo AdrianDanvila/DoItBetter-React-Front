@@ -7,10 +7,12 @@ import { LANGUAGES } from './constants'
 
 import './language-dropdown.scss'
 
+import { ChangeLanguage } from '@/helpers'
+
 export const LanguageDropdown = () => {
   const { i18n } = useTranslation()
   const handleChange = (e: DropdownChangeEvent) => {
-    i18n.changeLanguage(e.value)
+    ChangeLanguage(e)
   }
   return (
     <>

@@ -1,11 +1,32 @@
 {
-    "home": {
-        "title":"hello world",
-        "header":{
-            "introduction":"Introduction",
-            "who_we_are":"¿Who whe are?",
-            "info":"Information",
-            "login":"Login"
-        }
+  "home": {
+    "title": "hello world",
+    "header": {
+      "introduction": "Introduction",
+      "who_we_are": "¿Who whe are?",
+      "info": "Information",
+      "login": "Login"
     }
+  },
+  "main": {
+    "header": {
+      "introduction": "Introducción"
+    },
+    "navigation": {
+      "home": "Home",
+      "routines": "Routines",
+      "profile": "Profile"
+    },
+    "routines": {
+      "table": {
+        "title": "Your routines",
+        "headers": {
+          "name": "Name",
+          "description": "Description",
+          "date_created": "Date of creation",
+          "actions": "Actions"
+        }
+      }
+    }
+  }
 }

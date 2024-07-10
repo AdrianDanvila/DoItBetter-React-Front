@@ -1,0 +1,96 @@
+.navbar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: $secondary-1;
+  box-shadow: 10px 0px 100px -50px $primary-9;
+
+  @include tablet {
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+  }
+
+  &__title {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin: $space-3xs;
+    color: $primary-11;
+  }
+
+  &__section {
+    width: 100%;
+    flex-direction: column;
+    background-color: transparent;
+
+    &__title {
+      height: 48px;
+      margin: 10px -10px -20px 10px;
+      color: $primary-11;
+    }
+
+    &__link-container {
+      display: flex;
+      height: $space-s;
+      align-items: center;
+      border-radius: 0px;
+      border-right: 0px solid $primary-4;
+      margin: $space-2xs 0;
+      color: $secondary-11;
+      font-size: $font-small;
+      transition: border 0.5s ease-in-out;
+
+      &__link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      &__icon {
+        margin: 0 $space-2xs;
+        color: $primary-9;
+      }
+
+      &--selected {
+        border-right: 5px solid $primary-9;
+        color: $secondary-contrast;
+        font-weight: bold;
+
+        &:hover {
+          color: $primary-9;
+          transition: border 0.5s ease;
+        }
+      }
+
+      &:hover {
+        background-color: transparent;
+        background-color: rgba($color: $primary-9, $alpha: 0.1);
+        color: $primary-9;
+        transition: color box-shadow background-color 0.5s ease-in-out;
+        transition: border 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__card {
+    width: 90%;
+    padding: 0 10px;
+    border-radius: 5px;
+    margin: 10px 10px;
+    background-color: $primary-7;
+    justify-self: end;
+
+    .p-card-body {
+      height: 100%;
+    }
+
+    .p-card-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

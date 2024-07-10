@@ -1,0 +1,15 @@
+.card {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  padding: $space-xs;
+  border-radius: 5px;
+  margin: $space-2xs;
+  background-color: $color-background;
+  box-shadow: 0px 0px 75px -35px $primary-9;
+
+  .p-card-title {
+    color: $secondary-12;
+    font-weight: bolder;
+  }
+}

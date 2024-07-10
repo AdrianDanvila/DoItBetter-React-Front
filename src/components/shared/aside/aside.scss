@@ -1,5 +1,12 @@
-/*Generic component scss file*/
-
 .p-sidebar {
-  background-color: $secondary-3;
+  background-color: $secondary-1;
+
+  &-mask {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &-content {
+    overflow: hidden;
+    background-color: white;
+  }
 }

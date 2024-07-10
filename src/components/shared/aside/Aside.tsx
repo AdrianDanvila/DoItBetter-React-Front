@@ -1,37 +1,28 @@
 // Generic component tsx file
 
-import { PropsWithChildren, useState } from 'react'
-import { Button } from 'primereact/button'
+import { PropsWithChildren } from 'react'
 import { Sidebar } from 'primereact/sidebar'
 
-import './aside.scss'
+import { AsideProps } from './types'
 
-export interface AsideProps {
-  isOpen?: boolean
-  onHide?: () => void
-  className?: string
-}
+import './aside.scss'
 
 export const Aside = ({
   isOpen,
   onHide,
   className,
   children,
-}: PropsWithChildren<AsideProps>) => {
-  const [visible, setVisible] = useState(false)
-
-  return (
-    <div className="card flex justify-content-center">
-      <Sidebar
-        visible={visible}
-        onHide={() => setVisible(false)}
-        className={className ? className : ''}>
-        {children}
-      </Sidebar>
-      <Button
-        icon="pi pi-arrow-right"
-        onClick={() => setVisible(true)}
-      />
-    </div>
-  )
-}
+  header,
+}: PropsWithChildren<AsideProps>) => (
+  <div className="card flex justify-content-center">
+    <Sidebar
+      showCloseIcon={false}
+      header={header}
+      blockScroll={true}
+      visible={isOpen}
+      onHide={onHide}
+      className={className ? className : ''}>
+      {children}
+    </Sidebar>
+  </div>
+)

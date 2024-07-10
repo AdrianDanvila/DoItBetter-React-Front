@@ -1,17 +1,7 @@
 import { PropsWithChildren } from 'react'
-import { t } from 'i18next'
-// Generic component tsx file
-export interface NavBarProps {
-  navClassName?: string
-  linkClassName?: string
-  data: LinkData[]
-}
+import { useTranslation } from 'react-i18next'
 
-export interface LinkData {
-  icon?: JSX.Element
-  href: string
-  text: string
-}
+import { LinkData, NavBarProps } from './types'
 
 import './navbar.scss'
 
@@ -19,15 +9,26 @@ export const NavBar = ({
   navClassName,
   linkClassName,
   data,
-}: PropsWithChildren<NavBarProps>) => (
-  <nav className={`navigation ${navClassName} `}>
-    {data.map((elemnt: LinkData) => (
-      <a
-        className={`navigation__link ${window.location.pathname.includes(elemnt.href) ? 'navigation__link--selected' : ''} ${linkClassName} `}
-        key={elemnt.href}
-        href={elemnt.href}>
-        {t(elemnt.text)}
-      </a>
-    ))}
-  </nav>
-)
+  title,
+}: PropsWithChildren<NavBarProps>) => {
+  const { t } = useTranslation()
+  const navClassname = navClassName ? navClassName : 'navbar'
+  return (
+    <nav className={navClassname}>
+      {title ? <h4 className={`${navClassname}__title`}>{title}</h4> : null}
+
+      {data.map((element: LinkData) => (
+        <div
+          className={`${navClassname}__link-container ${window.location.pathname.includes(element.href) ? `${navClassname}__link-container--selected` : ''} ${linkClassName} `}
+          key={element.href}>
+          {element.icon}
+          <a
+            href={element.href}
+            className={`${navClassname}__link-container__link`}>
+            {t(element.text)}
+          </a>
+        </div>
+      ))}
+    </nav>
+  )
+}

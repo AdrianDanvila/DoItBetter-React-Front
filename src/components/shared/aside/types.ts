@@ -1,1 +1,8 @@
-//Interfaces or types needed in the component , the can be used outside if needed
+import { ReactNode } from 'react'
+
+export interface AsideProps {
+  isOpen?: boolean
+  onHide: () => void
+  className?: string
+  header?: ReactNode
+}
