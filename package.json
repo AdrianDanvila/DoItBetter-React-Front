@@ -1,9 +1,12 @@
 {
   "name": "mima-tu-planeta",
   "private": true,
+  "homepage": "https://gitname.github.io/react-gh-pages",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
@@ -64,6 +67,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-simple-import-sort": "^12.1.0",
+    "gh-pages": "^6.1.1",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
     "prettier": "3.2.5",

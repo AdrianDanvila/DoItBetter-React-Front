@@ -3,7 +3,6 @@
   z-index: 2;
   top: 0;
   left: 0;
-
   display: grid;
   width: 100%;
   align-items: center;
@@ -56,6 +55,12 @@
 
     .login-link {
       @include home-links;
+      padding: $space-2xs $space-2xs;
+
+      @include tablet {
+        padding: $space-2xs $space-2xs;
+        margin: 0 $space-2xs;
+      }
     }
   }
 }

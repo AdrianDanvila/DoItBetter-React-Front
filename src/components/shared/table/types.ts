@@ -1,5 +1,5 @@
 export interface TableProps {
-  values: never[]
+  values: unknown[]
   columns: ColumnData[]
   className?: string
   headerClassName?: string

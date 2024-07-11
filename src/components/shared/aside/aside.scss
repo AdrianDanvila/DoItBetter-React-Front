@@ -1,8 +1,13 @@
 .p-sidebar {
+  width: 251px;
   background-color: $secondary-1;
 
   &-mask {
     background-color: rgba(0, 0, 0, 0.1);
+
+    @include tablet {
+      width: 251px;
+    }
   }
 
   &-content {

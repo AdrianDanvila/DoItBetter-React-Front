@@ -2,6 +2,8 @@ import MediaQuery from 'react-responsive'
 
 import { NavBar as GenericNavBar } from '@components/shared/navbar/NavBar'
 
+import logo from '@assets/logo.png'
+
 import { NAVBAR_LINKS } from './constants'
 import { NavbarProps } from './types'
 
@@ -18,7 +20,11 @@ export const NavBar = ({ isOpen, onHide }: NavbarProps) => (
         onHide={onHide}
         isOpen={isOpen}>
         <div className="navbar">
-          <h2 className="navbar__title">Titulo</h2>
+          <h2 className="navbar__title">
+            <img
+              src={logo}
+              className="h-full w-40"></img>
+          </h2>
           <GenericNavBar
             navClassName="navbar__section"
             data={NAVBAR_LINKS}
@@ -34,7 +40,11 @@ export const NavBar = ({ isOpen, onHide }: NavbarProps) => (
     </MediaQuery>
     <MediaQuery minWidth={BREAKPOINTS.tablet}>
       <div className="navbar">
-        <h2 className="navbar__title">Titulo</h2>
+        <h2 className="navbar__title">
+          <img
+            src={logo}
+            className="h-full w-40"></img>
+        </h2>
         <div>
           <GenericNavBar
             navClassName="navbar__section"
