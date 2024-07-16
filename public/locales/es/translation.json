@@ -30,5 +30,18 @@
         }
       }
     }
+  },
+  "login": {
+    "form": {
+      "title": "Formulario de inicio de sesion",
+      "name": {
+        "label": "Nombre",
+        "PlaceHolder": "Maria del carmen"
+      }
+    }
+  },
+  "form": {
+    "submit": "Enviar",
+    "reset": "Reiniciar"
   }
 }

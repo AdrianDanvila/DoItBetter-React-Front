@@ -14,7 +14,7 @@ export const Aside = ({
   children,
   header,
 }: PropsWithChildren<AsideProps>) => (
-  <div className="card flex justify-content-center">
+  <section className="card flex justify-content-center">
     <Sidebar
       showCloseIcon={false}
       header={header}
@@ -24,5 +24,5 @@ export const Aside = ({
       className={className ? className : ''}>
       {children}
     </Sidebar>
-  </div>
+  </section>
 )

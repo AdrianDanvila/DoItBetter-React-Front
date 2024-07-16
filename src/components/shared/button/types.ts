@@ -6,4 +6,12 @@ export interface Buttonprops {
   icon: IconType<PrimeButtonprops>
   onClick: () => void
   text?: string
+  type?: ButtonType
+}
+
+export enum ButtonType {
+  Submit = 'submit',
+  Reset = 'reset',
+  Button = 'button',
+  Undefined = 'undefined',
 }

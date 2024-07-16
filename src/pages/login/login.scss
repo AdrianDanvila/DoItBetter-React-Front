@@ -1,0 +1,13 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient($primary-5, $color-background 30%);
+
+  &__form {
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-self: center;
+  }
+}

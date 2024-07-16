@@ -28,5 +28,22 @@
         }
       }
     }
+  },
+  "login": {
+    "title": "Login form",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Jhon snow",
+        "error_messages": {
+          "required": "required",
+          "short": "min lentgh"
+        }
+      }
+    }
+  },
+  "form": {
+    "submit": "Send",
+    "reset": "Reset"
   }
 }

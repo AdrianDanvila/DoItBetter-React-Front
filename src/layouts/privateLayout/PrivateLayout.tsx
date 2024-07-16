@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Button } from 'primereact/button'
-import { RowsIcon } from '@radix-ui/react-icons'
+import { ExitIcon, RowsIcon } from '@radix-ui/react-icons'
 
 import './private-layout.scss'
 
@@ -19,8 +19,16 @@ export const PrivateLayout = () => {
         isOpen={isNavOpen}
         onHide={() => setIsNavOpen(false)}
       />
-      <div className="section-container">
+      <section className="section-container">
         <Header>
+          <Button
+            icon={<ExitIcon className="icon" />}
+            className="header-container__button"
+            onClick={() => {}}
+          />
+          <div className="bg-black w-6 h-6 rounded-full mx-2">
+            <img></img>
+          </div>
           <Button
             icon={<RowsIcon className="icon" />}
             className="header-container__button header-container__button__nav "
@@ -29,7 +37,7 @@ export const PrivateLayout = () => {
         </Header>
 
         <Outlet />
-      </div>
+      </section>
     </main>
   )
 }
