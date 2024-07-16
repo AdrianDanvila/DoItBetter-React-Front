@@ -1,14 +1,14 @@
 {
-  "name": "mima-tu-planeta",
+  "name": "DoItBetter",
   "private": true,
   "homepage": "https://gitname.github.io/react-gh-pages",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "pnpm run build",
+    "deploy": "pnpm run build && gh-pages -d dist",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "react-scripts build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "dev:mock": "pnpm run dev & pnpm run stubby4node & wait",
