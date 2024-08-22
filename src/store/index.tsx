@@ -1,11 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import providersSlice from './providersSlice.ts'
 import routinesSlice from './routinesSlice.ts'
 
 const rootReducer = combineReducers({
-  providers: providersSlice,
-  users: usersSlice,
   routines: routinesSlice,
 })
 

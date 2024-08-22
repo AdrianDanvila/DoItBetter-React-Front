@@ -1,5 +1,3 @@
-import { createContext } from 'react'
-
 import { BreakPoints } from '@customTypes/interfaces.ts'
 
 export const BREAKPOINTS: BreakPoints = {
