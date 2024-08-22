@@ -1,0 +1,20 @@
+.card {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  padding: $space-xs;
+  border-radius: 5px;
+  background-color: $color-background;
+  box-shadow: 0px 4px 30px 0px rgba($primary-6, 0.54);
+
+  .p-card-body {
+    width: 100%;
+    padding: 0;
+  }
+
+  .p-card-title {
+    color: $secondary-12;
+    font-size: $font-extra-large;
+    font-weight: bolder;
+  }
+}

@@ -1,0 +1,31 @@
+.navbar {
+  /**/
+
+  &__title {
+    color: $primary-11;
+  }
+
+  &__link-container {
+    /**/
+
+    &:hover {
+      /**/
+    }
+
+    &__link {
+      /**/
+    }
+
+    &__icon {
+      /**/
+    }
+
+    &--selected {
+      /**/
+
+      &:hover {
+        /**/
+      }
+    }
+  }
+}

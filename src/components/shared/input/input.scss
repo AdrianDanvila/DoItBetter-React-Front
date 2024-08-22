@@ -1,0 +1,24 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: $space-xs;
+
+  &__title {
+    font-size: $font-medium;
+    font-weight: bold;
+  }
+
+  &__data-enter {
+    width: 100%;
+    padding: $space-3xs $space-2xs;
+    border: 1px solid $secondary-10;
+    border-radius: 5px;
+    margin-top: $space-3xs;
+  }
+
+  &__error-message {
+    padding-left: $space-3xs;
+    color: $danger;
+    font-size: $font-small;
+  }
+}

@@ -1,0 +1,1 @@
+//Set here the required general enums for the app

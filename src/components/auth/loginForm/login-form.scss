@@ -1,0 +1,9 @@
+.login-form {
+  display: block;
+
+  &__actions-container {
+    display: flex;
+    justify-content: end;
+    justify-self: end;
+  }
+}

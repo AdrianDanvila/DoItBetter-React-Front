@@ -1,0 +1,87 @@
+{
+  "home": {
+    "title": "Hola Mundo",
+    "header": {
+      "introduction": "Introducción",
+      "who_we_are": "¿Quienes somos?",
+      "info": "Informacion",
+      "login": "Inicia Sesion"
+    }
+  },
+  "main": {
+    "header": {
+      "introduction": "Introducción"
+    },
+    "navigation": {
+      "home": "Pagina Principal",
+      "routines": "Rutinas",
+      "profile": "Perfil"
+    },
+    "routines": {
+      "table": {
+        "title": "Tus Rutinas",
+        "headers": {
+          "name": "Nombre",
+          "description": "Descripcion",
+          "date_created": "Fecha de creacion",
+          "actions": "Acciones"
+        }
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenido de vuelta",
+      "register_link": "¿Eres nuevo? Comienza tu camino <a href=\"/register\">aqui</a>"
+    },
+    "register": {
+      "title": "Comienza tu camino",
+      "register_link": "¿Ya tienes una cuenta? Continua tu camino <a href=\"/login\">aqui</a>"
+    },
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Jhon snow",
+        "error_messages": {}
+      },
+      "password": {
+        "label": "Contraseña",
+        "placeholder": "1234567",
+        "error_messages": {
+          "minimun": "La contraseña debe tener almenos 12 caracteres"
+        }
+      },
+      "age": {
+        "label": "Edad",
+        "placeholder": "18",
+        "error_messages": {
+          "minimun": "La edad minima es de 18 años"
+        }
+      },
+      "weight": {
+        "label": "Peso (kg)",
+        "placeholder": "18",
+        "error_messages": {}
+      },
+      "height": {
+        "label": "Altura ",
+        "placeholder": "1234567",
+        "error_messages": {}
+      },
+      "mail": {
+        "label": "Correo electronico",
+        "placeholder": "prueba@gmail.com",
+        "error_messages": {
+          "format": "El formato del mail que ha ingresado es invalido"
+        }
+      }
+    }
+  },
+  "form": {
+    "submit": "Enviar",
+    "reset": "Reiniciar",
+    "error_messages": {
+      "required": "Requerido"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: $space-xs;
+  border-radius: -40px;
+  gap: 3;
+
+  &__button {
+    width: 40px;
+    height: 30px;
+    padding: $space-3xs $space-2xs;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: $secondary-11;
+    font-size: $font-large;
+    visibility: visible;
+
+    &__nav {
+      @include tablet {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:hover {
+      @include home-item-hover;
+    }
+  }
+}

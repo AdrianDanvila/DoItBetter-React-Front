@@ -1,0 +1,87 @@
+{
+  "home": {
+    "title": "hello world",
+    "header": {
+      "introduction": "Introduction",
+      "who_we_are": "¿Who whe are?",
+      "info": "Information",
+      "login": "Login"
+    }
+  },
+  "main": {
+    "header": {
+      "introduction": "Introducción"
+    },
+    "navigation": {
+      "home": "Home",
+      "routines": "Routines",
+      "profile": "Profile"
+    },
+    "routines": {
+      "table": {
+        "title": "Your routines",
+        "headers": {
+          "name": "Name",
+          "description": "Description",
+          "date_created": "Date of creation",
+          "actions": "Actions"
+        }
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "register_link": "Are you new? Start your journy <a href=\"/register\">here</a>"
+    },
+    "register": {
+      "title": "Welcome Back",
+      "register_link": "Already have an account? Continue on your way <a href=\"/login\">here</a>"
+    },
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Jhon snow",
+        "error_messages": {}
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "1234567",
+        "error_messages": {
+          "minimun": "Password must be at least 12 characters long"
+        }
+      },
+      "age": {
+        "label": "Age",
+        "placeholder": "18",
+        "error_messages": {
+          "minimun": "Minimum age is 18 years old"
+        }
+      },
+      "weight": {
+        "label": "Weight (kg)",
+        "placeholder": "18",
+        "error_messages": {}
+      },
+      "height": {
+        "label": "Height",
+        "placeholder": "1234567",
+        "error_messages": {}
+      },
+      "mail": {
+        "label": "Email",
+        "placeholder": "test@gmail.com",
+        "error_messages": {
+          "format": "The format of the e-mail you have entered is invalid."
+        }
+      }
+    }
+  },
+  "form": {
+    "submit": "Send",
+    "reset": "Reset",
+    "error_messages": {
+      "required": "Required"
+    }
+  }
+}

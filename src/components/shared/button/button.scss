@@ -1,0 +1,28 @@
+.button {
+  @include setColorSeverity($primary-9);
+
+  height: 30px;
+  padding: $space-xs $space-xs;
+  border-radius: 5px;
+  margin: $space-3xs $space-2xs;
+
+  &--danger {
+    @include setColorSeverity($danger);
+    height: 30px;
+    padding: $space-xs $space-2xs;
+    border-radius: 5px;
+    margin: $space-3xs $space-2xs;
+  }
+
+  &--warning {
+    @include setColorSeverity($primary-9);
+  }
+
+  &--info {
+    @include setColorSeverity($primary-9);
+  }
+
+  &--primary {
+    @include setColorSeverity($primary-9);
+  }
+}

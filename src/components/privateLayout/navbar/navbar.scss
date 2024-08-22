@@ -1,0 +1,99 @@
+.navbar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: $secondary-1;
+  box-shadow: 0px 4px 30px 0px rgba($primary-6, 0.54);
+
+  @include tablet {
+    display: grid;
+    grid-template-rows: 12% 82% 5%;
+  }
+
+  &__title {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: $space-3xs;
+    color: $primary-11;
+  }
+
+  &__section {
+    width: 100%;
+    flex-direction: column;
+    background-color: transparent;
+
+    &__title {
+      height: 48px;
+      margin: 10px -10px -20px 10px;
+      color: $primary-11;
+    }
+
+    &__link-container {
+      display: flex;
+      height: $space-s;
+      align-items: center;
+      padding: 0 $space-xs;
+      border-radius: 0px;
+      border-right: 0px solid $primary-4;
+      margin: $space-2xs 0;
+      color: $secondary-11;
+      font-size: $font-small;
+      transition: border 0.5s ease-in-out;
+
+      &__link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      &__icon {
+        margin: 0 $space-2xs;
+        color: $primary-9;
+      }
+
+      &--selected {
+        border-right: 5px solid $primary-9;
+        color: $secondary-contrast;
+        font-weight: bold;
+
+        &:hover {
+          color: $primary-9;
+          transition: border 0.5s ease;
+        }
+      }
+
+      &:hover {
+        background-color: transparent;
+        background-color: rgba($color: $primary-9, $alpha: 0.1);
+        color: $primary-9;
+        transition: color box-shadow background-color 0.5s ease-in-out;
+        transition: border 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__options {
+    display: flex;
+    height: $space-s;
+    align-items: center;
+    padding: 0 $space-xs;
+    border-radius: 0px;
+    border-right: 0px solid $primary-4;
+    margin: $space-2xs 0;
+    color: $secondary-11;
+    font-size: $font-medium;
+    transition: border 0.5s ease-in-out;
+
+    &:hover {
+      background-color: transparent;
+      background-color: rgba($color: $primary-9, $alpha: 0.1);
+      color: $primary-9;
+      transition: color box-shadow background-color 0.5s ease-in-out;
+      transition: border 0.5s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.main-container {
+  display: grid;
+  width: 100%;
+  min-height: calc(100vh);
+  background: $secondary-2;
+
+  grid-template-columns: 0% 100%;
+
+  @include tablet {
+    grid-template-columns: 251px auto;
+  }
+
+  .section-container {
+    display: grid;
+    grid-template-rows: 58px;
+  }
+
+  .outlet-container {
+    display: flex;
+    min-height: calc(100vh);
+    justify-content: center;
+    color: black;
+  }
+}
