@@ -1,26 +1,28 @@
-import { useRef } from 'react'
-import { Toast } from 'primereact/toast'
+import { useContext } from 'react'
+
+import { toastContext } from '@/App'
 
 export const useToast = () => {
-  const ref = useRef<Toast>(null)
+  const ref = useContext(toastContext)
 
-  const showError = (message: string) => {
-    ref.current &&
-      ref.current.show({
-        severity: 'error',
-        summary: 'Info',
-        detail: message,
-      })
+  const showToast = (
+    severity:
+      | 'success'
+      | 'info'
+      | 'warn'
+      | 'error'
+      | 'secondary'
+      | 'contrast'
+      | undefined,
+    summary: string,
+    message: string,
+  ) => {
+    ref?.current?.show({
+      severity: severity,
+      summary: summary,
+      detail: message,
+    })
   }
 
-  const showSuccess = (message: string) => {
-    ref.current &&
-      ref.current.show({
-        severity: 'success',
-        summary: 'Info',
-        detail: message,
-      })
-  }
-
-  return { ref, showError, showSuccess }
+  return { showToast }
 }

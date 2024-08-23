@@ -9,14 +9,10 @@ export const useTable = <T extends { id?: number }>(
   const [selectedItem, setSelectedItem] = useState<T>()
   const [error, setError] = useState<boolean>(false)
 
-  const succesHandler = () => {
-    onSucces && onSucces()
-  }
+  const succesHandler = () => onSucces?.()
 
   useEffect(() => {
-    const errorHandler = () => {
-      onError && onError()
-    }
+    const errorHandler = () => onError?.()
 
     error && errorHandler()
     setError(false)
@@ -40,13 +36,13 @@ export const useTable = <T extends { id?: number }>(
     setValues(filteredValues)
     succesHandler()
   }
+
   const addItem = (item: T) => {
     const newValues = [...values]
 
     newValues.push(item)
     setValues(newValues)
-
-    onSucces && onSucces()
+    onSucces?.()
   }
 
   const onRowEditComplete = (index: number, newData: T) => {

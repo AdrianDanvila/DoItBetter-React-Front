@@ -5,7 +5,12 @@ import axios from 'axios'
 import { API_BASE_URL, API_URL, DEFAULT_HEADERS } from './constants'
 
 import { User } from '@/types/interfaces'
-
+/**
+ *
+ * @param user
+ * @description Register an user in the Api.
+ * @returns
+ */
 export const registerUser = ({
   name,
   age,
@@ -36,6 +41,13 @@ export const registerUser = ({
       return error.data
     })
 
+/**
+ *
+ * @param email
+ * @param password
+ * @description Login a user by email and password
+ * @returns The token that authorize the user to make api calls
+ */
 export const loginUser = (email: string, password: string) =>
   axios
     .post(API_URL.UserInfo, { email, password })
@@ -47,12 +59,22 @@ export const loginUser = (email: string, password: string) =>
     })
     .catch((error) => error.data)
 
+/**
+ *
+ * @description Api call that gets user info
+ * @returns
+ */
 export const getUser = () =>
   axios
     .get(API_URL.UserInfo)
     .then((response) => response.data)
     .catch((error) => error.data)
 
+/**
+ *
+ * @param id
+ * @description Api call that deletes a routine in the API
+ */
 export const deleteRoutine = (id: number) => {
   axios
     .delete(API_BASE_URL.ROUTINE, {

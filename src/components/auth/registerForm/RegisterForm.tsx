@@ -18,7 +18,6 @@ import { User } from '@/types/interfaces'
 
 export const RegisterForm = () => {
   const navigate = useNavigate()
-
   const sumbitHandler = async (user: User) => {
     if (await registerUser(user).then((data) => data.staus))
       navigate(ROUTE_PATH.login)

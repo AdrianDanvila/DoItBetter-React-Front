@@ -1,7 +1,6 @@
-import { Toast } from 'primereact/toast'
 import { PlusIcon, TrashIcon } from '@radix-ui/react-icons'
 
-import { ROTUINES_TABLE_DATA, routines } from './constants'
+import { ROTUINES_TABLE_DATA } from './constants'
 
 import './routines-table.scss'
 
@@ -17,15 +16,12 @@ import { addRoutine, deleteRoutine, editRoutine } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
 export const RoutinesTable = () => {
-  const { showSuccess, ref } = useToast()
+  const { showToast } = useToast()
 
   const values = useAppSelector((state) => state.routines.ownRoutines)
 
   const dispatch = useAppDispatch()
 
-  const onSucces = () => {
-    showSuccess('HOLA')
-  }
   const { selectedItem, onSelectionChange, setError, succesHandler } =
     useTable<Routine>()
 
@@ -37,20 +33,15 @@ export const RoutinesTable = () => {
     dispatch(deleteRoutine(selectedItem))
     succesHandler()
   }
+
   const addItem = (item: Routine) => {
-    dispatch(
-      addRoutine({
-        id: values.length + 1,
-        name: 'aaaa',
-        description: '',
-      }),
-    )
-    onSucces && onSucces()
+    dispatch(addRoutine(item))
+    showToast('error', '', '')
   }
 
   const myEditHandler = (index: number, newData: Routine) => {
     dispatch(editRoutine({ index, newData }))
-    onSucces && onSucces()
+    showToast('success', '', '')
   }
 
   return (
@@ -81,10 +72,8 @@ export const RoutinesTable = () => {
         values={values}
         selectedItem={selectedItem as Routine}
         columns={ROTUINES_TABLE_DATA}
-        onRowEditComplete={myEditHandler}
         onSelectionChange={onSelectionChange}
       />
-      <Toast ref={ref} />
     </>
   )
 }

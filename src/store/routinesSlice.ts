@@ -45,9 +45,7 @@ const routinesSlice = createSlice({
       state,
       action: PayloadAction<{ index: number; newData: Routine }>,
     ) => {
-      const _values = [...state.ownRoutines]
-      _values[action.payload.index] = action.payload.newData
-      state.ownRoutines = _values
+      state.ownRoutines[action.payload.index] = action.payload.newData
     },
   },
 })

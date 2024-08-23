@@ -20,6 +20,6 @@ export const Button = ({
     icon={icon}
     className={className || `button--${severity}`}
     onClick={onClick}>
-    {children && children}
+    {children}
   </PrimeButton>
 )
