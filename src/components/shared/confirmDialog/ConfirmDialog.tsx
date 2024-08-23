@@ -5,6 +5,7 @@ import {
 } from 'primereact/confirmdialog'
 
 import { Button } from '../button/Button'
+import { ButtonSeverity } from '../button/types'
 
 import { ConfirmDialogProps } from './types'
 
@@ -16,11 +17,12 @@ export const ConfirmDialog = ({
   rejectLabel,
   contentClassName,
   rejectButtonClassName = 'button--danger p-button p-component',
-  acceptButtonClassName = 'button p-button p-component',
+  acceptButtonClassName = 'button--primary p-button p-component',
   onAccept,
   onReject,
-  openButtonClassname = 'button p-button p-component',
+  openButtonClassname = 'button--primary p-button p-component',
   openButtonLabel,
+  openButtonIcon,
 }: PropsWithChildren<ConfirmDialogProps>) => {
   const openConfirm = () => {
     confirmDialog({
@@ -40,12 +42,10 @@ export const ConfirmDialog = ({
     <>
       <PrimeConfirmDialog />
       <Button
-        className={
-          openButtonClassname +
-          'w-10 border-blue-800 border-2 hover:bg-blue-400 rounded-lg  py-1 m-2.5 flex items-center justify-center self-end'
-        }
+        className={openButtonClassname}
+        severity={ButtonSeverity.Primary}
         onClick={() => openConfirm()}
-        icon={undefined}>
+        icon={openButtonIcon}>
         {openButtonLabel}
       </Button>
     </>

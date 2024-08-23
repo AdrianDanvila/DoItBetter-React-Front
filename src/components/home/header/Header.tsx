@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
-import { Button } from 'primereact/button'
 import { RowsIcon } from '@radix-ui/react-icons'
 
 import logo from '@assets/logo.png'
@@ -10,6 +9,8 @@ import { Navbar } from './components/navbar/Navbar'
 
 import './header.scss'
 
+import { Button } from '@/components/shared/button/Button'
+import { ButtonSeverity } from '@/components/shared/button/types'
 import { LanguageDropdown } from '@/components/shared/languageDropdown/LanguageDropdown'
 import { BREAKPOINTS } from '@/constants'
 
@@ -60,6 +61,7 @@ export const Header = () => {
           {t('home.header.login')}
         </NavLink>
         <Button
+          severity={ButtonSeverity.Primary}
           icon={<RowsIcon className="icon" />}
           className="menu-button"
           onClick={handleClickButton}

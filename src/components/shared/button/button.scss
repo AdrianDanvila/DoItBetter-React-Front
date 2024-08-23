@@ -1,6 +1,4 @@
 .button {
-  @include setColorSeverity($primary-9);
-
   height: 30px;
   padding: $space-xs $space-xs;
   border-radius: 5px;
@@ -15,14 +13,26 @@
   }
 
   &--warning {
-    @include setColorSeverity($primary-9);
+    @include setColorSeverity($danger);
+    height: 30px;
+    padding: $space-xs $space-2xs;
+    border-radius: 5px;
+    margin: $space-3xs $space-2xs;
   }
 
   &--info {
-    @include setColorSeverity($primary-9);
+    @include setColorSeverity($danger);
+    height: 30px;
+    padding: $space-xs $space-2xs;
+    border-radius: 5px;
+    margin: $space-3xs $space-2xs;
   }
 
   &--primary {
     @include setColorSeverity($primary-9);
+    height: 30px;
+    padding: $space-xs $space-2xs;
+    border-radius: 5px;
+    margin: $space-3xs $space-2xs;
   }
 }

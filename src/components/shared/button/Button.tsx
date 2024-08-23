@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 import { Button as PrimeButton } from 'primereact/button'
 
-import { Buttonprops, ButtonType } from './types'
+import { Buttonprops, ButtonSeverity, ButtonType } from './types'
 
 import './button.scss'
 
@@ -10,7 +10,7 @@ export const Button = ({
   onClick,
   className,
   children,
-  severity,
+  severity = ButtonSeverity.Primary,
   label,
   type = ButtonType.Button,
 }: PropsWithChildren<Buttonprops>) => (

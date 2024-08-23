@@ -8,7 +8,7 @@ export interface Buttonprops {
   text?: string
   type?: ButtonType
   label?: string
-  severity?: ButtonSeverity
+  severity: ButtonSeverity
 }
 
 export enum ButtonType {
@@ -21,6 +21,6 @@ export enum ButtonType {
 export enum ButtonSeverity {
   Danger = 'danger',
   Info = 'info',
-  warning = 'button',
-  default = '',
+  Warning = 'warning',
+  Primary = 'primary',
 }

@@ -1,25 +1,35 @@
-import { SetStateAction, useState } from 'react'
+import { PropsWithChildren, ReactNode, SetStateAction, useState } from 'react'
 import { Dialog as PrimeDialog } from 'primereact/dialog'
 
 import { Button } from '../button/Button'
+import { ButtonSeverity } from '../button/types'
 
 import './dialog.scss'
 
 export interface DialogProps {
   isVisible?: boolean
-  setIsVisible: (value: SetStateAction<boolean>) => void
+  setIsVisible?: (value: SetStateAction<boolean>) => void
+  openButtonClassname: string
+  openButtonLabel: string
+  openButtonIcon: ReactNode
 }
 
-export const Dialog = () => {
+export const Dialog = ({
+  openButtonClassname,
+  openButtonIcon,
+  openButtonLabel,
+  children,
+}: PropsWithChildren<DialogProps>) => {
   const [visible, setVisible] = useState(false)
 
   return (
     <>
       <Button
-        className="button p-button p-component"
         onClick={() => setVisible(true)}
-        icon={undefined}
-        label="a"
+        icon={openButtonIcon}
+        severity={ButtonSeverity.Primary}
+        label={openButtonLabel}
+        className={openButtonClassname}
       />
       <PrimeDialog
         visible={visible}
@@ -27,7 +37,9 @@ export const Dialog = () => {
         onHide={() => {
           if (!visible) return
           setVisible(false)
-        }}></PrimeDialog>
+        }}>
+        {children}
+      </PrimeDialog>
     </>
   )
 }

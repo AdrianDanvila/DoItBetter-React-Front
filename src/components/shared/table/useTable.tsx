@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
 export const useTable = <T extends { id?: number }>(
-  initialValues: T[],
+  initialValues?: T[],
   onError?: () => void,
   onSucces?: () => void,
 ) => {
-  const [values, setValues] = useState<T[]>(initialValues)
+  const [values, setValues] = useState<T[]>(initialValues || [])
   const [selectedItem, setSelectedItem] = useState<T>()
   const [error, setError] = useState<boolean>(false)
 
@@ -68,5 +68,7 @@ export const useTable = <T extends { id?: number }>(
     onRowEditComplete,
     selectedItem,
     onSelectionChange,
+    succesHandler,
+    error,
   }
 }

@@ -7,6 +7,7 @@ import './private-layout.scss'
 import { Header } from '@/components/privateLayout/header/Header'
 import { NavBar } from '@/components/privateLayout/navbar/NavBar'
 import { Button } from '@/components/shared/button/Button'
+import { ButtonSeverity } from '@/components/shared/button/types'
 import { Card } from '@/components/shared/card/Card'
 import { OverlayPanel } from '@/components/shared/overlayPanel/OverlayPanel'
 
@@ -24,6 +25,7 @@ export const PrivateLayout = () => {
             icon={<ExitIcon className="icon" />}
             className="header-container__button"
             onClick={() => {}}
+            severity={ButtonSeverity.Primary}
           />
 
           <OverlayPanel
@@ -33,6 +35,7 @@ export const PrivateLayout = () => {
             <Card title="hola" />
           </OverlayPanel>
           <Button
+            severity={ButtonSeverity.Primary}
             icon={<RowsIcon className="icon" />}
             className="header-container__button header-container__button__nav "
             onClick={() => setIsNavOpen(true)}

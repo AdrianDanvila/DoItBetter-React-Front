@@ -29,7 +29,7 @@ export interface Routine {
 export interface Exercise {
   id: number
   name: string
-  photo: URL
+  photo: string
   description: string
 }
 

@@ -8,7 +8,18 @@ export interface RoutinesState {
 }
 
 const initialState: RoutinesState = {
-  ownRoutines: [],
+  ownRoutines: [
+    {
+      id: 1,
+      name: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      description: 'c',
+    },
+    { id: 2, name: 'b', description: 'c' },
+    { id: 3, name: 'c', description: 'c' },
+    { id: 4, name: 'd', description: 'c' },
+    { id: 5, name: 'e', description: 'c' },
+    { id: 6, name: 'g', description: 'c' },
+  ],
   published: [],
 }
 
@@ -16,13 +27,30 @@ const routinesSlice = createSlice({
   name: 'routines',
   initialState,
   reducers: {
-    // Use the PayloadAction type to declare the contents of `action.payload`
     addRoutine: (state, action: PayloadAction<Routine>) => {
-      const newRoutine: Routine = action.payload as Routine
-      state.ownRoutines.push(newRoutine)
+      state.ownRoutines.push(action.payload)
+    },
+    deleteRoutine: (state, action: PayloadAction<Routine>) => {
+      const filteredValues = state.ownRoutines.filter(
+        (value) => value.id != action.payload?.id,
+      )
+
+      if (filteredValues.length === state.ownRoutines.length) {
+        return
+      }
+
+      state.ownRoutines = filteredValues
+    },
+    editRoutine: (
+      state,
+      action: PayloadAction<{ index: number; newData: Routine }>,
+    ) => {
+      const _values = [...state.ownRoutines]
+      _values[action.payload.index] = action.payload.newData
+      state.ownRoutines = _values
     },
   },
 })
 
-//xport { fetchProvidersByStatus }
+export const { addRoutine, deleteRoutine, editRoutine } = routinesSlice.actions
 export default routinesSlice.reducer

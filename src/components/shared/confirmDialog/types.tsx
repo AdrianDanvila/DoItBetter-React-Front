@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface ConfirmDialogProps {
   message?: string
   header?: string
@@ -10,5 +12,6 @@ export interface ConfirmDialogProps {
   onAccept?: () => void
   onReject?: () => void
   openButtonClassname?: string
-  openButtonLabel: string
+  openButtonLabel?: string
+  openButtonIcon?: ReactNode
 }
