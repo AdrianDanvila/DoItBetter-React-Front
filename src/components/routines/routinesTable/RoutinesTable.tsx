@@ -41,12 +41,13 @@ export const RoutinesTable = () => {
 
   const myEditHandler = (index: number, newData: Routine) => {
     dispatch(editRoutine({ index, newData }))
+
     showToast('success', '', '')
   }
 
   return (
     <>
-      <div className="flex justify-end">
+      <div className="flex justify-end ">
         <Dialog
           openButtonClassname="button--primary"
           openButtonLabel=""

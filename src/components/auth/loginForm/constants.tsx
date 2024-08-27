@@ -19,7 +19,7 @@ export const LOGIN_FORM_INPUTS: InputProps[] = [
     id: 'password',
     field: 'auth.form.password.label',
     placeHolder: 'auth.form.password.placeholder',
-    className: 'name',
+    className: 'password',
     inputType: InputType.Password,
     fieldTag: FieldTag.Input,
   },

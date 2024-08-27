@@ -20,4 +20,5 @@ export interface InputProps {
   inputType: InputType
   fieldTag: FieldTag
   options?: Record<string, string>[]
+  disabled?: boolean
 }

@@ -5,10 +5,34 @@ import { Card } from '@/components/shared/card/Card'
 
 export const Routines = () => (
   <section className="routines-container">
-    <div className="flex flex-col sm:flex-row">
-      <Card title="main.routines.table.title">
-        <RoutinesTable />
-      </Card>
-    </div>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
+    <Card title="main.routines.table.title">
+      <RoutinesTable />
+    </Card>
   </section>
 )

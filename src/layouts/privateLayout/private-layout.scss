@@ -12,6 +12,8 @@
 
   .section-container {
     display: grid;
+    overflow: scroll;
+    max-height: 100vh;
     grid-template-rows: 58px;
   }
 

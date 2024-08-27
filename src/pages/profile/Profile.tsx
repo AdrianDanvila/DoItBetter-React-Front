@@ -5,6 +5,8 @@ import { Card } from '../../components/shared/card/Card'
 
 import './profile.scss'
 
+import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
+
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
@@ -71,15 +73,22 @@ export const Profile = () => {
     <section className="profile-container">
       <Card
         title="Profile Info"
-        className="item">
-        <div className="bg-black">
-          <img />
+        className="div2">
+        <div className="parent">
+          <div className="div1">1</div>
+          <div className="div2">2</div>
         </div>
       </Card>
 
       <Card
+        title="Profile Info"
+        className="div1">
+        <EditUserForm />
+      </Card>
+
+      <Card
         title="Titulo"
-        className="item-2">
+        className="div3">
         <Chart
           className="h-60"
           type="line"
@@ -90,7 +99,7 @@ export const Profile = () => {
 
       <Card
         title="Titulo"
-        className="item-2">
+        className="div4">
         <Chart
           className="h-60"
           type="line"

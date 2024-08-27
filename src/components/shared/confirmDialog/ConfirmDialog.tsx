@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useRef, useState } from 'react'
 import {
   ConfirmDialog as PrimeConfirmDialog,
   confirmDialog,
@@ -24,27 +24,29 @@ export const ConfirmDialog = ({
   openButtonLabel,
   openButtonIcon,
 }: PropsWithChildren<ConfirmDialogProps>) => {
-  const openConfirm = () => {
-    confirmDialog({
-      message,
-      header,
-      className,
-      acceptLabel,
-      rejectLabel,
-      contentClassName,
-      rejectClassName: rejectButtonClassName,
-      acceptClassName: acceptButtonClassName,
-      accept: onAccept,
-      reject: onReject,
-    })
-  }
+  const ref = useRef(null)
+  const [isVisible, setIsVisible] = useState<boolean>(false)
   return (
     <>
-      <PrimeConfirmDialog />
+      <PrimeConfirmDialog
+        onHide={() => setIsVisible(false)}
+        visible={isVisible}
+        message={message}
+        header={header}
+        className={className}
+        acceptLabel={acceptLabel}
+        rejectLabel={rejectLabel}
+        contentClassName={contentClassName}
+        rejectClassName={rejectButtonClassName}
+        acceptClassName={acceptButtonClassName}
+        accept={onAccept}
+        reject={onReject}
+        ref={ref}
+      />
       <Button
         className={openButtonClassname}
         severity={ButtonSeverity.Primary}
-        onClick={() => openConfirm()}
+        onClick={() => setIsVisible(true)}
         icon={openButtonIcon}>
         {openButtonLabel}
       </Button>

@@ -7,12 +7,12 @@ import {
 } from '@/components/shared/input/types'
 import { User } from '@/types/interfaces'
 
-export const REGISTER_FORM_INPUTS: InputProps[] = [
+export const EDIT_USER_FORM_INPUTS: InputProps[] = [
   {
     id: 'name',
     field: 'auth.form.name.label',
     placeHolder: 'auth.form.name.placeholder',
-    className: '',
+    className: 'col-span-2',
     inputType: InputType.Text,
     fieldTag: FieldTag.Input,
   },
@@ -20,7 +20,7 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     id: 'age',
     field: 'auth.form.age.label',
     placeHolder: 'auth.form.age.placeholder',
-    className: '',
+    className: 'col-span-2 col-start-3',
     inputType: InputType.Text,
     fieldTag: FieldTag.Input,
   },
@@ -28,7 +28,7 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     id: 'weight',
     field: 'auth.form.weight.label',
     placeHolder: 'auth.form.weight.placeholder',
-    className: '',
+    className: 'col-span-4 row-start-2',
     inputType: InputType.Range,
     fieldTag: FieldTag.Input,
   },
@@ -36,7 +36,7 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     id: 'height',
     field: 'auth.form.height.label',
     placeHolder: 'auth.form.height.placeholder',
-    className: '',
+    className: 'col-span-4 row-start-3',
     inputType: InputType.Range,
     fieldTag: FieldTag.Input,
   },
@@ -44,7 +44,7 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     id: 'email',
     field: 'auth.form.mail.label',
     placeHolder: 'auth.form.mail.placeholder',
-    className: '',
+    className: 'col-span-4 row-start-4',
     inputType: InputType.Mail,
     fieldTag: FieldTag.Input,
   },
@@ -52,13 +52,13 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     id: 'password',
     field: 'auth.form.password.label',
     placeHolder: 'auth.form.password.placeholder',
-    className: '',
+    className: 'col-span-4 row-start-5',
     inputType: InputType.Password,
     fieldTag: FieldTag.Input,
   },
 ]
 
-export const VALID_REGISTER_SCHEMA = Yup.object().shape({
+export const VALID_EDIT_SCHEMA = Yup.object().shape({
   name: Yup.string().min(2, 'error').required('form.error_messages.required'),
   email: Yup.string()
     .email('auth.form.mail.error_messages.format')

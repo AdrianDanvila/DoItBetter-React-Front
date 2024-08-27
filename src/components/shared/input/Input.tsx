@@ -13,6 +13,7 @@ export const Input = ({
   inputType,
   fieldTag,
   options,
+  disabled,
 }: InputProps) => {
   const { t } = useTranslation()
   return (
@@ -35,6 +36,7 @@ export const Input = ({
         )}
       </label>
       <Field
+        disabled={disabled}
         type={inputType}
         role="input"
         className={`${className} input__data-enter`}
