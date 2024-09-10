@@ -1,7 +1,7 @@
 import { BreakPoints } from '@customTypes/interfaces.ts'
 
 export const BREAKPOINTS: BreakPoints = {
-  tablet: 768,
+  tablet: 790,
   desktop: 992,
 }
 

@@ -4,6 +4,7 @@ export const PATH = {
   register: '/register',
   main: '/main',
   routines: '/routines',
+  routinesDetail: '/routines/:id',
   profile: '/profile',
 }
 
@@ -13,5 +14,6 @@ export const ROUTE_PATH = {
   login: PATH.login,
   register: PATH.register,
   routines: PATH.routines,
+  routinesDetail: PATH.routinesDetail,
   profile: PATH.profile,
 }

@@ -14,13 +14,13 @@ import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
 import { Form } from '@/components/shared/form/Form'
 import { User } from '@/types/interfaces'
+
 export const EditUserForm = () => {
   const [editable, setEditable] = useState<boolean>(true)
 
   const HandleEditClick = () => {
     setEditable(!editable)
   }
-  console.log('a')
 
   return (
     <>

@@ -73,7 +73,7 @@ export const Profile = () => {
     <section className="profile-container">
       <Card
         title="Profile Info"
-        className="div2">
+        className="profile-container__data">
         <div className="parent">
           <div className="div1">1</div>
           <div className="div2">2</div>
@@ -82,13 +82,13 @@ export const Profile = () => {
 
       <Card
         title="Profile Info"
-        className="div1">
+        className="profile-container__form">
         <EditUserForm />
       </Card>
 
       <Card
         title="Titulo"
-        className="div3">
+        className="profile-container__chart">
         <Chart
           className="h-60"
           type="line"
@@ -99,7 +99,7 @@ export const Profile = () => {
 
       <Card
         title="Titulo"
-        className="div4">
+        className="profile-container__chart2">
         <Chart
           className="h-60"
           type="line"

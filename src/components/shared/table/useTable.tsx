@@ -63,6 +63,7 @@ export const useTable = <T extends { id?: number }>(
     setError,
     onRowEditComplete,
     selectedItem,
+    setSelectedItem,
     onSelectionChange,
     succesHandler,
     error,

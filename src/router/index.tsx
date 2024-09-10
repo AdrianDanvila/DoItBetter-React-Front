@@ -13,6 +13,7 @@ import { ROUTE_PATH } from './constants.ts'
 
 import { Auth } from '@/pages/auth/Auth.tsx'
 import { Profile } from '@/pages/profile/Profile.tsx'
+import { RoutinesDetails } from '@/pages/routineDetails/RoutineDetails.tsx'
 import { Routines } from '@/pages/routines/Routines.tsx'
 
 export const getRouter = () =>
@@ -42,6 +43,10 @@ export const getRouter = () =>
           <Route
             path={ROUTE_PATH.routines}
             Component={Routines}
+          />
+          <Route
+            path={ROUTE_PATH.routinesDetail}
+            Component={RoutinesDetails}
           />
           <Route
             path={ROUTE_PATH.profile}

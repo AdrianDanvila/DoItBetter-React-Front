@@ -19,6 +19,7 @@ export const LoginForm = () => (
         onSumbit={function (): void {
           throw new Error('Function not implemented.')
         }}
+        disabled={false}
       />
     </Card>
     <p className="my-6">

@@ -13,7 +13,15 @@
   }
 
   &--warning {
-    @include setColorSeverity($danger);
+    @include setColorSeverity($warning);
+    height: 30px;
+    padding: $space-xs $space-2xs;
+    border-radius: 5px;
+    margin: $space-3xs $space-2xs;
+  }
+
+  &--success {
+    @include setColorSeverity($success);
     height: 30px;
     padding: $space-xs $space-2xs;
     border-radius: 5px;
@@ -21,7 +29,7 @@
   }
 
   &--info {
-    @include setColorSeverity($danger);
+    @include setColorSeverity($info);
     height: 30px;
     padding: $space-xs $space-2xs;
     border-radius: 5px;

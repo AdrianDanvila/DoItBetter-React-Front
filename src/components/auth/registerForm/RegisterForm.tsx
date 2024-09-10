@@ -31,6 +31,7 @@ export const RegisterForm = () => {
           initialValues={INITIAL_VALUES}
           validationSchema={VALID_REGISTER_SCHEMA}
           onSumbit={sumbitHandler}
+          disabled={false}
         />
       </Card>
       <p className="my-6">

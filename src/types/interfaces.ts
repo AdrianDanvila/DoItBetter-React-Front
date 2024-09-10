@@ -31,6 +31,9 @@ export interface Exercise {
   name: string
   photo: string
   description: string
+  sets: number
+  weight: number
+  reps: number
 }
 
 export interface BreakPoints {

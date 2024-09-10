@@ -77,7 +77,7 @@ In this project, we use linters to ensure code quality and maintain a consistent
 
 ## Authors
 
-- [@adrian.danvila](https://code.flowable.com/adrian.danvila)
+- [@adrian.danvila]()
 
 
 

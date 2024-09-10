@@ -23,4 +23,5 @@ export enum ButtonSeverity {
   Info = 'info',
   Warning = 'warning',
   Primary = 'primary',
+  Success = 'success',
 }

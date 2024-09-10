@@ -1,8 +1,5 @@
 import { PropsWithChildren, useRef, useState } from 'react'
-import {
-  ConfirmDialog as PrimeConfirmDialog,
-  confirmDialog,
-} from 'primereact/confirmdialog'
+import { ConfirmDialog as PrimeConfirmDialog } from 'primereact/confirmdialog'
 
 import { Button } from '../button/Button'
 import { ButtonSeverity } from '../button/types'
@@ -29,6 +26,7 @@ export const ConfirmDialog = ({
   return (
     <>
       <PrimeConfirmDialog
+        closeOnEscape={true}
         onHide={() => setIsVisible(false)}
         visible={isVisible}
         message={message}
