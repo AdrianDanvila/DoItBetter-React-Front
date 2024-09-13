@@ -9,7 +9,8 @@ export interface FormProps<T extends Maybe<AnyObject>> {
   inputClassName?: string
   inputContainerClassName?: string
   initialValues: T
-  validationSchema: Yup.ObjectSchema<T>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  validationSchema: Yup.ObjectSchema<any>
   onSumbit: (e: T) => void
   disabled: boolean
 }

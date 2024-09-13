@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { API_BASE_URL, API_URL, DEFAULT_HEADERS } from './constants'
 
-import { User } from '@/types/interfaces'
+import { Routine, User } from '@/types/interfaces'
 /**
  *
  * @param user
@@ -48,16 +48,29 @@ export const registerUser = ({
  * @description Login a user by email and password
  * @returns The token that authorize the user to make api calls
  */
-export const loginUser = (email: string, password: string) =>
+export const loginUser = ({ email, password }: User) =>
   axios
-    .post(API_URL.UserInfo, { email, password })
-    .then((respose) => {
+    .post(
+      API_URL.Login,
+      { email, password },
+      {
+        headers: DEFAULT_HEADERS.headers,
+      },
+    )
+    .then((response) => {
+      const token = response.data.data.token
+      const user = response.data.data.user
+      localStorage.setItem('userToken', token)
+      localStorage.setItem('user', user)
       axios.defaults.headers.common = {
-        Authorization: `Bearer ${respose.data.token}`,
+        Authorization: `Bearer ${token}`,
       }
-      return respose.status
+      return response.data
     })
-    .catch((error) => error.data)
+    .catch((error) => {
+      const response = error.response
+      return response
+    })
 
 /**
  *
@@ -84,3 +97,25 @@ export const deleteRoutine = (id: number) => {
     .then((response) => response.data)
     .catch((error) => error.data)
 }
+
+export const createRoutine = ({ name, description, published }: Routine) =>
+  axios
+    .post(
+      API_BASE_URL.ROUTINE,
+      {
+        name,
+        description,
+        published,
+      },
+      {
+        headers: DEFAULT_HEADERS.headers,
+      },
+    )
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const getAllPublishedRoutines = () =>
+  axios
+    .get(API_URL.publishedRoutines)
+    .then((response) => response.data)
+    .catch((error) => error.data)

@@ -1,11 +1,35 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { Exercise, Routine } from '@/types/interfaces'
-
 export interface RoutinesState {
   ownRoutines: Routine[]
   published: Routine[]
 }
+
+export const createRoutine = createAsyncThunk(
+  'routine/createRoutine',
+  async (routineData: Routine, { rejectWithValue }) => {
+    try {
+      const response = await fakeApiCall(routineData)
+
+      //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return routineData // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+// Simulamos una llamada API
+const fakeApiCall = (data) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (data) resolve({ success: true })
+      else reject(new Error('Failed to create routine'))
+    }, 1000)
+  })
 
 const initialState: RoutinesState = {
   ownRoutines: [
@@ -90,6 +114,12 @@ const routinesSlice = createSlice({
     ) => {
       state.ownRoutines[action.payload.index] = action.payload.newData
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(createRoutine.fulfilled, (state, action) => {
+      state.ownRoutines.push(action.payload)
+      // Añadir la rutina creada
+    })
   },
 })
 

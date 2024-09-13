@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Chart } from 'primereact/chart'
 
 import { Card } from '../../components/shared/card/Card'
@@ -6,10 +7,13 @@ import { Card } from '../../components/shared/card/Card'
 import './profile.scss'
 
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
+import { useAppSelector } from '@/helpers/hooks'
 
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
+  const user = useAppSelector((state) => state.user.user)
+  console.log(user)
 
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement)

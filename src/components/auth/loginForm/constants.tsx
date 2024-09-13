@@ -8,11 +8,11 @@ import {
 
 export const LOGIN_FORM_INPUTS: InputProps[] = [
   {
-    id: 'name',
-    field: 'auth.form.name.label',
-    placeHolder: 'auth.form.name.placeholder',
-    className: 'name',
-    inputType: InputType.Text,
+    id: 'email',
+    field: 'auth.form.mail.label',
+    placeHolder: 'auth.form.mail.placeholder',
+    className: 'email',
+    inputType: InputType.Mail,
     fieldTag: FieldTag.Input,
   },
   {
@@ -26,7 +26,7 @@ export const LOGIN_FORM_INPUTS: InputProps[] = [
 ]
 
 export const VALID_LOGIN_SCHEMA = Yup.object().shape({
-  name: Yup.string().min(2, 'error').required('form.error_messages.required'),
+  email: Yup.string().min(2, 'error').required('form.error_messages.required'),
   password: Yup.string()
     .min(2, 'error')
     .required('form.error_messages.required'),

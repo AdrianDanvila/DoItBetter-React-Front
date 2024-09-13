@@ -9,12 +9,12 @@ export interface RegisteredUser extends User {
 }
 
 export interface User {
-  name: string
-  age: number
+  name?: string
+  age?: number
   email: string
-  password: string
-  weight: number
-  height: number
+  password?: string
+  weight?: number
+  height?: number
 }
 
 export interface Routine {

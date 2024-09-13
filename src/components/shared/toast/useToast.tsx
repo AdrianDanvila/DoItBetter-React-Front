@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 
 import { toastContext } from '@/App'
 
@@ -14,13 +14,16 @@ export const useToast = () => {
       | 'secondary'
       | 'contrast'
       | undefined,
-    summary: string,
-    message: string,
+    summary: string | ReactNode,
+    message: string | ReactNode,
+    content?: ReactNode,
   ) => {
     ref?.current?.show({
+      icon: message,
       severity: severity,
       summary: summary,
       detail: message,
+      content: content,
     })
   }
 
