@@ -10,7 +10,7 @@ export const ROTUINE_DETAILS_TABLE_DATA: ColumnData[] = [
   {
     sortable: true,
     header: 'main.routines.table.headers.description',
-    field: 'description',
+    field: 'exercise.description',
   },
 
   {

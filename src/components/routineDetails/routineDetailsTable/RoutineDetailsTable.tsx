@@ -14,14 +14,13 @@ import { useTable } from '@/components/shared/table/useTable'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
-import { addExercise, deleteExercise, editRoutine } from '@/store/routinesSlice'
+import { addExercise, deleteExercise } from '@/store/routinesSlice'
 import { Exercise } from '@/types/interfaces'
 
 export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
   const { selectedItem, onSelectionChange, setError, succesHandler } =
     useTable<Exercise>()
 
@@ -37,15 +36,12 @@ export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
   const addItem = (item: Exercise) => {
     dispatch(
       addExercise({
-        id: routine.id,
-        exercise: {
-          id: 2,
-          name: 'a',
-          photo: 'a',
-          description: 'a',
-          sets: 0,
+        routineId: routine.id,
+        exerciseData: {
+          id: 1,
+          sets: 1000,
+          reps: 1000,
           weight: 0,
-          reps: 0,
         },
       }),
     )

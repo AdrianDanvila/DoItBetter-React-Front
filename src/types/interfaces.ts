@@ -36,6 +36,13 @@ export interface Exercise {
   reps: number
 }
 
+export interface RoutineExercise {
+  id: number
+  sets: number
+  weight: number
+  reps: number
+}
+
 export interface BreakPoints {
   tablet: number
   desktop: number

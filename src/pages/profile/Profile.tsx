@@ -13,7 +13,6 @@ export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
   const user = useAppSelector((state) => state.user.user)
-  console.log(user)
 
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement)
@@ -87,7 +86,7 @@ export const Profile = () => {
       <Card
         title="Profile Info"
         className="profile-container__form">
-        <EditUserForm />
+        <EditUserForm user={user} />
       </Card>
 
       <Card

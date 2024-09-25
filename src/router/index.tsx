@@ -12,6 +12,7 @@ import { PublicLayout } from '../layouts/publicLayout/PublicLayout.tsx'
 import { ROUTE_PATH } from './constants.ts'
 
 import { Auth } from '@/pages/auth/Auth.tsx'
+import { Main } from '@/pages/main/Main.tsx'
 import { Profile } from '@/pages/profile/Profile.tsx'
 import { RoutinesDetails } from '@/pages/routineDetails/RoutineDetails.tsx'
 import { Routines } from '@/pages/routines/Routines.tsx'
@@ -38,7 +39,7 @@ export const getRouter = () =>
         <Route Component={PrivateLayout}>
           <Route
             path={ROUTE_PATH.main}
-            Component={Routines}
+            Component={Main}
           />
           <Route
             path={ROUTE_PATH.routines}

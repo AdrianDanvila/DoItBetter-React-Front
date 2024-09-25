@@ -16,15 +16,14 @@ import { useTable } from '@/components/shared/table/useTable'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
-import { deleteRoutine, editRoutine } from '@/store/routinesSlice'
+import { deleteRoutine } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
 export const RoutinesTable = () => {
   const { showToast } = useToast()
-  const navigate = useNavigate()
   const values = useAppSelector((state) => state.routines.ownRoutines)
   const dispatch = useAppDispatch()
-
+  const nagigate = useNavigate()
   const {
     selectedItem,
     setSelectedItem,
@@ -43,13 +42,14 @@ export const RoutinesTable = () => {
     succesHandler()
   }
 
-  const myEditHandler = (index: number, newData: Routine) => {
-    dispatch(editRoutine({ index, newData }))
-    showToast('success', '', '')
-  }
+  // const myEditHandler = (index: number, newData: Routine) => {
+  //   dispatch(editRoutine({ index, newData }))
+  //   showToast('success', '', '')
+  // }
 
-  const navigateRoutine = () =>
-    selectedItem?.id && navigate(`${ROUTE_PATH.routines}/${selectedItem?.id}`)
+  const showDetailsButtonClickHandler = () => {
+    if (selectedItem) nagigate(`${ROUTE_PATH.routines}/${selectedItem?.id}`)
+  }
 
   return (
     <>
@@ -67,7 +67,7 @@ export const RoutinesTable = () => {
               onAccept={() => deleteItem(selectedItem)}
             />
             <Button
-              onClick={navigateRoutine}
+              onClick={showDetailsButtonClickHandler}
               icon={<FileTextIcon className="icon" />}
               severity={ButtonSeverity.Primary}
             />

@@ -29,15 +29,23 @@ const initialState: userSate = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    initialize: (state) => {
+      const userData = sessionStorage.getItem('userInfo')
+      if (userData) {
+        state.user = JSON.parse(userData)
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(loginUser.fulfilled, (state, action) => {
       // Añadir la rutina creada
-      console.log(action.payload.data.user)
-      state.user = action.payload.data.user
+      const userData = action.payload.data.user
+      sessionStorage.setItem('userInfo', JSON.stringify(userData))
+      state.user = userData
     })
   },
 })
 
-//export const { a } = userSlice.actions
+export const { initialize } = userSlice.actions
 export default userSlice.reducer

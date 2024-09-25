@@ -1,35 +1,62 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { Exercise, Routine } from '@/types/interfaces'
+import {
+  addRoutineExercise,
+  createNewRoutine,
+  deleteRoutineByid,
+  getRoutineExercises,
+  getUserRoutines,
+} from '@/api/services'
+import { Exercise, Routine, RoutineExercise } from '@/types/interfaces'
+
 export interface RoutinesState {
   ownRoutines: Routine[]
   published: Routine[]
 }
 
-export const createRoutine = createAsyncThunk(
-  'routine/createRoutine',
-  async (routineData: Routine, { rejectWithValue }) => {
+export const getRoutines = createAsyncThunk(
+  'routine/getRoutines',
+  async (routineData, { rejectWithValue }) => {
     try {
-      const response = await fakeApiCall(routineData)
-
-      //TODO extraer a su archivo
+      const response = await getUserRoutines()
 
       // Si no hay error, retornamos los datos como éxito
-      return routineData // Si es exitoso, devolvemos la respuesta
+      return response // Si es exitoso, devolvemos la respuesta
     } catch (error) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
 )
 
-// Simulamos una llamada API
-const fakeApiCall = (data) =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (data) resolve({ success: true })
-      else reject(new Error('Failed to create routine'))
-    }, 1000)
-  })
+export const deleteRoutine = createAsyncThunk(
+  'routine/deleteRoutines',
+  async (routine: Routine, { rejectWithValue }) => {
+    try {
+      const response = await deleteRoutineByid(routine.id)
+
+      // Si no hay error, retornamos los datos como éxito
+      if (response) return routine // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const createRoutine = createAsyncThunk(
+  'routine/createRoutine',
+  async (routineData: Routine, { rejectWithValue }) => {
+    try {
+      const response = await createNewRoutine(routineData)
+
+      //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return response // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
 
 const initialState: RoutinesState = {
   ownRoutines: [
@@ -58,6 +85,45 @@ const initialState: RoutinesState = {
   published: [],
 }
 
+export const addExercise = createAsyncThunk(
+  'routine/addExercise',
+  async (
+    requestData: {
+      routineId: number
+      exerciseData: RoutineExercise
+    },
+    { rejectWithValue },
+  ) => {
+    try {
+      const response = await addRoutineExercise(
+        requestData.routineId,
+        requestData.exerciseData,
+      )
+
+      //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return { requestData, response } // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const getExercises = createAsyncThunk(
+  'routine/getExercises',
+  async (routineId: number, { rejectWithValue }) => {
+    try {
+      const response = await getRoutineExercises(routineId)
+      console.log(response)
+
+      return { routineId, response } // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
 const routinesSlice = createSlice({
   name: 'routines',
   initialState,
@@ -65,24 +131,13 @@ const routinesSlice = createSlice({
     addRoutine: (state, action: PayloadAction<Routine>) => {
       state.ownRoutines.push(action.payload)
     },
-    deleteRoutine: (state, action: PayloadAction<Routine>) => {
-      const filteredValues = state.ownRoutines.filter(
-        (value) => value.id != action.payload?.id,
-      )
-
-      if (filteredValues.length === state.ownRoutines.length) {
-        return
-      }
-
-      state.ownRoutines = filteredValues
-    },
     editRoutine: (
       state,
       action: PayloadAction<{ index: number; newData: Routine }>,
     ) => {
       state.ownRoutines[action.payload.index] = action.payload.newData
     },
-    addExercise: (
+    addExercise2: (
       state,
       action: PayloadAction<{ id: number; exercise: Exercise }>,
     ) => {
@@ -117,7 +172,42 @@ const routinesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(createRoutine.fulfilled, (state, action) => {
-      state.ownRoutines.push(action.payload)
+      state.ownRoutines.push(action.payload.data)
+      // Añadir la rutina creada
+    })
+    builder.addCase(getRoutines.fulfilled, (state, action) => {
+      state.ownRoutines = action.payload.data
+      // Añadir la rutina creada
+    })
+    builder.addCase(deleteRoutine.fulfilled, (state, action) => {
+      const filteredValues = state.ownRoutines.filter(
+        (value) => value.id != action.payload?.id,
+      )
+
+      if (filteredValues.length === state.ownRoutines.length) {
+        return
+      }
+
+      state.ownRoutines = filteredValues
+    })
+    builder.addCase(getExercises.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.routineId,
+      )
+      if (tempRoutine) {
+        tempRoutine.exercises = action.payload.response.data
+      }
+
+      // Añadir la rutina creada
+    })
+    builder.addCase(addExercise.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.requestData.routineId,
+      )
+      if (tempRoutine) {
+        tempRoutine.exercises = action.payload.response.data
+      }
+
       // Añadir la rutina creada
     })
   },
@@ -125,9 +215,8 @@ const routinesSlice = createSlice({
 
 export const {
   addRoutine,
-  deleteRoutine,
   editRoutine,
-  addExercise,
+  addExercise2,
   deleteExercise,
   editExercise,
 } = routinesSlice.actions
