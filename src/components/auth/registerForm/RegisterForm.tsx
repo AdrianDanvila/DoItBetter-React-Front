@@ -1,5 +1,6 @@
 import { Trans } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { HttpStatusCode } from 'axios'
 
 import { Form } from '@components/shared/form/Form'
 
@@ -19,8 +20,21 @@ import { User } from '@/types/interfaces'
 export const RegisterForm = () => {
   const navigate = useNavigate()
   const sumbitHandler = async (user: User) => {
-    if (await registerUser(user).then((data) => data.status))
-      navigate(ROUTE_PATH.login)
+    const responseStatus = await registerUser(user).then((data) => data.status)
+    switch (responseStatus) {
+      case HttpStatusCode.Accepted:
+        break
+
+      case HttpStatusCode.Forbidden:
+        break
+
+      case HttpStatusCode.InternalServerError:
+        break
+
+      default:
+        break
+    }
+    navigate(ROUTE_PATH.login)
   }
   return (
     <>

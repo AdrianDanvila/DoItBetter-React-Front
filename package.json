@@ -1,5 +1,6 @@
 {
   "name": "DoItBetter",
+  "proxy": "http://localhost:8081",
   "private": true,
   "homepage": "https://gitname.github.io/react-gh-pages",
   "version": "0.0.0",

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Trans } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { ProgressSpinner } from 'primereact/progressspinner'
 
 import { Form } from '@components/shared/form/Form'
 
@@ -26,7 +25,6 @@ export const LoginForm = () => {
     setIsDisabled(true)
 
     const resultAction = await dispatch(loginUser(user))
-    console.log(resultAction.payload)
 
     switch (resultAction.payload.status) {
       case 202:

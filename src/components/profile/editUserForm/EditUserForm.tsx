@@ -15,7 +15,10 @@ import { ButtonSeverity } from '@/components/shared/button/types'
 import { Form } from '@/components/shared/form/Form'
 import { User } from '@/types/interfaces'
 
-export const EditUserForm = () => {
+export interface EditUserFormProps {
+  user: User
+}
+export const EditUserForm = ({ user }: EditUserFormProps) => {
   const [editable, setEditable] = useState<boolean>(true)
 
   const HandleEditClick = () => {
@@ -36,7 +39,7 @@ export const EditUserForm = () => {
       />
       <Form<User>
         inputs={EDIT_USER_FORM_INPUTS}
-        initialValues={INITIAL_VALUES}
+        initialValues={user}
         validationSchema={VALID_EDIT_SCHEMA}
         inputContainerClassName="grid-cols-4 grid-rows-5 "
         onSumbit={function (e: User): void {

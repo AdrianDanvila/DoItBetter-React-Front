@@ -4,13 +4,9 @@ import axios from 'axios'
 
 import { API_BASE_URL, API_URL, DEFAULT_HEADERS } from './constants'
 
-import { Routine, User } from '@/types/interfaces'
-/**
- *
- * @param user
- * @description Register an user in the Api.
- * @returns
- */
+import { ROUTE_PATH } from '@/router/constants'
+import { Routine, RoutineExercise, User } from '@/types/interfaces'
+
 export const registerUser = ({
   name,
   age,
@@ -59,12 +55,7 @@ export const loginUser = ({ email, password }: User) =>
     )
     .then((response) => {
       const token = response.data.data.token
-      const user = response.data.data.user
       localStorage.setItem('userToken', token)
-      localStorage.setItem('user', user)
-      axios.defaults.headers.common = {
-        Authorization: `Bearer ${token}`,
-      }
       return response.data
     })
     .catch((error) => {
@@ -72,45 +63,72 @@ export const loginUser = ({ email, password }: User) =>
       return response
     })
 
-/**
- *
- * @description Api call that gets user info
- * @returns
- */
-export const getUser = () =>
-  axios
-    .get(API_URL.UserInfo)
-    .then((response) => response.data)
-    .catch((error) => error.data)
+export const logout = () => {
+  localStorage.removeItem('userToken')
+  sessionStorage.removeItem('userinfo')
+  axios.defaults.headers.common['Authorization'] =
+    `Bearer ${localStorage.getItem('userToken')}`
 
-/**
- *
- * @param id
- * @description Api call that deletes a routine in the API
- */
-export const deleteRoutine = (id: number) => {
+  axios.defaults.headers.common = {
+    Authorization: `Bearer ${localStorage.getItem('userToken')}`,
+  }
+  window.location.href = ROUTE_PATH.home
+}
+
+export const getRoutinesByUserId = (userId: number) => {
   axios
-    .delete(API_BASE_URL.ROUTINE, {
-      data: { id },
-      headers: DEFAULT_HEADERS.headers,
+    .get(`${API_BASE_URL.ROUTINE}`, {
+      params: {
+        userId,
+      },
     })
     .then((response) => response.data)
     .catch((error) => error.data)
 }
 
-export const createRoutine = ({ name, description, published }: Routine) =>
+export const getUserRoutines = () =>
   axios
-    .post(
-      API_BASE_URL.ROUTINE,
-      {
-        name,
-        description,
-        published,
-      },
-      {
-        headers: DEFAULT_HEADERS.headers,
-      },
-    )
+    .get(`${API_BASE_URL.ROUTINE}/me`)
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const deleteRoutineByid = (id: number) =>
+  axios
+    .delete(`${API_BASE_URL.ROUTINE}/${id}`)
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const createNewRoutine = ({
+  name,
+  description,
+  published = false,
+}: Routine) =>
+  axios
+    .post(API_BASE_URL.ROUTINE, {
+      name,
+      description,
+      published,
+    })
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const addRoutineExercise = (
+  routineId: number,
+  { id, reps, sets, weight }: RoutineExercise,
+) =>
+  axios
+    .post(`${API_BASE_URL.ROUTINE}/${routineId}/exercises`, {
+      id,
+      reps,
+      sets,
+      weight,
+    })
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const getRoutineExercises = (routineId: number) =>
+  axios
+    .get(`${API_BASE_URL.ROUTINE}/${routineId}/exercises`)
     .then((response) => response.data)
     .catch((error) => error.data)
 
@@ -119,3 +137,30 @@ export const getAllPublishedRoutines = () =>
     .get(API_URL.publishedRoutines)
     .then((response) => response.data)
     .catch((error) => error.data)
+
+export const testToken = () =>
+  axios
+    .get(API_URL.testToken, {
+      headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') },
+    })
+    .then(() => true)
+    .catch(() => false)
+
+export const autoAuth = async () => {
+  if (await testToken().then((data) => data)) {
+    axios.defaults.headers.common['Authorization'] =
+      `Bearer ${localStorage.getItem('userToken')}`
+    window.location.href = ROUTE_PATH.main
+  }
+}
+
+export const apiErrorHandler = (error: number) => {
+  switch (error) {
+    case 403:
+      window.location.href = ROUTE_PATH.login
+      break
+
+    default:
+      break
+  }
+}

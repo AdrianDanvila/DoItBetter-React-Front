@@ -10,7 +10,6 @@ export const toastContext = createContext<RefObject<Toast> | null>(null)
 
 function App() {
   const toast = useRef<Toast>(null)
-
   return (
     <PrimeReactProvider>
       <Toast ref={toast} />

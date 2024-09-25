@@ -48,14 +48,6 @@ export const EDIT_USER_FORM_INPUTS: InputProps[] = [
     inputType: InputType.Mail,
     fieldTag: FieldTag.Input,
   },
-  {
-    id: 'password',
-    field: 'auth.form.password.label',
-    placeHolder: 'auth.form.password.placeholder',
-    className: 'col-span-4 row-start-5',
-    inputType: InputType.Password,
-    fieldTag: FieldTag.Input,
-  },
 ]
 
 export const VALID_EDIT_SCHEMA = Yup.object().shape({
