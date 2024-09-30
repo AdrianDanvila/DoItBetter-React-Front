@@ -75,7 +75,7 @@ export const logout = () => {
   window.location.href = ROUTE_PATH.home
 }
 
-export const getRoutinesByUserId = (userId: number) => {
+export const getRoutinesByUserId = (userId: number) =>
   axios
     .get(`${API_BASE_URL.ROUTINE}`, {
       params: {
@@ -84,7 +84,6 @@ export const getRoutinesByUserId = (userId: number) => {
     })
     .then((response) => response.data)
     .catch((error) => error.data)
-}
 
 export const getUserRoutines = () =>
   axios
@@ -95,6 +94,12 @@ export const getUserRoutines = () =>
 export const deleteRoutineByid = (id: number) =>
   axios
     .delete(`${API_BASE_URL.ROUTINE}/${id}`)
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const copyRoutineById = (id: number) =>
+  axios
+    .post(`${API_BASE_URL.ROUTINE}/copy/${id}`)
     .then((response) => response.data)
     .catch((error) => error.data)
 
@@ -132,6 +137,12 @@ export const getRoutineExercises = (routineId: number) =>
     .then((response) => response.data)
     .catch((error) => error.data)
 
+export const toggleRoutinePublished = (routineId: number) =>
+  axios
+    .post(`${API_BASE_URL.ROUTINE}/${routineId}`)
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
 export const getAllPublishedRoutines = () =>
   axios
     .get(API_URL.publishedRoutines)
@@ -151,8 +162,20 @@ export const autoAuth = async () => {
     axios.defaults.headers.common['Authorization'] =
       `Bearer ${localStorage.getItem('userToken')}`
     window.location.href = ROUTE_PATH.main
+  } else {
+    localStorage.removeItem('userToken')
   }
 }
+
+// eslint-disable-next-line no-confusing-arrow
+export const autoAuth2 = async () =>
+  (await testToken().then((data) => data))
+    ? () => {
+        axios.defaults.headers.common['Authorization'] =
+          `Bearer ${localStorage.getItem('userToken')}`
+        window.location.href = ROUTE_PATH.main
+      }
+    : localStorage.removeItem('userToken')
 
 export const apiErrorHandler = (error: number) => {
   switch (error) {

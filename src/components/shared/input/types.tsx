@@ -3,6 +3,7 @@ export enum InputType {
   Range = 'range',
   Select = 'select',
   Text = 'text',
+  Number = 'number',
   Password = 'password',
 }
 
@@ -19,6 +20,6 @@ export interface InputProps {
   className?: string
   inputType: InputType
   fieldTag: FieldTag
-  options?: Record<string, string>[]
+  options?: { value: number; label: string }[]
   disabled?: boolean
 }

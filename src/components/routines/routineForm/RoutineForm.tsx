@@ -3,6 +3,7 @@ import {
   ROUTINE_FORM_INPUTS,
   VALID_ROUTINE_SCHEMA,
 } from './constants'
+import { RoutineFormProps } from './types'
 
 import { Form } from '@/components/shared/form/Form'
 import { useToast } from '@/components/shared/toast/useToast'
@@ -10,7 +11,7 @@ import { useAppDispatch } from '@/helpers/hooks'
 import { createRoutine } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
-export const RoutineForm = () => {
+export const RoutineForm = ({ onSumbit }: RoutineFormProps) => {
   const dispatch = useAppDispatch()
   const { showToast } = useToast()
 
@@ -27,7 +28,10 @@ export const RoutineForm = () => {
       inputs={ROUTINE_FORM_INPUTS}
       initialValues={INITIAL_VALUES}
       validationSchema={VALID_ROUTINE_SCHEMA}
-      onSumbit={(e) => acceptButtonClickHandler(e as Routine)}
+      onSumbit={(e) => {
+        acceptButtonClickHandler(e as Routine)
+        onSumbit?.()
+      }}
       disabled={false}
     />
   )

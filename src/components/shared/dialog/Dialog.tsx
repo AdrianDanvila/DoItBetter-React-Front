@@ -9,17 +9,19 @@ import { DialogProps } from './types'
 import './dialog.scss'
 
 export const Dialog = ({
+  isVisible,
+  setIsVisible,
   openButtonClassname,
   openButtonIcon,
   openButtonLabel,
   children,
 }: PropsWithChildren<DialogProps>) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(isVisible)
 
   return (
     <>
       <Button
-        onClick={() => setVisible(true)}
+        onClick={() => setIsVisible?.(true)}
         icon={openButtonIcon}
         severity={ButtonSeverity.Primary}
         label={openButtonLabel}
@@ -29,11 +31,11 @@ export const Dialog = ({
         closable={true}
         closeOnEscape={true}
         header="Create Routine"
-        visible={visible}
+        visible={isVisible}
         style={{ width: '50vw' }}
         onHide={() => {
-          if (!visible) return
-          setVisible(false)
+          if (!isVisible) return
+          setIsVisible?.(false)
         }}>
         {children}
       </PrimeDialog>

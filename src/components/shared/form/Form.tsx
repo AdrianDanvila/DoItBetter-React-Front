@@ -45,6 +45,7 @@ export const Form = <T extends FormikValues>({
         <div className={`${inputContainerClassName} form__inputs-container`}>
           {inputs?.map((input) => (
             <Input
+              options={input?.options}
               disabled={disabled}
               key={input.id}
               {...input}

@@ -14,24 +14,24 @@ export const RoutinesDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  console.log(values)
 
   useEffect(() => {
     dispatch(getExercises(Number.parseInt(id || '0')))
   }, [dispatch, id])
 
-  const a = values.find((routine) => routine.id === Number.parseInt(id || '0'))
+  const routine = values.find(
+    (routine) => routine.id === Number.parseInt(id || '0'),
+  )
 
   useEffect(() => {
-    if (isUndefined(id)) navigate(ROUTE_PATH.routines)
-
-    if (isUndefined(a)) navigate(ROUTE_PATH.routines)
-  }, [a, id, navigate])
+    if (isUndefined(id)) navigate(ROUTE_PATH.main)
+    if (isUndefined(routine)) navigate(ROUTE_PATH.main)
+  }, [id, navigate, routine])
 
   return (
     <section className="routines-container">
       <Card title="main.routines.table.title">
-        <RoutineDetailsTable routine={a as Routine} />
+        <RoutineDetailsTable routine={routine as Routine} />
       </Card>
 
       <Card title="main.routines.table.title">a</Card>

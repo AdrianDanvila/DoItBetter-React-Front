@@ -46,7 +46,14 @@ export const getRouter = () =>
             Component={Routines}
           />
           <Route
-            path={ROUTE_PATH.routinesDetail}
+            path={
+              ROUTE_PATH.routinesDetail || ROUTE_PATH.publishedRoutinesDetail
+            }
+            Component={RoutinesDetails}
+          />
+
+          <Route
+            path={ROUTE_PATH.publishedRoutinesDetail}
             Component={RoutinesDetails}
           />
           <Route

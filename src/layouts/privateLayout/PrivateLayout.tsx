@@ -25,6 +25,7 @@ export const PrivateLayout = () => {
   useEffect(() => {
     const asyncTestToken = async () => {
       if (!(await testToken())) {
+        localStorage.removeItem('userToken')
         navigate(ROUTE_PATH.login)
       }
     }

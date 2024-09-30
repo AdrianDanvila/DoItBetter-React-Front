@@ -13,17 +13,15 @@ import { ButtonSeverity } from '@/components/shared/button/types'
 import { ConfirmDialog } from '@/components/shared/confirmDialog/ConfirmDialog'
 import { Table } from '@/components/shared/table/Table'
 import { useTable } from '@/components/shared/table/useTable'
-import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
 import { deleteRoutine } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
 export const RoutinesTable = () => {
-  const { showToast } = useToast()
   const values = useAppSelector((state) => state.routines.ownRoutines)
   const dispatch = useAppDispatch()
-  const nagigate = useNavigate()
+  const navigate = useNavigate()
   const {
     selectedItem,
     setSelectedItem,
@@ -47,9 +45,8 @@ export const RoutinesTable = () => {
   //   showToast('success', '', '')
   // }
 
-  const showDetailsButtonClickHandler = () => {
-    if (selectedItem) nagigate(`${ROUTE_PATH.routines}/${selectedItem?.id}`)
-  }
+  const showDetailsButtonClickHandler = () =>
+    selectedItem && navigate(`${ROUTE_PATH.routines}/${selectedItem?.id}`)
 
   return (
     <>

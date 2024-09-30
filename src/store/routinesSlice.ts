@@ -4,8 +4,10 @@ import {
   addRoutineExercise,
   createNewRoutine,
   deleteRoutineByid,
+  getAllPublishedRoutines,
   getRoutineExercises,
   getUserRoutines,
+  toggleRoutinePublished,
 } from '@/api/services'
 import { Exercise, Routine, RoutineExercise } from '@/types/interfaces'
 
@@ -22,6 +24,18 @@ export const getRoutines = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return response // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const getPublishedRoutines = createAsyncThunk(
+  'routine/getPublishedRoutines',
+  async (routineData, { rejectWithValue }) => {
+    try {
+      const response = await getAllPublishedRoutines()
+      return response
     } catch (error) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
@@ -57,33 +71,6 @@ export const createRoutine = createAsyncThunk(
     }
   },
 )
-
-const initialState: RoutinesState = {
-  ownRoutines: [
-    {
-      id: 1,
-      name: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      description: 'c',
-      exercises: [
-        {
-          id: 1,
-          name: 'aa',
-          photo: 'a',
-          description: 'aa',
-          sets: 0,
-          weight: 0,
-          reps: 0,
-        },
-      ],
-    },
-    { id: 2, name: 'b', description: 'c' },
-    { id: 3, name: 'c', description: 'c' },
-    { id: 4, name: 'd', description: 'c' },
-    { id: 5, name: 'e', description: 'c' },
-    { id: 6, name: 'g', description: 'c' },
-  ],
-  published: [],
-}
 
 export const addExercise = createAsyncThunk(
   'routine/addExercise',
@@ -123,6 +110,46 @@ export const getExercises = createAsyncThunk(
     }
   },
 )
+
+export const togglePublishedRoutine = createAsyncThunk(
+  'routine/togglePublishedRoutine',
+  async (routineId: number, { rejectWithValue }) => {
+    try {
+      const response = await toggleRoutinePublished(routineId)
+
+      return { routineId, response } // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+const initialState: RoutinesState = {
+  ownRoutines: [
+    {
+      id: 1,
+      name: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      description: 'c',
+      exercises: [
+        {
+          id: 1,
+          name: 'aa',
+          photo: 'a',
+          description: 'aa',
+          sets: 0,
+          weight: 0,
+          reps: 0,
+        },
+      ],
+    },
+    { id: 2, name: 'b', description: 'c' },
+    { id: 3, name: 'c', description: 'c' },
+    { id: 4, name: 'd', description: 'c' },
+    { id: 5, name: 'e', description: 'c' },
+    { id: 6, name: 'g', description: 'c' },
+  ],
+  published: [],
+}
 
 const routinesSlice = createSlice({
   name: 'routines',
@@ -207,7 +234,18 @@ const routinesSlice = createSlice({
       if (tempRoutine) {
         tempRoutine.exercises = action.payload.response.data
       }
+    })
 
+    builder.addCase(togglePublishedRoutine.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.routineId,
+      )
+      if (tempRoutine) {
+        tempRoutine.published = !tempRoutine.published
+      }
+    })
+    builder.addCase(getPublishedRoutines.fulfilled, (state, action) => {
+      state.ownRoutines = action.payload.data
       // Añadir la rutina creada
     })
   },
