@@ -131,6 +131,22 @@ export const addRoutineExercise = (
     .then((response) => response.data)
     .catch((error) => error.data)
 
+export const deleteRoutineExercise = (
+  routineId: number,
+  { id, reps, sets, weight }: RoutineExercise,
+) =>
+  axios
+    .delete(`${API_BASE_URL.ROUTINE}/${routineId}/exercises`, {
+      data: {
+        id,
+        reps,
+        sets,
+        weight,
+      },
+    })
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
 export const getRoutineExercises = (routineId: number) =>
   axios
     .get(`${API_BASE_URL.ROUTINE}/${routineId}/exercises`)

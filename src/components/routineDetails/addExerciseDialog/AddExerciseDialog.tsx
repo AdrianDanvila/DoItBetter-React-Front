@@ -40,6 +40,7 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
 
   return (
     <Dialog
+      header="Add an excercise"
       isVisible={isVisible}
       setIsVisible={setIsVisible}
       openButtonClassname="button--success"

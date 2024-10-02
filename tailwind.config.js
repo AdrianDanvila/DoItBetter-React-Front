@@ -6,6 +6,10 @@ export default {
         screens: {
           md: '768px',
         },
+        fontFamily: {
+          verbatim: ['"verbatim"', "sans-serif"],
+          // Add more custom font families as needed
+        }
       },
     },
     plugins: [],

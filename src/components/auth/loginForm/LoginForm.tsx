@@ -53,7 +53,9 @@ export const LoginForm = () => {
 
   return (
     <>
-      <Card title="auth.login.title">
+      <Card
+        title="auth.login.title"
+        className="w-full">
         <Form<User>
           className="login-form"
           inputs={LOGIN_FORM_INPUTS}

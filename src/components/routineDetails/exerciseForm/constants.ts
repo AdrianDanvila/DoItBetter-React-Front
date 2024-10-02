@@ -12,7 +12,7 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     id: 'id',
     field: 'auth.form.name.label',
     placeHolder: 'auth.form.name.placeholder',
-    className: '',
+    className: 'w-full',
     options: [
       { value: 1, label: 'Squat' },
       { value: 2, label: 'Curl' },
@@ -24,7 +24,7 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     id: 'reps',
     field: 'reps',
     placeHolder: 'auth.form.name.placeholder',
-    className: '',
+    className: 'w-1/3',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
   },
@@ -32,7 +32,8 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     id: 'sets',
     field: 'sets',
     placeHolder: 'auth.form.name.placeholder',
-    className: '',
+    className: 'w-1/3',
+
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
   },
@@ -40,7 +41,8 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     id: 'weight',
     field: 'weight',
     placeHolder: 'auth.form.name.placeholder',
-    className: '',
+    className: 'w-1/4',
+
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
   },

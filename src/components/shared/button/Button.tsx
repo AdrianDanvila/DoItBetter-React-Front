@@ -13,8 +13,10 @@ export const Button = ({
   severity = ButtonSeverity.Primary,
   label,
   type = ButtonType.Button,
+  ref,
 }: PropsWithChildren<Buttonprops>) => (
   <PrimeButton
+    ref={ref}
     label={label}
     type={type as 'submit' | 'reset' | 'button' | undefined}
     icon={icon}

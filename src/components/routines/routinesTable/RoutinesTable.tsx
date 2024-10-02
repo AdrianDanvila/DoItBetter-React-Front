@@ -56,18 +56,22 @@ export const RoutinesTable = () => {
           <>
             <CreateRoutineDialog />
 
-            <ConfirmDialog
-              openButtonIcon={<TrashIcon className="icon" />}
-              openButtonClassname="button--danger"
-              header="Delete"
-              message="are you sure?"
-              onAccept={() => deleteItem(selectedItem)}
-            />
-            <Button
-              onClick={showDetailsButtonClickHandler}
-              icon={<FileTextIcon className="icon" />}
-              severity={ButtonSeverity.Primary}
-            />
+            {selectedItem && (
+              <>
+                <ConfirmDialog
+                  openButtonIcon={<TrashIcon className="icon" />}
+                  openButtonClassname="button--danger"
+                  header="Delete"
+                  message="are you sure?"
+                  onAccept={() => deleteItem(selectedItem)}
+                />
+                <Button
+                  onClick={showDetailsButtonClickHandler}
+                  icon={<FileTextIcon className="icon" />}
+                  severity={ButtonSeverity.Primary}
+                />
+              </>
+            )}
           </>
         }
       />

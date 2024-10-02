@@ -1,31 +1,38 @@
+import {
+  GitHubLogoIcon,
+  InstagramLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons'
+
 import './footer.scss'
 
 export const Footer = () => (
   <footer className="footer-container">
     <div className="footer-container__column">
-      <span className="footer-container__column__title">b</span>
+      <span className="footer-container__column__title">contact</span>
       <a
         href=""
         className="footer-container__column__item">
-        a
+        <TwitterLogoIcon />
       </a>
 
       <a
         href=""
         className="footer-container__column__item">
-        a
+        <InstagramLogoIcon />
       </a>
 
       <a
         href=""
         className="footer-container__column__item">
-        a
+        <GitHubLogoIcon />
       </a>
 
       <a
         href=""
         className="footer-container__column__item">
-        a
+        <LinkedInLogoIcon />
       </a>
     </div>
 

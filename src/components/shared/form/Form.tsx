@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Form as FormikForm, Formik, FormikValues } from 'formik'
+import { PaperPlaneIcon } from '@radix-ui/react-icons'
 
 import { Button } from '../button/Button'
 import { ButtonSeverity, ButtonType } from '../button/types'
@@ -57,7 +58,7 @@ export const Form = <T extends FormikValues>({
           <div className={`${className} form__actions-container`}>
             <Button
               type={ButtonType.Submit}
-              icon={undefined}
+              icon={<PaperPlaneIcon />}
               severity={ButtonSeverity.Primary}>
               {t('form.submit') || t('form.reset')}
             </Button>

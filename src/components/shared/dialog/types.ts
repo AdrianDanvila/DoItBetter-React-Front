@@ -6,4 +6,5 @@ export interface DialogProps {
   openButtonClassname: string
   openButtonLabel: string
   openButtonIcon: ReactNode
+  header?: string
 }

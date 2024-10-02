@@ -2,15 +2,15 @@ import { LinkData } from '@/components/shared/navbar/types'
 
 export const HEADER_LINKS: LinkData[] = [
   {
-    href: 'introduction',
+    href: '#introduction',
     text: 'home.header.introduction',
   },
   {
-    href: 'WhoWeAre',
+    href: '#who_we_are',
     text: 'home.header.who_we_are',
   },
   {
-    href: 'information',
+    href: '#information',
     text: 'home.header.info',
   },
 ]

@@ -4,6 +4,7 @@ import {
   addRoutineExercise,
   createNewRoutine,
   deleteRoutineByid,
+  deleteRoutineExercise,
   getAllPublishedRoutines,
   getRoutineExercises,
   getUserRoutines,
@@ -18,7 +19,7 @@ export interface RoutinesState {
 
 export const getRoutines = createAsyncThunk(
   'routine/getRoutines',
-  async (routineData, { rejectWithValue }) => {
+  async (_routineData, { rejectWithValue }) => {
     try {
       const response = await getUserRoutines()
 
@@ -32,7 +33,7 @@ export const getRoutines = createAsyncThunk(
 
 export const getPublishedRoutines = createAsyncThunk(
   'routine/getPublishedRoutines',
-  async (routineData, { rejectWithValue }) => {
+  async (_routineData, { rejectWithValue }) => {
     try {
       const response = await getAllPublishedRoutines()
       return response
@@ -97,12 +98,36 @@ export const addExercise = createAsyncThunk(
   },
 )
 
+export const deleteExercise = createAsyncThunk(
+  'routine/delete',
+  async (
+    requestData: {
+      routineId: number
+      exerciseData: RoutineExercise
+    },
+    { rejectWithValue },
+  ) => {
+    try {
+      const response = await deleteRoutineExercise(
+        requestData.routineId,
+        requestData.exerciseData,
+      )
+
+      //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return { requestData, response } // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
 export const getExercises = createAsyncThunk(
   'routine/getExercises',
   async (routineId: number, { rejectWithValue }) => {
     try {
       const response = await getRoutineExercises(routineId)
-      console.log(response)
 
       return { routineId, response } // Si es exitoso, devolvemos la respuesta
     } catch (error) {
@@ -172,24 +197,6 @@ const routinesSlice = createSlice({
         .find((routine) => routine.id === action.payload.id)
         ?.exercises?.push(action.payload.exercise)
     },
-    deleteExercise: (
-      state,
-      action: PayloadAction<{ id: number; exercise: Exercise }>,
-    ) => {
-      const routine = state.ownRoutines.find(
-        (routine) => routine.id === action.payload.id,
-      )
-      const filteredValues = routine?.exercises?.filter(
-        (value) => value.id != action.payload.exercise.id,
-      )
-
-      if (filteredValues?.length === routine?.exercises?.length) {
-        return
-      }
-      if (routine) {
-        routine.exercises = filteredValues // Solo asigna si la rutina existe
-      }
-    },
     editExercise: (
       state,
       action: PayloadAction<{ index: number; newData: Routine }>,
@@ -235,6 +242,14 @@ const routinesSlice = createSlice({
         tempRoutine.exercises = action.payload.response.data
       }
     })
+    builder.addCase(deleteExercise.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.requestData.routineId,
+      )
+      if (tempRoutine) {
+        tempRoutine.exercises = action.payload.response.data
+      }
+    })
 
     builder.addCase(togglePublishedRoutine.fulfilled, (state, action) => {
       const tempRoutine = state.ownRoutines.find(
@@ -251,11 +266,6 @@ const routinesSlice = createSlice({
   },
 })
 
-export const {
-  addRoutine,
-  editRoutine,
-  addExercise2,
-  deleteExercise,
-  editExercise,
-} = routinesSlice.actions
+export const { addRoutine, editRoutine, addExercise2, editExercise } =
+  routinesSlice.actions
 export default routinesSlice.reducer

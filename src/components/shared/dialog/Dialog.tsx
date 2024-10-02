@@ -14,6 +14,7 @@ export const Dialog = ({
   openButtonClassname,
   openButtonIcon,
   openButtonLabel,
+  header,
   children,
 }: PropsWithChildren<DialogProps>) => {
   const [visible, setVisible] = useState(isVisible)
@@ -30,7 +31,7 @@ export const Dialog = ({
       <PrimeDialog
         closable={true}
         closeOnEscape={true}
-        header="Create Routine"
+        header={header || 'create routine'}
         visible={isVisible}
         style={{ width: '50vw' }}
         onHide={() => {

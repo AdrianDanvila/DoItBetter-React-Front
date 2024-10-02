@@ -17,9 +17,10 @@
     }
 
     &__item {
+      padding: 2px 0px;
       padding-left: 5px;
-
       border-radius: 5px;
+      margin: 3px 0px;
       font-size: $font-small;
 
       &:hover {

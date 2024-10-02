@@ -4,6 +4,7 @@ import { Toolbar } from 'primereact/toolbar'
 import { ArrowLeftIcon, CopyIcon, TrashIcon } from '@radix-ui/react-icons'
 
 import { AddExerciseDialog } from '../addExerciseDialog/AddExerciseDialog'
+import { ExerciseDetailsDialog } from '../exerciseDetailsDialog/ExerciseDetailsDialog'
 
 import { ROTUINE_DETAILS_TABLE_DATA } from './constants'
 import { RoutineDetailsTableProps } from './types'
@@ -33,12 +34,14 @@ export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
       setError(true)
       return
     }
-    dispatch(deleteExercise({ id: routine.id, exercise: selectedItem }))
+    dispatch(
+      deleteExercise({ routineId: routine.id, exerciseData: selectedItem }),
+    )
     succesHandler()
   }
 
   const onClickSwitch = async () => {
-    const dispatchValue = await dispatch(togglePublishedRoutine(routine.id))
+    await dispatch(togglePublishedRoutine(routine.id))
   }
   const clickCopyButton = async () =>
     await copyRoutineById(routine.id).then(() => showToast('success', '', ''))
@@ -64,7 +67,9 @@ export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
           ) : (
             <>
               <div className="mx-10">
-                <span className="mx-2">Publish </span>
+                <span className="mx-2">
+                  {routine.published ? 'unpublishes' : 'publishes'}
+                </span>
                 <InputSwitch
                   checked={routine.published as boolean}
                   onChange={onClickSwitch}
@@ -72,13 +77,21 @@ export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
               </div>
 
               <AddExerciseDialog routine={routine} />
-              <ConfirmDialog
-                openButtonIcon={<TrashIcon className="icon" />}
-                openButtonClassname="button--danger"
-                header="Delete"
-                message="are you sure?"
-                onAccept={() => deleteItem(selectedItem)}
-              />
+              {selectedItem && (
+                <>
+                  <ExerciseDetailsDialog
+                    exercise={selectedItem as Exercise}
+                    routine={routine}
+                  />
+                  <ConfirmDialog
+                    openButtonIcon={<TrashIcon className="icon" />}
+                    openButtonClassname="button--danger"
+                    header="Delete"
+                    message="are you sure?"
+                    onAccept={() => deleteItem(selectedItem)}
+                  />
+                </>
+              )}
             </>
           )
         }

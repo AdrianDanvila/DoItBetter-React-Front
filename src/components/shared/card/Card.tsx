@@ -15,7 +15,7 @@ export const Card = ({
   return (
     <PrimeCard
       title={t(title)}
-      className={`${className} card`}>
+      className={`${className || 'card'} card`}>
       {children}
     </PrimeCard>
   )

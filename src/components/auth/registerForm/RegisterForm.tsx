@@ -38,7 +38,9 @@ export const RegisterForm = () => {
   }
   return (
     <>
-      <Card title="auth.register.title">
+      <Card
+        title="auth.register.title"
+        className="w-full">
         <Form<User>
           className="register-form"
           inputs={REGISTER_FORM_INPUTS}

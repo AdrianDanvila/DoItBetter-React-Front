@@ -31,11 +31,7 @@ export const NavBar = ({ isOpen, onHide }: NavbarProps) => {
                 className="h-full w-40"
               />
             </h2>
-            <GenericNavBar
-              navClassName="navbar__section"
-              data={NAVBAR_LINKS}
-              title="titulo"
-            />
+
             <GenericNavBar
               navClassName="navbar__section"
               data={NAVBAR_LINKS}
@@ -53,11 +49,6 @@ export const NavBar = ({ isOpen, onHide }: NavbarProps) => {
             />
           </h2>
           <div>
-            <GenericNavBar
-              navClassName="navbar__section"
-              data={NAVBAR_LINKS}
-              title="titulo"
-            />
             <GenericNavBar
               navClassName="navbar__section"
               data={NAVBAR_LINKS}
