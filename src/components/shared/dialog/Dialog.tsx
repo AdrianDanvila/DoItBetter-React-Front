@@ -33,7 +33,6 @@ export const Dialog = ({
         closeOnEscape={true}
         header={header || 'create routine'}
         visible={isVisible}
-        style={{ width: '50vw' }}
         onHide={() => {
           if (!isVisible) return
           setIsVisible?.(false)

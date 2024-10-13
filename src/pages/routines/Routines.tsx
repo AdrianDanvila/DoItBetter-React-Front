@@ -12,9 +12,9 @@ export const Routines = () => {
 
   return (
     <section className="routines-container">
-      <Card title="main.routines.table.title">
+      {/* <Card title="main.routines.table.title">
         <RoutinesTable />
-      </Card>
+      </Card> */}
 
       <Card title="main.routines.table.title">
         <RoutinesDataview />

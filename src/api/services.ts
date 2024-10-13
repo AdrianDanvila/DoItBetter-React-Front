@@ -75,6 +75,17 @@ export const logout = () => {
   window.location.href = ROUTE_PATH.home
 }
 
+export const uploadImage = (file, id) =>
+  axios
+    .post(`${API_URL.uploadImage}/${id}`, file, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+//
 export const getRoutinesByUserId = (userId: number) =>
   axios
     .get(`${API_BASE_URL.ROUTINE}`, {
@@ -165,6 +176,7 @@ export const getAllPublishedRoutines = () =>
     .then((response) => response.data)
     .catch((error) => error.data)
 
+//
 export const testToken = () =>
   axios
     .get(API_URL.testToken, {

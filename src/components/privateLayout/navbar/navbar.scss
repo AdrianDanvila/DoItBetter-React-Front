@@ -22,6 +22,9 @@
   &__section {
     width: 100%;
     flex-direction: column;
+    padding: 10px 0px;
+    border-top: 2px solid $primary-4;
+    border-bottom: 2px solid $primary-4;
     background-color: transparent;
 
     &__title {
@@ -37,9 +40,9 @@
       padding: 0 $space-xs;
       border-radius: 0px;
       border-right: 0px solid $primary-4;
-      margin: $space-2xs 0;
+      margin: $space-xs 0;
       color: $secondary-11;
-      font-size: $font-small;
+      font-size: $font-medium;
       transition: border 0.5s ease-in-out;
 
       &__link {

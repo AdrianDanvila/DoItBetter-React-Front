@@ -1,5 +1,6 @@
+import { SetStateAction, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ErrorMessage, Field } from 'formik'
+import { ErrorMessage, Field, useFormikContext } from 'formik'
 
 import { FieldTag, InputProps, InputType } from './types'
 
@@ -15,7 +16,16 @@ export const Input = ({
   options,
   disabled,
 }: InputProps) => {
+  const [value, setValue] = useState()
   const { t } = useTranslation()
+  const formikProps = useFormikContext()
+
+  const handleChange = async (event: {
+    target: { value: SetStateAction<any> }
+  }) => {
+    setValue(event.target.value)
+    formikProps.setFieldValue(id, event.target.value)
+  }
   return (
     <div
       className={`${className} input`}
@@ -25,17 +35,10 @@ export const Input = ({
         className={`${className} input__title`}
         htmlFor={id}>
         {t(field) + ''}
-        {inputType === InputType.Range ? (
-          <output
-            id={`${id}-output`}
-            name={id}
-            htmlFor={id}
-          />
-        ) : (
-          ''
-        )}
+        {inputType === InputType.Range ? `${value || 0}` : ''}
       </label>
       <Field
+        onChange={handleChange}
         disabled={disabled}
         type={inputType}
         role="input"

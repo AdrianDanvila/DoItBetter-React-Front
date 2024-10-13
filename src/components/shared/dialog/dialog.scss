@@ -1,7 +1,9 @@
 .p-dialog {
   overflow: hidden;
+  width: 90%;
+  max-width: 500px;
   height: fit-content;
-  padding: $space-xs;
+  padding: $space-2xs;
   border-radius: 5px;
   background-color: white;
   background-color: $color-background;
@@ -26,6 +28,7 @@
   }
 
   &-content {
+    padding: 0;
   }
 
   &-footer {

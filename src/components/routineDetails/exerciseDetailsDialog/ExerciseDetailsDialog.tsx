@@ -56,10 +56,15 @@ export const ExerciseDetailsDialog = ({
       openButtonLabel=""
       openButtonIcon={<PlayIcon />}>
       <div className="flex flex-row">
-        <img
-          src={foto}
-          className="w-1/2"
-        />
+        <iframe
+          width="315"
+          height="560"
+          src="https://youtube.com/embed/0Xweg0mjlwQ?si=QbaQlgC9OwJkVQxl"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen></iframe>
+
         <Card title="Edit your excercise">
           <Form
             inputContainerClassName="flex flex-row"

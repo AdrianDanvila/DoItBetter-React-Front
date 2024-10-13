@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
+import { ExercisesDataView } from '@/components/routineDetails/exercisesDataView/ExercisesDataView'
 import { RoutineDetailsTable } from '@/components/routineDetails/routineDetailsTable/RoutineDetailsTable'
 import { Card } from '@/components/shared/card/Card'
 import { isUndefined } from '@/helpers'
@@ -30,11 +31,13 @@ export const RoutinesDetails = () => {
 
   return (
     <section className="routines-container">
-      <Card title="main.routines.table.title">
+      {/* <Card title="main.routines.table.title">
         <RoutineDetailsTable routine={routine as Routine} />
-      </Card>
+      </Card> */}
 
-      <Card title="main.routines.table.title">a</Card>
+      <Card title="main.routines.table.title">
+        <ExercisesDataView routine={routine as Routine} />
+      </Card>
       <Card title="main.routines.table.title">a</Card>
     </section>
   )

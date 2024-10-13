@@ -3,16 +3,17 @@ import type { Dispatch } from 'redux'
 //set here the needed types for the entire app
 
 export interface RegisteredUser extends User {
-  id: number
   isTrainer: boolean
   routines: Routine[]
 }
 
 export interface User {
+  id?: number
   name?: string
   age?: number
   email: string
   password?: string
+  profilePictureName?: string
   weight?: number
   height?: number
 }
@@ -21,6 +22,7 @@ export interface Routine {
   id: number
   name: string
   description: string
+  routinePicturePath?: string
   exercises?: Exercise[]
   record?: []
   published?: boolean
