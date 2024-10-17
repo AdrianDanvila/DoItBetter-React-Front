@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import axios from 'axios'
 import { Chart } from 'primereact/chart'
 
 import { Card } from '../../components/shared/card/Card'
@@ -10,14 +8,18 @@ import './profile.scss'
 import { uploadImage } from '@/api/services'
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
-import { useAppSelector } from '@/helpers/hooks'
+import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { getUserInfoAction } from '@/store/userSlice'
 
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
   const user = useAppSelector((state) => state.user.user)
   const inputRef = useRef()
+  const dispatch = useAppDispatch()
   useEffect(() => {
+    dispatch(getUserInfoAction())
+
     const documentStyle = getComputedStyle(document.documentElement)
     const textColor = documentStyle.getPropertyValue('--text-color')
     const textColorSecondary = '#000000'
@@ -73,7 +75,7 @@ export const Profile = () => {
 
     setChartData(data)
     setChartOptions(options)
-  }, [])
+  }, [dispatch])
 
   return (
     <section className="profile-container">
@@ -99,7 +101,8 @@ export const Profile = () => {
                 if (e.target.files && e.target.files[0]) {
                   const formData = new FormData()
                   formData.append('file', e.target.files[0])
-                  const response2 = await uploadImage(formData, user.id)
+                  await uploadImage(formData, user.id)
+                  window.location.reload()
                 }
               }}
               type="file"

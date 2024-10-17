@@ -12,17 +12,21 @@ import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
 import { Card } from '@/components/shared/card/Card'
 import { OverlayPanel } from '@/components/shared/overlayPanel/OverlayPanel'
-import { useAppDispatch } from '@/helpers/hooks'
+import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
+import { getRoutines } from '@/store/routinesSlice'
 import { initialize } from '@/store/userSlice'
 
 export const PrivateLayout = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  dispatch(initialize())
+  const user = useAppSelector((state) => state.user.user)
 
   useEffect(() => {
+    dispatch(initialize())
+    dispatch(getRoutines())
+
     const asyncTestToken = async () => {
       if (!(await testToken())) {
         localStorage.removeItem('userToken')
@@ -30,7 +34,7 @@ export const PrivateLayout = () => {
       }
     }
     asyncTestToken()
-  }, [navigate])
+  }, [dispatch, navigate])
 
   return (
     <main className="main-container">
@@ -56,7 +60,10 @@ export const PrivateLayout = () => {
 
           <OverlayPanel
             activationComponent={
-              <div className="bg-black w-6 h-6 rounded-full mx-2" />
+              <img
+                src={`http://localhost:8081/uploads/${user.profilePictureName}`}
+                className=" w-10 h-10 rounded-full mx-2"
+              />
             }>
             <Card title="hola" />
           </OverlayPanel>

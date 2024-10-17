@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+import { uploaRoutinedImage } from '@/api/services'
+// eslint-disable-next-line no-duplicate-imports
 import {
   addRoutineExercise,
   createNewRoutine,
@@ -64,6 +66,23 @@ export const createRoutine = createAsyncThunk(
       const response = await createNewRoutine(routineData)
 
       //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return response // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const uploadRoutineImageAction = createAsyncThunk(
+  'routine/uploadRoutineImageAction',
+  async (_routineData: { file: FormData; id: number }, { rejectWithValue }) => {
+    try {
+      const response = await uploaRoutinedImage(
+        _routineData.file,
+        _routineData.id,
+      )
 
       // Si no hay error, retornamos los datos como éxito
       return response // Si es exitoso, devolvemos la respuesta
@@ -166,12 +185,9 @@ const initialState: RoutinesState = {
           reps: 0,
         },
       ],
+      user_id: 0,
+      user_name: null,
     },
-    { id: 2, name: 'b', description: 'c' },
-    { id: 3, name: 'c', description: 'c' },
-    { id: 4, name: 'd', description: 'c' },
-    { id: 5, name: 'e', description: 'c' },
-    { id: 6, name: 'g', description: 'c' },
   ],
   published: [],
 }
@@ -234,6 +250,17 @@ const routinesSlice = createSlice({
 
       // Añadir la rutina creada
     })
+
+    builder.addCase(uploadRoutineImageAction.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.data.id,
+      )
+
+      if (tempRoutine) {
+        tempRoutine.routinePictureName = action.payload.data.routinePictureName
+        tempRoutine.routinePicturePath = action.payload.data.routinePicturePath
+      }
+    })
     builder.addCase(addExercise.fulfilled, (state, action) => {
       const tempRoutine = state.ownRoutines.find(
         (x) => x.id === action.payload.requestData.routineId,
@@ -260,7 +287,7 @@ const routinesSlice = createSlice({
       }
     })
     builder.addCase(getPublishedRoutines.fulfilled, (state, action) => {
-      state.ownRoutines = action.payload.data
+      state.published = action.payload.data
       // Añadir la rutina creada
     })
   },

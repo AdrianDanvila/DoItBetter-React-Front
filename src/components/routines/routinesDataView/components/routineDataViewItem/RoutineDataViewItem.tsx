@@ -3,15 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { Rating } from 'primereact/rating'
 import { FileTextIcon } from '@radix-ui/react-icons'
 
-import foto3 from '../../../../../assets/foto3.png'
-
 import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
 import { DeletePopUp } from '@/components/shared/deletePopUp/DeletePopUp'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
-import { deleteRoutine } from '@/store/routinesSlice'
+import { deleteRoutine, uploadRoutineImageAction } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
 export const RoutineDataViewItem = (routine: Routine, index: number) => {
@@ -35,12 +33,12 @@ export const RoutineDataViewItem = (routine: Routine, index: number) => {
 
   return (
     <div
-      className={`h-1/5 flex flex-col xl:flex-row xl:items-start p-4 my-4 gap-4 ${index !== 0 ? 'border-t-2 surface-border border-gray-300' : ''}`}>
+      className={` mx-2  flex flex-col xl:flex-row xl:items-start p-4 my-1 gap-4 ${index !== 0 ? 'border-b-2 surface-border border-gray-300' : ''}`}>
       <img
         onClick={() => {
           inputRef.current && inputRef.current.click()
         }}
-        src={`http://localhost:8081/uploads/${routine.routinePicturePath}`}
+        src={`http://localhost:8081/uploads/${routine.routinePictureName}`}
         className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all hover:scale-105 hover:cursor-pointer "
       />
       <input
@@ -50,6 +48,9 @@ export const RoutineDataViewItem = (routine: Routine, index: number) => {
           if (e.target.files && e.target.files[0]) {
             const formData = new FormData()
             formData.append('file', e.target.files[0])
+            dispatch(
+              uploadRoutineImageAction({ file: formData, id: routine.id }),
+            )
           }
         }}
         type="file"

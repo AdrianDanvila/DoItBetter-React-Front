@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import { loginUser as loginApiUser } from '@/api/services'
+import { getUserInfo, loginUser as loginApiUser } from '@/api/services'
 import { User } from '@/types/interfaces'
 
 export interface userSate {
@@ -13,6 +13,18 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await loginApiUser(userData)
 
+      return response // Si es exitoso, devolvemos la respuesta
+    } catch (error) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const getUserInfoAction = createAsyncThunk(
+  'user/getUserInfo',
+  async (_userData, { rejectWithValue }) => {
+    try {
+      const response = await getUserInfo()
       return response // Si es exitoso, devolvemos la respuesta
     } catch (error) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
@@ -39,9 +51,12 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(loginUser.fulfilled, (state, action) => {
-      // Añadir la rutina creada
       const userData = action.payload.data.user
       sessionStorage.setItem('userInfo', JSON.stringify(userData))
+      state.user = userData
+    })
+    builder.addCase(getUserInfoAction.fulfilled, (state, action) => {
+      const userData = action.payload.data
       state.user = userData
     })
   },

@@ -12,7 +12,7 @@ export const OverlayPanel = ({
   const op = useRef(null)
   return (
     <>
-      <div>{activationComponent}</div>
+      <div onClick={(e) => op.current?.toggle(e)}>{activationComponent}</div>
       <PrimeOverlayPanel ref={op}>{children}</PrimeOverlayPanel>
     </>
   )

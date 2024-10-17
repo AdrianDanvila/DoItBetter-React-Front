@@ -19,7 +19,7 @@ import { Routine } from '@/types/interfaces'
 export const Main = () => {
   const { selectedItem, onSelectionChange } = useTable<Routine>()
   const dispatch = useAppDispatch()
-  const values = useAppSelector((state) => state.routines.ownRoutines)
+  const values = useAppSelector((state) => state.routines)
   const navigate = useNavigate()
 
   const showDetailsButtonClickHandler = () =>
@@ -28,10 +28,51 @@ export const Main = () => {
   useEffect(() => {
     dispatch(getPublishedRoutines())
   }, [dispatch])
-  console.log(values)
+
+  const publisherRoutinesCount = values.ownRoutines.filter(
+    (value) => value.published,
+  ).length
 
   return (
     <section className="routines-container">
+      <div className="flex flex-col xl:flex-row justify-between gap-3">
+        <Card
+          title="numero de rutinas creadas"
+          className="w-full">
+          <p className="text-2xl font-verbatim gap-1 flex items-end">
+            <b className="text-4xl text-blue-700">
+              {' '}
+              {values.ownRoutines.length}
+            </b>
+            rutina{values.ownRoutines.length == 1 ? '' : 's'} creada
+            {values.ownRoutines.length == 1 ? '' : 's'}
+          </p>
+        </Card>
+
+        <Card
+          title="numero de rutinas publicadas"
+          className="w-full">
+          <p className="text-2xl font-verbatim gap-1 flex items-end">
+            <b className="text-4xl text-blue-700"> {publisherRoutinesCount}</b>
+            rutina{publisherRoutinesCount == 1 ? '' : 's'} publicada
+            {publisherRoutinesCount == 1 ? '' : 's'}
+          </p>
+        </Card>
+
+        <Card
+          title="numero de rutinas creadas"
+          className="w-full">
+          <p className="text-2xl font-verbatim gap-1 flex items-end">
+            <b className="text-4xl text-blue-700">
+              {' '}
+              {values.ownRoutines.length}
+            </b>
+            rutina{values.ownRoutines.length == 1 ? '' : 's'} creada
+            {values.ownRoutines.length == 1 ? '' : 's'}
+          </p>
+        </Card>
+      </div>
+
       <Card title="main.routines.table.title">
         <Toolbar
           className="p-0 m-0"
@@ -46,7 +87,7 @@ export const Main = () => {
           }
         />
         <Table<Routine>
-          values={values || []}
+          values={values.published || []}
           columns={PUBLISHED_ROTUINES_TABLE_DATA}
           selectedItem={selectedItem as Routine}
           onSelectionChange={onSelectionChange}
@@ -55,7 +96,7 @@ export const Main = () => {
 
       <Card title="main.routines.table.title">
         <Table<Routine>
-          values={values || []}
+          values={values.published || []}
           columns={ROTUINES_TABLE_DATA}
           selectedItem={selectedItem as Routine}
           onSelectionChange={onSelectionChange}

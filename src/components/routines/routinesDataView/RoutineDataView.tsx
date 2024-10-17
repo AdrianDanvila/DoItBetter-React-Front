@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { DataView } from 'primereact/dataview'
 import { Dropdown } from 'primereact/dropdown'
 import { Toolbar } from 'primereact/toolbar'
@@ -14,9 +14,10 @@ import { Routine } from '@/types/interfaces'
 export const RoutinesDataview = () => {
   const values = useAppSelector((state) => state.routines.ownRoutines)
   const [sortKey, setSortKey] = useState('')
+  const [searchedValue, setSearchedValue] = useState()
+  const searchRef = useRef()
   const [sortOrder, setSortOrder] = useState<0 | 1 | -1 | null | undefined>()
   const [sortField, setSortField] = useState('')
-  console.log(values)
 
   const sortOptions = [
     { label: 'sort by name', value: 'name' },
@@ -46,6 +47,24 @@ export const RoutinesDataview = () => {
     return <div className="h-full grid">{list}</div>
   }
 
+  const onSearchChange = (e) => {
+    const nameValue = e.currentTarget.value
+    const filteredValues = values.filter((value) =>
+      value.name.startsWith(nameValue),
+    )
+
+    if (nameValue == '') {
+      setSearchedValue(values)
+    } else {
+      setSearchedValue(filteredValues)
+    }
+  }
+
+  useEffect(() => {
+    searchRef.current ? (searchRef.current.value = '') : null
+    setSearchedValue(values)
+  }, [values])
+
   return (
     <>
       <Toolbar
@@ -62,6 +81,11 @@ export const RoutinesDataview = () => {
         }
         end={
           <>
+            <input
+              ref={searchRef}
+              placeholder="Find by name"
+              onChange={onSearchChange}
+              className="sm:w-14rem border-2 px-2 border-gray-400 p-dropdown p-component p-inputwrapper"></input>
             <CreateRoutineDialog />
           </>
         }
@@ -69,9 +93,10 @@ export const RoutinesDataview = () => {
       {values.length ? (
         <>
           <DataView
+            className="flex flex-col justify-between py-0.5  "
             sortField={sortField}
             sortOrder={sortOrder}
-            value={values}
+            value={searchedValue}
             itemTemplate={RoutineDataViewItem}
             paginatorClassName="w-full px-0"
             paginator

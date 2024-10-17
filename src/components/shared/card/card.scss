@@ -1,6 +1,7 @@
 .card {
   overflow: hidden;
   height: fit-content;
+  max-height: 100vh;
   padding: $space-xs;
   border-radius: 5px;
   background-color: $color-background;
@@ -8,14 +9,12 @@
 
   .p-card-body {
     width: 100%;
-    height: fit-content;
-    padding: 0;
+    padding: 1px 0px;
   }
 
   .p-card-content {
-    overflow: scroll;
+    overflow: hidden;
     width: 100%;
-    height: fit-content;
     padding: $space-3xs;
   }
 

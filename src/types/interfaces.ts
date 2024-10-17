@@ -23,9 +23,12 @@ export interface Routine {
   name: string
   description: string
   routinePicturePath?: string
+  routinePictureName?: string
   exercises?: Exercise[]
   record?: []
   published?: boolean
+  user_id: number
+  user_name: null
 }
 
 export interface Exercise {

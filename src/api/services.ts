@@ -63,6 +63,17 @@ export const loginUser = ({ email, password }: User) =>
       return response
     })
 
+export const getUserInfo = () =>
+  axios
+    .get(API_URL.me, {
+      headers: DEFAULT_HEADERS.headers,
+    })
+    .then((response) => response.data)
+    .catch((error) => {
+      const response = error.response
+      return response
+    })
+
 export const logout = () => {
   localStorage.removeItem('userToken')
   sessionStorage.removeItem('userinfo')
@@ -75,9 +86,19 @@ export const logout = () => {
   window.location.href = ROUTE_PATH.home
 }
 
-export const uploadImage = (file, id) =>
+export const uploadImage = (file: FormData, id: number | undefined) =>
   axios
     .post(`${API_URL.uploadImage}/${id}`, file, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const uploaRoutinedImage = (file: FormData, id: number) =>
+  axios
+    .post(`${API_URL.uploaRoutinedImage}/${id}`, file, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
