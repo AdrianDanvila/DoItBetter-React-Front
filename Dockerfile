@@ -19,11 +19,14 @@ FROM nginx:stable-alpine
 # Copiar los archivos compilados
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copiar la configuración personalizada de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copiar el archivo de configuración de Nginx con la variable ${PORT}
+COPY nginx.conf /etc/nginx/templates/default.conf.template
 
-# Exponer el puerto que se leerá desde la variable de entorno
+# Instalar gettext para usar envsubst
+RUN apk add --no-cache gettext
+
+# Exponer el puerto que Render establece (Render usará PORT=8080 por defecto)
 EXPOSE 8080
 
-# Iniciar Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Reemplazar las variables de entorno en la plantilla de Nginx y luego iniciar Nginx
+CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
