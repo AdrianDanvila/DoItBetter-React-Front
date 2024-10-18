@@ -20,7 +20,7 @@ FROM nginx:stable-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copiar el archivo de configuración de Nginx con la variable ${PORT}
-COPY nginx.conf /etc/nginx/templates/default.conf.template
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 
 # Instalar gettext para usar envsubst
 RUN apk add --no-cache gettext
