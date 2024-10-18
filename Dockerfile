@@ -23,7 +23,7 @@ FROM nginx:stable-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Exponer el puerto donde Nginx servirá la aplicación
-EXPOSE 80
+EXPOSE 8080
 
 # Iniciar Nginx
 CMD ["nginx", "-g", "daemon off;"]
