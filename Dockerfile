@@ -1,28 +1,28 @@
-# Etapa 1: Compilación de la aplicación
+# Etapa 1: Compilar la aplicación
 FROM node:18-alpine AS build
 
 WORKDIR /app
 
-# Copiar package.json y pnpm-lock.yaml
-COPY package.json ./
+COPY package.json pnpm-lock.yaml ./
 
-# Instalar pnpm y dependencias del proyecto
 RUN npm i -g pnpm@8.15.4
 RUN pnpm install
 
-# Copiar el resto de los archivos
 COPY . .
 
 # Compilar la aplicación
 RUN pnpm run build
 
-# Etapa 2: Servir la aplicación usando Nginx
+# Etapa 2: Servir la aplicación con Nginx
 FROM nginx:stable-alpine
 
-# Copiar los archivos compilados desde la etapa de build
+# Copiar los archivos compilados
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Exponer el puerto donde Nginx servirá la aplicación
+# Copiar la configuración personalizada de Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Exponer el puerto que se leerá desde la variable de entorno
 EXPOSE 8080
 
 # Iniciar Nginx
