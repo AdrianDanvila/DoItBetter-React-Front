@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { getUserInfo, loginUser as loginApiUser } from '@/api/services'
@@ -14,7 +15,7 @@ export const loginUser = createAsyncThunk(
       const response = await loginApiUser(userData)
 
       return response // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -26,7 +27,7 @@ export const getUserInfoAction = createAsyncThunk(
     try {
       const response = await getUserInfo()
       return response // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },

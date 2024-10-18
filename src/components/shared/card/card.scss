@@ -1,5 +1,6 @@
 .card {
   overflow: hidden;
+  max-width: 100%;
   height: fit-content;
   max-height: 100vh;
   padding: $space-xs;
@@ -15,10 +16,12 @@
   .p-card-content {
     overflow: hidden;
     width: 100%;
-    padding: $space-3xs;
   }
 
   .p-card-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $secondary-3;
+    margin-bottom: 0px;
     color: $secondary-12;
     font-size: $font-extra-large;
     font-weight: bolder;

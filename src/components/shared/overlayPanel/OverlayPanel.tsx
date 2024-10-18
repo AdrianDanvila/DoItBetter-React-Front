@@ -9,10 +9,13 @@ export const OverlayPanel = ({
   children,
   activationComponent,
 }: PropsWithChildren<OverlayPanelProps>) => {
-  const op = useRef(null)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const op = useRef<any>(null)
   return (
     <>
-      <div onClick={(e) => op.current?.toggle(e)}>{activationComponent}</div>
+      <div onClick={(e) => op.current && op.current.toggle(e)}>
+        {activationComponent}
+      </div>
       <PrimeOverlayPanel ref={op}>{children}</PrimeOverlayPanel>
     </>
   )

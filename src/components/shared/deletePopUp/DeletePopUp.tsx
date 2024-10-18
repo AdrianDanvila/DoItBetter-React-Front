@@ -1,13 +1,7 @@
 import { useRef, useState } from 'react'
 import { Button as PrimeButton } from 'primereact/button'
 import { ConfirmPopup } from 'primereact/confirmpopup'
-import {
-  AngleIcon,
-  CheckIcon,
-  Cross2Icon,
-  InputIcon,
-  TrashIcon,
-} from '@radix-ui/react-icons'
+import { CheckIcon, Cross2Icon, TrashIcon } from '@radix-ui/react-icons'
 
 import { DeletePopUpProps } from './types'
 

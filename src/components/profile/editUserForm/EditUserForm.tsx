@@ -2,11 +2,7 @@ import { useState } from 'react'
 import { Toolbar } from 'primereact/toolbar'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 
-import {
-  EDIT_USER_FORM_INPUTS,
-  INITIAL_VALUES,
-  VALID_EDIT_SCHEMA,
-} from './constants'
+import { EDIT_USER_FORM_INPUTS, VALID_EDIT_SCHEMA } from './constants'
 
 import './edit-user-form.scss'
 
@@ -42,9 +38,7 @@ export const EditUserForm = ({ user }: EditUserFormProps) => {
         initialValues={user}
         validationSchema={VALID_EDIT_SCHEMA}
         inputContainerClassName="grid-cols-4 grid-rows-5 "
-        onSumbit={function (e: User): void {
-          throw new Error('Function not implemented.')
-        }}
+        onSumbit={() => {}}
         disabled={editable}
       />
     </>

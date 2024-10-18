@@ -1,21 +1,29 @@
 import { useEffect, useRef, useState } from 'react'
 import { DataView } from 'primereact/dataview'
-import { Dropdown } from 'primereact/dropdown'
+import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown'
 import { Toolbar } from 'primereact/toolbar'
-
-import { CreateRoutineDialog } from '../createRoutineDiaglog/CreateRoutineDialog'
 
 import { RoutineDataViewEmpty } from './components/routineDataViewEmpty/RoutineDataviewEmpty'
 import { RoutineDataViewItem } from './components/routineDataViewItem/RoutineDataViewItem'
 
+import { CreateRoutineDialog } from '@/components/routines/createRoutineDiaglog/CreateRoutineDialog'
 import { useAppSelector } from '@/helpers/hooks'
 import { Routine } from '@/types/interfaces'
 
-export const RoutinesDataview = () => {
-  const values = useAppSelector((state) => state.routines.ownRoutines)
+export interface RoutineDataViewProps {
+  values: Routine[]
+  className?: string
+}
+
+export const RoutinesDataview = ({
+  values,
+  className,
+}: RoutineDataViewProps) => {
+  const areValuesPublished =
+    values === useAppSelector((state) => state.routines.published)
   const [sortKey, setSortKey] = useState('')
-  const [searchedValue, setSearchedValue] = useState()
-  const searchRef = useRef()
+  const [searchedValue, setSearchedValue] = useState(values)
+  const searchRef = useRef<HTMLInputElement>(null)
   const [sortOrder, setSortOrder] = useState<0 | 1 | -1 | null | undefined>()
   const [sortField, setSortField] = useState('')
 
@@ -23,7 +31,7 @@ export const RoutinesDataview = () => {
     { label: 'sort by name', value: 'name' },
     { label: 'sort by none', value: 'none' },
   ]
-  const onSortChange = (event) => {
+  const onSortChange = (event: DropdownChangeEvent) => {
     const value = event.value
 
     if (value.indexOf('!') === 0) {
@@ -37,27 +45,20 @@ export const RoutinesDataview = () => {
     }
   }
 
-  const listTemplate = (items: Routine[]) => {
-    if (!items || items.length === 0) return null
-
-    const list = items.map((routine, index) =>
-      RoutineDataViewItem(routine, index),
-    )
-
-    return <div className="h-full grid">{list}</div>
-  }
-
-  const onSearchChange = (e) => {
-    const nameValue = e.currentTarget.value
+  const onSearchChange = (e: { currentTarget: { value: string } }) => {
+    const nameValue = e.currentTarget.value.toLowerCase()
+    // eslint-disable-next-line no-confusing-arrow
     const filteredValues = values.filter((value) =>
-      value.name.startsWith(nameValue),
+      areValuesPublished
+        ? (value.user_name as unknown as string)
+            .toLowerCase()
+            .startsWith(nameValue)
+        : value.name.toLowerCase().startsWith(nameValue),
     )
 
-    if (nameValue == '') {
-      setSearchedValue(values)
-    } else {
-      setSearchedValue(filteredValues)
-    }
+    nameValue === ''
+      ? setSearchedValue(values)
+      : setSearchedValue(filteredValues)
   }
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export const RoutinesDataview = () => {
   return (
     <>
       <Toolbar
-        className="p-0 m-0 items-center px-3 z-30 flex flex-row flex-nowrap"
+        className="pb-5 pt-0 m-0 items-center px-3 z-30 flex flex-row flex-wrap"
         start={
           <Dropdown
             options={sortOptions}
@@ -76,24 +77,27 @@ export const RoutinesDataview = () => {
             optionLabel="label"
             placeholder="Sort By none"
             onChange={onSortChange}
-            className=" sm:w-14rem border-2 border-gray-400"
+            className="w-[25vh] sm border-2 border-gray-400"
           />
         }
         end={
           <>
             <input
               ref={searchRef}
-              placeholder="Find by name"
+              placeholder={
+                areValuesPublished ? 'Find by user name' : 'find by name'
+              }
               onChange={onSearchChange}
-              className="sm:w-14rem border-2 px-2 border-gray-400 p-dropdown p-component p-inputwrapper"></input>
-            <CreateRoutineDialog />
+              className=" border-2 px-2 border-gray-400 p-dropdown p-component p-inputwrapper"
+            />
+            {areValuesPublished || <CreateRoutineDialog />}
           </>
         }
       />
-      {values.length ? (
+      {searchedValue?.length ? (
         <>
           <DataView
-            className="flex flex-col justify-between py-0.5  "
+            className={`flex flex-col justify-between py-0.5 max-h-[65.5vh] ${className}`}
             sortField={sortField}
             sortOrder={sortOrder}
             value={searchedValue}

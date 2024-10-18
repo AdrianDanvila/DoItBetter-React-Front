@@ -17,6 +17,18 @@
       "routines": "Routines",
       "profile": "Profile"
     },
+    "main_page": {
+      "number_routines": {
+        "title": "Number of created routines",
+        "content": "created routine",
+        "content_plural": "created routines"
+      },
+      "number_published_routines": {
+        "title": "Number of published routines",
+        "content": "published routine",
+        "content_plural": "published routines"
+      }
+    },
     "routines": {
       "table": {
         "title": "Your routines",

@@ -37,4 +37,6 @@ export const INITIAL_VALUES: Routine = {
   name: '',
   description: '',
   id: 0,
+  user_id: 0,
+  user_name: null,
 }

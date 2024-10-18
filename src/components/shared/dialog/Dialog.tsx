@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren } from 'react'
 import { Dialog as PrimeDialog } from 'primereact/dialog'
 
 import { Button } from '../button/Button'
@@ -16,29 +16,25 @@ export const Dialog = ({
   openButtonLabel,
   header,
   children,
-}: PropsWithChildren<DialogProps>) => {
-  const [visible, setVisible] = useState(isVisible)
-
-  return (
-    <>
-      <Button
-        onClick={() => setIsVisible?.(true)}
-        icon={openButtonIcon}
-        severity={ButtonSeverity.Primary}
-        label={openButtonLabel}
-        className={openButtonClassname}
-      />
-      <PrimeDialog
-        closable={true}
-        closeOnEscape={true}
-        header={header || 'create routine'}
-        visible={isVisible}
-        onHide={() => {
-          if (!isVisible) return
-          setIsVisible?.(false)
-        }}>
-        {children}
-      </PrimeDialog>
-    </>
-  )
-}
+}: PropsWithChildren<DialogProps>) => (
+  <>
+    <Button
+      onClick={() => setIsVisible?.(true)}
+      icon={openButtonIcon}
+      severity={ButtonSeverity.Primary}
+      label={openButtonLabel}
+      className={openButtonClassname}
+    />
+    <PrimeDialog
+      closable={true}
+      closeOnEscape={true}
+      header={header || 'create routine'}
+      visible={isVisible}
+      onHide={() => {
+        if (!isVisible) return
+        setIsVisible?.(false)
+      }}>
+      {children}
+    </PrimeDialog>
+  </>
+)

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { PlayIcon } from '@radix-ui/react-icons'
 
-import foto from '../../../assets/foto2.png'
 import { VALID_EXERCISE_SCHEMA } from '../exerciseForm/constants'
 
 import { EXECISE_EDIT_FORM_INPUTS } from './constants'

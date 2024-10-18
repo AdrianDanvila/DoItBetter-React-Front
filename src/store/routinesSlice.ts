@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { uploaRoutinedImage } from '@/api/services'
@@ -27,7 +28,8 @@ export const getRoutines = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return response // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -39,7 +41,7 @@ export const getPublishedRoutines = createAsyncThunk(
     try {
       const response = await getAllPublishedRoutines()
       return response
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -53,7 +55,7 @@ export const deleteRoutine = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       if (response) return routine // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -69,7 +71,7 @@ export const createRoutine = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return response // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -86,7 +88,7 @@ export const uploadRoutineImageAction = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return response // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -111,7 +113,7 @@ export const addExercise = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return { requestData, response } // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -136,7 +138,7 @@ export const deleteExercise = createAsyncThunk(
 
       // Si no hay error, retornamos los datos como éxito
       return { requestData, response } // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -149,7 +151,7 @@ export const getExercises = createAsyncThunk(
       const response = await getRoutineExercises(routineId)
 
       return { routineId, response } // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -162,7 +164,7 @@ export const togglePublishedRoutine = createAsyncThunk(
       const response = await toggleRoutinePublished(routineId)
 
       return { routineId, response } // Si es exitoso, devolvemos la respuesta
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
     }
   },
@@ -241,9 +243,10 @@ const routinesSlice = createSlice({
       state.ownRoutines = filteredValues
     })
     builder.addCase(getExercises.fulfilled, (state, action) => {
-      const tempRoutine = state.ownRoutines.find(
-        (x) => x.id === action.payload.routineId,
-      )
+      const tempRoutine =
+        state.published.find((x) => x.id === action.payload.routineId) ||
+        state.ownRoutines.find((x) => x.id === action.payload.routineId)
+
       if (tempRoutine) {
         tempRoutine.exercises = action.payload.response.data
       }

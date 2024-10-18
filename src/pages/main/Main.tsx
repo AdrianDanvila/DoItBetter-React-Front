@@ -1,29 +1,15 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Toolbar } from 'primereact/toolbar'
-import { FileTextIcon } from '@radix-ui/react-icons'
+import { useTranslation } from 'react-i18next'
 
-import { PUBLISHED_ROTUINES_TABLE_DATA } from './constants'
-
-import { ROTUINES_TABLE_DATA } from '@/components/routines/routinesTable/constants'
-import { Button } from '@/components/shared/button/Button'
-import { ButtonSeverity } from '@/components/shared/button/types'
 import { Card } from '@/components/shared/card/Card'
-import { Table } from '@/components/shared/table/Table'
-import { useTable } from '@/components/shared/table/useTable'
+import { RoutinesDataview } from '@/components/shared/routinesDataView/RoutineDataView'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { ROUTE_PATH } from '@/router/constants'
 import { getPublishedRoutines } from '@/store/routinesSlice'
-import { Routine } from '@/types/interfaces'
 
 export const Main = () => {
-  const { selectedItem, onSelectionChange } = useTable<Routine>()
   const dispatch = useAppDispatch()
   const values = useAppSelector((state) => state.routines)
-  const navigate = useNavigate()
-
-  const showDetailsButtonClickHandler = () =>
-    selectedItem && navigate(`${ROUTE_PATH.main}/${selectedItem?.id}`)
+  const { t } = useTranslation()
 
   useEffect(() => {
     dispatch(getPublishedRoutines())
@@ -37,69 +23,47 @@ export const Main = () => {
     <section className="routines-container">
       <div className="flex flex-col xl:flex-row justify-between gap-3">
         <Card
-          title="numero de rutinas creadas"
+          title="main.main_page.number_routines.title"
           className="w-full">
           <p className="text-2xl font-verbatim gap-1 flex items-end">
             <b className="text-4xl text-blue-700">
-              {' '}
               {values.ownRoutines.length}
             </b>
-            rutina{values.ownRoutines.length == 1 ? '' : 's'} creada
-            {values.ownRoutines.length == 1 ? '' : 's'}
+            {values.ownRoutines.length === 1
+              ? t('main.main_page.number_routines.content')
+              : t('main.main_page.number_routines.content_plural')}
           </p>
         </Card>
 
         <Card
-          title="numero de rutinas publicadas"
+          title="main.main_page.number_published_routines.title"
           className="w-full">
           <p className="text-2xl font-verbatim gap-1 flex items-end">
             <b className="text-4xl text-blue-700"> {publisherRoutinesCount}</b>
-            rutina{publisherRoutinesCount == 1 ? '' : 's'} publicada
-            {publisherRoutinesCount == 1 ? '' : 's'}
+            {publisherRoutinesCount === 1
+              ? t('main.main_page.number_published_routines.content')
+              : t('main.main_page.number_published_routines.content_plural')}
           </p>
         </Card>
 
         <Card
-          title="numero de rutinas creadas"
+          title="main.main_page.number_routines.title"
           className="w-full">
           <p className="text-2xl font-verbatim gap-1 flex items-end">
             <b className="text-4xl text-blue-700">
-              {' '}
               {values.ownRoutines.length}
             </b>
-            rutina{values.ownRoutines.length == 1 ? '' : 's'} creada
-            {values.ownRoutines.length == 1 ? '' : 's'}
+            {values.ownRoutines.length === 1
+              ? t('main.main_page.number_routines.content')
+              : t('main.main_page.number_routines.content_plural')}
           </p>
         </Card>
       </div>
 
       <Card title="main.routines.table.title">
-        <Toolbar
-          className="p-0 m-0"
-          end={
-            <>
-              <Button
-                onClick={showDetailsButtonClickHandler}
-                icon={<FileTextIcon className="icon" />}
-                severity={ButtonSeverity.Primary}
-              />
-            </>
-          }
-        />
-        <Table<Routine>
-          values={values.published || []}
-          columns={PUBLISHED_ROTUINES_TABLE_DATA}
-          selectedItem={selectedItem as Routine}
-          onSelectionChange={onSelectionChange}
-        />
-      </Card>
-
-      <Card title="main.routines.table.title">
-        <Table<Routine>
-          values={values.published || []}
-          columns={ROTUINES_TABLE_DATA}
-          selectedItem={selectedItem as Routine}
-          onSelectionChange={onSelectionChange}
+        <RoutinesDataview
+          className="h-[48vh] "
+          values={values.published}
         />
       </Card>
     </section>

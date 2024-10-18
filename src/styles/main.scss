@@ -16,9 +16,12 @@ body {
   margin: 0px;
 }
 
+.p-dataview {
+}
+
 .p-dataview-content {
-  height: 61vh;
-  border: 1px solid $secondary-3;
+  height: 100%;
+  border: 1px solid $secondary-4;
   border-radius: 20px;
   justify-self: center;
   overflow-x: auto;

@@ -1,9 +1,8 @@
-import { useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import jsPDF from 'jspdf'
-import autoTable from 'jspdf-autotable'
 import { DataView } from 'primereact/dataview'
-import { Dropdown } from 'primereact/dropdown'
+import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown'
 import { InputSwitch } from 'primereact/inputswitch'
 import { Toolbar } from 'primereact/toolbar'
 import { ArrowLeftIcon, CopyIcon, DownloadIcon } from '@radix-ui/react-icons'
@@ -13,27 +12,15 @@ import { AddExerciseDialog } from '../addExerciseDialog/AddExerciseDialog'
 import { ExercisesDataViewItem } from './components/exerciseDataViewItem/ExerciseDataViewItem'
 
 import { copyRoutineById } from '@/api/services'
-import { RoutineDataViewEmpty } from '@/components/routines/routinesDataView/components/routineDataViewEmpty/RoutineDataviewEmpty'
 import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
+import { RoutineDataViewEmpty } from '@/components/shared/routinesDataView/components/routineDataViewEmpty/RoutineDataviewEmpty'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch } from '@/helpers/hooks'
-import { PATH, ROUTE_PATH } from '@/router/constants'
+import { PATH } from '@/router/constants'
 import { togglePublishedRoutine } from '@/store/routinesSlice'
-import { Exercise, Routine } from '@/types/interfaces'
+import { Routine } from '@/types/interfaces'
 
-interface Product {
-  id: string
-  code: string
-  name: string
-  description: string
-  image: string
-  price: number
-  category: string
-  quantity: number
-  inventoryStatus: string
-  rating: number
-}
 export interface ExerciseDataViewProps {
   routine: Routine
 }
@@ -50,7 +37,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
     { label: 'sort by name', value: 'name' },
     { label: 'sort by none', value: 'none' },
   ]
-  const onSortChange = (event) => {
+  const onSortChange = (event: DropdownChangeEvent) => {
     const value = event.value
 
     if (value.indexOf('!') === 0) {
@@ -70,14 +57,20 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
   const clickCopyButton = async () =>
     await copyRoutineById(routine.id).then(() => showToast('success', '', ''))
 
-  const listTemplate = (items: Exercise[]) => {
-    if (!items || items.length === 0) return null
+  const listTemplate = (
+    items: any[],
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _layout?: 'list' | 'grid' | (string & Record<string, unknown>) | undefined,
+  ) => {
+    if (!items || items.length === 0) return undefined
 
-    const list = items.map((exercise, index) =>
-      ExercisesDataViewItem(exercise, routine, index),
+    const list = items.map((item, index) =>
+      ExercisesDataViewItem(item, routine, index),
     )
 
-    return <div className="grid grid-nogutter">{list}</div>
+    return (<div className="grid grid-nogutter">{list}</div>) as unknown as
+      | ReactNode[]
+      | undefined
   }
   const cols = [
     { field: 'name', header: 'Name' },
@@ -93,7 +86,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
   const exportPdf = () => {
     import('jspdf').then((jsPDF) => {
       import('jspdf-autotable').then(() => {
-        const doc = new jsPDF.default(0, 0)
+        const doc = new jsPDF.default('p', 'px') as any
 
         doc.autoTable(exportColumns, routine.exercises)
         doc.save(`${routine.name}.pdf`)
@@ -108,7 +101,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
         start={
           <>
             <Button
-              onClick={() => navigate(ROUTE_PATH.routines)}
+              onClick={() => navigate(-1)}
               icon={<ArrowLeftIcon className="icon" />}
               severity={ButtonSeverity.Primary}
             />
@@ -152,7 +145,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
           )
         }
       />
-      {routine?.exercises ? (
+      {routine?.exercises?.length ? (
         <DataView
           sortField={sortField}
           sortOrder={sortOrder}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
 import { Chart } from 'primereact/chart'
 
@@ -15,7 +16,7 @@ export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
   const user = useAppSelector((state) => state.user.user)
-  const inputRef = useRef()
+  const inputRef = useRef<any>()
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(getUserInfoAction())
