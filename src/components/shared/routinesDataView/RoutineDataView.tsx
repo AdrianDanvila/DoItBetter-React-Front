@@ -69,7 +69,7 @@ export const RoutinesDataview = ({
   return (
     <>
       <Toolbar
-        className="pb-5 pt-0 m-0 items-center px-3 z-30 flex flex-row flex-wrap"
+        className="pb-5 pt-0 m-0 items-center px-3 z-30 flex flex-row flex-wrap bg-transparent"
         start={
           <Dropdown
             options={sortOptions}
@@ -97,7 +97,7 @@ export const RoutinesDataview = ({
       {searchedValue?.length ? (
         <>
           <DataView
-            className={`flex flex-col justify-between py-0.5 max-h-[65.5vh] ${className}`}
+            className={`flex flex-col justify-between py-0.5 max-h-[62vh] ${className}`}
             sortField={sortField}
             sortOrder={sortOrder}
             value={searchedValue}

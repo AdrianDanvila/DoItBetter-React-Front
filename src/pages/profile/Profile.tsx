@@ -122,17 +122,6 @@ export const Profile = () => {
 
       <Card
         title="Titulo"
-        className="profile-container__chart">
-        <Chart
-          className="h-full"
-          type=""
-          data={chartData}
-          options={chartOptions}
-        />
-      </Card>
-
-      <Card
-        title="Titulo"
         className="profile-container__chart2 flex items-center justify-center">
         <RoutinesTable />
       </Card>

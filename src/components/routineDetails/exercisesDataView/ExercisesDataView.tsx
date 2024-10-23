@@ -97,7 +97,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
   return (
     <>
       <Toolbar
-        className="p-02m-0 items-center px-3 z-30 flex flex-col sm:flex-row  flex-nowrap"
+        className="p-02m-0 items-center px-3 z-30 flex flex-col sm:flex-row bg-transparent  flex-nowrap"
         start={
           <>
             <Button

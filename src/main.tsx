@@ -8,6 +8,8 @@ import { BASE_URL } from '@constants/server.ts'
 
 import './i18n'
 
+import { SidebarProvider } from './components/ui/sidebar'
+
 import '@styles/main.scss'
 
 import App from '@/App.tsx'
@@ -26,7 +28,10 @@ axios.interceptors.request.use(
   (error) => Promise.reject(error),
 )
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <Provider store={index}>
-    <App />
-  </Provider>,
+  <SidebarProvider className="">
+    <Provider store={index}>
+      <App />
+    </Provider>
+    ,
+  </SidebarProvider>,
 )

@@ -21,7 +21,7 @@ export const Main = () => {
 
   return (
     <section className="routines-container">
-      <div className="flex flex-col xl:flex-row justify-between gap-3">
+      <div className="flex flex-col xl:flex-row gap-3">
         <Card
           title="main.main_page.number_routines.title"
           className="w-full">

@@ -6,8 +6,8 @@ export const NAVBAR_LINKS: LinkData[] = [
   {
     icon: (
       <HomeIcon
-        className="navbar__section__link-container__icon"
-        fontSize="large"
+        className=""
+        fontSize=""
       />
     ),
     href: '/main',

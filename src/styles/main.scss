@@ -11,12 +11,33 @@
   scroll-behavior: smooth;
 }
 
+html {
+  @apply w-screen;
+  height: 100vh;
+}
+
 body {
   display: block;
-  margin: 0px;
+}
+
+html {
+  background-color: $secondary-2;
+}
+
+.sidebar-wrapper {
+  width: 100%;
+}
+
+.gradient-title {
+  @apply font-extrabold bg-gradient-to-br from-blue-600 to-blue-400 bg-clip-text tracking-tighter
+  text-transparent pb-4 pr-2;
 }
 
 .p-dataview {
+}
+
+.p-paginator {
+  background-color: transparent;
 }
 
 .p-dataview-content {
@@ -30,4 +51,10 @@ body {
 .p-dropdown-items {
   border-radius: 5px;
   background-color: white;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
