@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { ExercisesDataView } from '@/components/routineDetails/exercisesDataView/ExercisesDataView'
@@ -15,7 +15,10 @@ export const RoutinesDetails = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(getExercises(Number.parseInt(id || '0')))
+    const fun = async () => {
+      await dispatch(getExercises(Number.parseInt(id || '0')))
+    }
+    fun()
   }, [dispatch, id])
 
   const routine =
@@ -33,10 +36,6 @@ export const RoutinesDetails = () => {
 
   return (
     <section className="routines-container">
-      {/* <Card title="main.routines.table.title">
-        <RoutineDetailsTable routine={routine as Routine} />
-      </Card> */}
-
       <Card title="main.routines.table.title">
         <ExercisesDataView routine={routine as Routine} />
       </Card>

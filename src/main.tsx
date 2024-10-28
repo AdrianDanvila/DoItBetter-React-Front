@@ -28,7 +28,7 @@ axios.interceptors.request.use(
   (error) => Promise.reject(error),
 )
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <SidebarProvider className="">
+  <SidebarProvider className="w-full h-full">
     <Provider store={index}>
       <App />
     </Provider>

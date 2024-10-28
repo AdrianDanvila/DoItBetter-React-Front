@@ -31,6 +31,7 @@ export const ExercisesDataViewItem = (
   }
   return (
     <div
+      key={index}
       className={`h-1/5 flex flex-col xl:flex-row xl:items-start p-4 my-4 gap-4 ${index !== 0 ? 'border-t-2 surface-border border-gray-300' : ''}`}>
       <img
         className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"

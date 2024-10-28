@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { t } from 'i18next'
-import { ExitIcon, RowsIcon } from '@radix-ui/react-icons'
+import { ExitIcon } from '@radix-ui/react-icons'
 
 import './private-layout.scss'
 
@@ -9,28 +9,21 @@ import { axios } from '@/api/axios'
 import { testToken } from '@/api/services'
 import { Header } from '@/components/privateLayout/header/Header'
 import { NAVBAR_LINKS } from '@/components/privateLayout/navbar/constants'
-import { NavBar } from '@/components/privateLayout/navbar/NavBar'
 import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
 import { Card } from '@/components/shared/card/Card'
 import { OverlayPanel } from '@/components/shared/overlayPanel/OverlayPanel'
 import { AppSidebar } from '@/components/ui/AppSidebar'
-import {
-  SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
-} from '@/components/ui/sidebar'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
 import { getRoutines } from '@/store/routinesSlice'
 import { initialize } from '@/store/userSlice'
 
 export const PrivateLayout = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const user = useAppSelector((state) => state.user.user)
-  const { toggleSidebar } = useSidebar()
   useEffect(() => {
     dispatch(initialize())
     dispatch(getRoutines())
@@ -46,7 +39,7 @@ export const PrivateLayout = () => {
 
   return (
     <>
-      <div className="flex md:flex-row w-full">
+      <div className="flex md:flex-row ">
         <AppSidebar />
 
         <main className="main-container">

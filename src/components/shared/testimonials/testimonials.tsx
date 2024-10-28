@@ -1,6 +1,3 @@
-'use client'
-
-import React from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 
 import { Avatar, AvatarFallback, AvatarImage } from '../../ui/avatar'

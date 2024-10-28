@@ -48,13 +48,13 @@ export function AppSidebar() {
                       key={item.href}>
                       <a
                         href={item.href}
-                        className="a__link-container__link ">
+                        className="">
                         {item.icon}
                       </a>
 
                       <a
                         href={item.href}
-                        className="a__link-container__link w-full py-5">
+                        className=" w-full py-5">
                         {t(item.text)}
                       </a>
                     </div>

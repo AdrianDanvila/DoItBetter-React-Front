@@ -12,7 +12,7 @@ export const CreateRoutineDialog = () => {
     <Dialog
       isVisible={isVisible}
       setIsVisible={setIsVisible}
-      openButtonClassname="button--success"
+      openButtonClassname="button button--success"
       openButtonLabel=""
       openButtonIcon={<PlusIcon />}>
       <RoutineForm

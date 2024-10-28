@@ -13,6 +13,7 @@ import {
   getUserRoutines,
   toggleRoutinePublished,
 } from '@/api/services'
+import { isUndefined } from '@/helpers'
 import { Exercise, Routine, RoutineExercise } from '@/types/interfaces'
 
 export interface RoutinesState {
@@ -250,8 +251,7 @@ const routinesSlice = createSlice({
       if (tempRoutine) {
         tempRoutine.exercises = action.payload.response.data
       }
-
-      // Añadir la rutina creada
+      console.log('paso')
     })
 
     builder.addCase(uploadRoutineImageAction.fulfilled, (state, action) => {

@@ -1,1 +1,0 @@
-//Constants of the component
