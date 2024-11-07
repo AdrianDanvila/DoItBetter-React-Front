@@ -6,7 +6,6 @@ import { useAppSelector } from '@/helpers/hooks'
 
 export const Routines = () => {
   const values = useAppSelector((state) => state.routines.ownRoutines)
-  console.log('a')
 
   return (
     <section className="routines-container">

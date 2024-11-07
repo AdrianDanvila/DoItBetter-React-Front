@@ -13,7 +13,9 @@ export const OverlayPanel = ({
   const op = useRef<any>(null)
   return (
     <>
-      <div onClick={(e) => op.current && op.current.toggle(e)}>
+      <div
+        onClick={(e) => op.current && op.current.toggle(e)}
+        className="flex items-center">
         {activationComponent}
       </div>
       <PrimeOverlayPanel ref={op}>{children}</PrimeOverlayPanel>

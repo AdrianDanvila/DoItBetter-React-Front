@@ -26,7 +26,7 @@ export const RoutinePicture = ({ routine, user_id }: RoutinePictureProps) => {
           inputRef.current && inputRef.current.click()
         }}
         src={`http://localhost:8081/uploads/${routine.routinePictureName}`}
-        className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all hover:scale-105 hover:cursor-pointer "
+        className="w-2/12 max-h-32 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all hover:scale-105 hover:cursor-pointer "
       />
       <input
         style={{ display: 'none' }}

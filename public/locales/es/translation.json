@@ -1,11 +1,85 @@
 {
   "home": {
-    "title": "Hola Mundo",
+    "title": "hola mundo",
     "header": {
       "introduction": "Introducción",
-      "who_we_are": "¿Quienes somos?",
-      "info": "Informacion",
-      "login": "Inicia Sesion"
+      "key_features": "Características clave",
+      "what_users_says": "lo que dicen los usuarios",
+      "how_it_works": "Cómo funciona",
+      "login": "Iniciar sesión"
+    },
+    "introduction": {
+      "title": "Simplifica tus Rutinas",
+      "description": "DoItBetter te ayudará a gestionar tus rutinas de manera más efectiva. Crea algunos hábitos y más",
+      "button": "Comenzar"
+    },
+    "key_features": {
+      "title": "Características clave",
+      "description": {
+        "routines_creation": {
+          "title": "Crear Rutinas",
+          "description": "Configura y personaliza tus rutinas fácilmente",
+          "alt": "Tarjeta de rutina"
+        },
+        "routine_manage": {
+          "title": "Gestionar Rutinas",
+          "description": "Gestiona tus rutinas según tu disponibilidad",
+          "alt": "Tarjeta de gestión de rutinas"
+        },
+        "learn_from_others": {
+          "title": "Publica tus Rutinas",
+          "description": "Comparte tus rutinas con otros",
+          "alt": "Tarjeta de compartir"
+        }
+      },
+      "button": "Comenzar"
+    },
+    "what_users_says": {
+      "title": "Que dicen nuestros usuarios",
+      "user1": {
+        "name": "Sarah Johnson",
+        "role": "Gerente de Marketing",
+        "content": "DoItBetter ha transformado cómo gestiono mis rutinas. ¡Es intuitivo y nos ahorra horas cada semana!"
+      },
+      "user2": {
+        "name": "David Lee",
+        "role": "Entrenador Personal",
+        "content": "Como freelancer, DoItBetter me ayuda a mantenerme organizado y profesional. A mis clientes les encanta lo fácil que es usarlo."
+      },
+      "user3": {
+        "name": "Emily Chen",
+        "role": "Fundadora de Startup",
+        "content": "DoItBetter me ha ayudado a mejorar mi organización en el gimnasio y me ha ahorrado mucho tiempo."
+      },
+      "user4": {
+        "name": "Michael Brown",
+        "role": "Ejecutivo de Ventas",
+        "content": "He visto un aumento del 15% en la eficiencia de mis rutinas desde que uso DoItBetter. Es un cambio de juego para los profesionales del gimnasio."
+      }
+    },
+    "how_it_works": {
+      "title": "Como Funciona",
+      "step1": {
+        "step": "Regístrate",
+        "description": "Crea tu cuenta gratuita en DoItBetter"
+      },
+      "step2": {
+        "step": "Establece Rutinas",
+        "description": "Define cuándo será tu primera rutina"
+      },
+      "step3": {
+        "step": "Añade ejercicios",
+        "description": "Añade algunos ejercicios a tus rutinas"
+      },
+      "step4": {
+        "step": "Compártelo",
+        "description": "Publica tus rutinas"
+      }
+    },
+    "CTA": {
+      "title": "¿Listo para Simplificar tus Rutinas?",
+      "description": "Únete a miles de profesionales que confían en DoItBetter para una gestión eficiente de rutinas.",
+      "button": "Comienza Gratis"
     }
   },
   "main": {
@@ -13,17 +87,29 @@
       "introduction": "Introducción"
     },
     "navigation": {
-      "home": "Pagina Principal",
+      "home": "Inicio",
       "routines": "Rutinas",
       "profile": "Perfil"
     },
+    "main_page": {
+      "number_routines": {
+        "title": "Número de rutinas creadas",
+        "content": "rutina creada",
+        "content_plural": "rutinas creadas"
+      },
+      "number_published_routines": {
+        "title": "Número de rutinas publicadas",
+        "content": "rutina publicada",
+        "content_plural": "rutinas publicadas"
+      }
+    },
     "routines": {
       "table": {
-        "title": "Tus Rutinas",
+        "title": "Tus rutinas",
         "headers": {
           "name": "Nombre",
-          "description": "Descripcion",
-          "date_created": "Fecha de creacion",
+          "description": "Descripción",
+          "date_created": "Fecha de creación",
           "actions": "Acciones"
         }
       }
@@ -31,31 +117,31 @@
   },
   "auth": {
     "login": {
-      "title": "Bienvenido de vuelta",
-      "register_link": "¿Eres nuevo? Comienza tu camino <a href=\"/register\">aqui</a>"
+      "title": "Bienvenido de nuevo",
+      "register_link": "¿Eres nuevo? Comienza tu viaje <a href=\"/register\">aquí</a>"
     },
     "register": {
-      "title": "Comienza tu camino",
-      "register_link": "¿Ya tienes una cuenta? Continua tu camino <a href=\"/login\">aqui</a>"
+      "title": "Bienvenido de nuevo",
+      "register_link": "¿Ya tienes una cuenta? Continúa en tu camino <a href=\"/login\">aquí</a>"
     },
     "form": {
       "name": {
         "label": "Nombre",
-        "placeholder": "Jhon snow",
+        "placeholder": "Jhon Snow",
         "error_messages": {}
       },
       "password": {
         "label": "Contraseña",
         "placeholder": "1234567",
         "error_messages": {
-          "minimun": "La contraseña debe tener almenos 12 caracteres"
+          "minimun": "La contraseña debe tener al menos 12 caracteres"
         }
       },
       "age": {
         "label": "Edad",
         "placeholder": "18",
         "error_messages": {
-          "minimun": "La edad minima es de 18 años"
+          "minimun": "La edad mínima es de 18 años"
         }
       },
       "weight": {
@@ -64,22 +150,22 @@
         "error_messages": {}
       },
       "height": {
-        "label": "Altura ",
+        "label": "Altura",
         "placeholder": "1234567",
         "error_messages": {}
       },
       "mail": {
-        "label": "Correo electronico",
-        "placeholder": "prueba@gmail.com",
+        "label": "Correo electrónico",
+        "placeholder": "test@gmail.com",
         "error_messages": {
-          "format": "El formato del mail que ha ingresado es invalido"
+          "format": "El formato del correo electrónico que has ingresado es inválido."
         }
       }
     }
   },
   "form": {
     "submit": "Enviar",
-    "reset": "Reiniciar",
+    "reset": "Restablecer",
     "error_messages": {
       "required": "Requerido"
     }

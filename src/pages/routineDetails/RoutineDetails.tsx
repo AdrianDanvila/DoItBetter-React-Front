@@ -1,11 +1,11 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { ExercisesDataView } from '@/components/routineDetails/exercisesDataView/ExercisesDataView'
 import { Card } from '@/components/shared/card/Card'
 import { isUndefined } from '@/helpers'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { ROUTE_PATH } from '@/router/constants'
+import { PATH, ROUTE_PATH } from '@/router/constants'
 import { getExercises } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 export const RoutinesDetails = () => {
@@ -21,13 +21,13 @@ export const RoutinesDetails = () => {
     fun()
   }, [dispatch, id])
 
-  const routine =
-    values.ownRoutines.find(
-      (routine) => routine.id === Number.parseInt(id || '0'),
-    ) ||
-    values.published.find(
-      (routine) => routine.id === Number.parseInt(id || '0'),
-    )
+  const routine = window.location.pathname.includes(PATH.main)
+    ? values.published.find(
+        (routine) => routine.id === Number.parseInt(id || '0'),
+      )
+    : values.ownRoutines.find(
+        (routine) => routine.id === Number.parseInt(id || '0'),
+      )
 
   useEffect(() => {
     if (isUndefined(id)) navigate(ROUTE_PATH.main)

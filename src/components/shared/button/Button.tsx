@@ -17,17 +17,15 @@ export const Button = ({
   type = ButtonType.Button,
   ref,
 }: PropsWithChildren<Buttonprops>) => (
-  <>
-    <ButtonShad
-      ref={ref}
-      size="lg"
-      type={type as 'submit' | 'reset' | 'button' | undefined}
-      icon={icon}
-      className={className || `button button--${severity}`}
-      onClick={onClick}>
-      {label}
-      {children}
-      {icon as string}
-    </ButtonShad>
-  </>
+  <ButtonShad
+    ref={ref}
+    size="lg"
+    type={type as 'submit' | 'reset' | 'button' | undefined}
+    icon={icon}
+    className={className || `button button--${severity}`}
+    onClick={onClick}>
+    {label}
+    {children}
+    {icon as string}
+  </ButtonShad>
 )

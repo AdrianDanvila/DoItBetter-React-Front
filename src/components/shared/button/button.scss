@@ -2,14 +2,12 @@
   width: 50px;
   height: 50px;
   padding: $space-xs $space-xs;
-  border-radius: 50px;
   margin: $space-3xs $space-2xs;
 
   &--danger {
     @include setColorSeverity($danger);
     height: 50px;
     padding: $space-xs $space-2xs;
-    border-radius: 50px;
     margin: $space-3xs $space-2xs;
   }
 
@@ -41,7 +39,6 @@
     @include setColorSeverity($primary-9);
     height: 50px;
     padding: $space-xs $space-2xs;
-    border-radius: 50px;
     margin: $space-3xs $space-2xs;
   }
 }

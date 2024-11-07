@@ -5,7 +5,7 @@ import foto3 from '../../../../../assets/foto3.png'
 import { ExerciseDetailsDialog } from '@/components/routineDetails/exerciseDetailsDialog/ExerciseDetailsDialog'
 import { DeletePopUp } from '@/components/shared/deletePopUp/DeletePopUp'
 import { useToast } from '@/components/shared/toast/useToast'
-import { useAppDispatch } from '@/helpers/hooks'
+import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { PATH } from '@/router/constants'
 import { deleteExercise } from '@/store/routinesSlice'
 import { Exercise, Routine } from '@/types/interfaces'
@@ -17,6 +17,7 @@ export const ExercisesDataViewItem = (
 ) => {
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
+  const values = useAppSelector((state) => state)
 
   const deleteItem = async () => {
     const actionResult = await dispatch(
@@ -54,21 +55,23 @@ export const ExercisesDataViewItem = (
             </span>
           </div>
         </div>
-        {(!routine.published ||
-          window.location.pathname.includes(PATH.routines)) && (
-          <div className="flex sm:flex-col  sm:items-end  gap-3 sm:gap-2 w-full md:w-2/12">
-            <span className="text-2xl font-semibold text-center w-full">
-              Actions
-            </span>
-            <div className="flex ">
+
+        <div className="flex sm:flex-col  sm:items-end  gap-3 sm:gap-2 w-full md:w-2/12">
+          <span className="text-2xl font-semibold text-center w-full">
+            Actions
+          </span>
+          <div className="flex ">
+            {!routine.published || routine.user_id === values.user.user.id ? (
               <DeletePopUp onAccept={deleteItem} />
-              <ExerciseDetailsDialog
-                exercise={exercise as Exercise}
-                routine={routine}
-              />
-            </div>
+            ) : (
+              <></>
+            )}
+            <ExerciseDetailsDialog
+              exercise={exercise as Exercise}
+              routine={routine}
+            />
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

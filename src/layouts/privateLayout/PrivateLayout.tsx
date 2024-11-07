@@ -10,7 +10,7 @@ import { testToken } from '@/api/services'
 import { Header } from '@/components/privateLayout/header/Header'
 import { NAVBAR_LINKS } from '@/components/privateLayout/navbar/constants'
 import { Button } from '@/components/shared/button/Button'
-import { ButtonSeverity } from '@/components/shared/button/types'
+import { ButtonSeverity, ButtonType } from '@/components/shared/button/types'
 import { Card } from '@/components/shared/card/Card'
 import { OverlayPanel } from '@/components/shared/overlayPanel/OverlayPanel'
 import { AppSidebar } from '@/components/ui/AppSidebar'
@@ -41,13 +41,13 @@ export const PrivateLayout = () => {
     <>
       <div className="flex md:flex-row ">
         <AppSidebar />
-
         <main className="main-container">
           <section className="section-container w-screen">
             <Header>
               <Button
+                type={ButtonType.Button}
                 icon={<ExitIcon className="icon" />}
-                className="header-container__button"
+                className="header-container__button shadow-none"
                 onClick={() => {
                   localStorage.setItem('userToken', '0')
                   axios.defaults.headers.common = {
@@ -62,7 +62,7 @@ export const PrivateLayout = () => {
                 activationComponent={
                   <img
                     src={`http://localhost:8081/uploads/${user.profilePictureName}`}
-                    className=" w-10 h-10 rounded-full mx-2"
+                    className=" w-7 h-7 rounded-full mx-2"
                   />
                 }>
                 <Card title="hola" />

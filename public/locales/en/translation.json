@@ -3,9 +3,83 @@
     "title": "hello world",
     "header": {
       "introduction": "Introduction",
-      "who_we_are": "¿Who whe are?",
-      "info": "Information",
+      "key_features": "Key features",
+      "what_users_says": "what users says",
+      "how_it_works": "How it works",
       "login": "Login"
+    },
+    "introduction": {
+      "title": "Simpleify Your Routines",
+      "description": "DoItBetter will help you manage your Routines more effectively. Create some habits and more",
+      "button": "Get Started"
+    },
+    "key_features": {
+      "title": "Key features",
+      "description": {
+        "routines_creation": {
+          "title": "Create Routines",
+          "description": "Easily set up and customize your Routines",
+          "alt": "Routine card"
+        },
+        "routine_manage": {
+          "title": "Manage Routines",
+          "description": "manage your routines according to your availability",
+          "alt": "routine_manage card"
+        },
+        "learn_from_others": {
+          "title": "Publish your Routines",
+          "description": "Share your Routines to others",
+          "alt": "Share card"
+        }
+      },
+      "button": "Get Started"
+    },
+    "what_users_says": {
+      "title": "What users says",
+      "user1": {
+        "name": "Sarah Johnson",
+        "role": "Marketing Manager",
+        "content": "DoItBetter has transformed how I manage my Routines. It's intuitive and saves us hours every week!"
+      },
+      "user2": {
+        "name": "David Lee",
+        "role": "Personal Trainer",
+        "content": "As a freelancer, DoItBetter helps me stay organized and professional. My clients love how easy it is to use it."
+      },
+      "user3": {
+        "name": "Emily Chen",
+        "role": "Startup Founder",
+        "content": "DoItBetter It has helped me to improve my organization at the gym and saved me a lot of time."
+      },
+      "user4": {
+        "name": "Michael Brown",
+        "role": "Sales Executive",
+        "content": "I've seen a 15% increase in my routines efficiency since using DoItBetter. It's a game-changer for gym professionals."
+      }
+    },
+    "how_it_works": {
+      "title": "How it works",
+      "step1": {
+        "step": "Sign Up",
+        "description": "Create your free DoItBetter account"
+      },
+      "step2": {
+        "step": "Set Routines",
+        "description": "Define when your first Routine"
+      },
+      "step3": {
+        "step": "Add exercises",
+        "description": "Add some excercises to your routines"
+      },
+      "step4": {
+        "step": "Share it",
+        "description": "Publish your routines"
+      }
+    },
+    "CTA": {
+      "title": "Ready to Simplify Your Routines?",
+      "description": " Join thousands of professionals who trust DoItBetter for efficient Routine management.",
+      "button": "Start For Free"
     }
   },
   "main": {

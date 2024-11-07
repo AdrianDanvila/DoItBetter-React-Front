@@ -6,11 +6,15 @@ export const HEADER_LINKS: LinkData[] = [
     text: 'home.header.introduction',
   },
   {
-    href: '#who_we_are',
-    text: 'home.header.who_we_are',
+    href: '#key_features',
+    text: 'home.header.key_features',
   },
   {
-    href: '#information',
-    text: 'home.header.info',
+    href: '#what_users_says',
+    text: 'home.header.what_users_says',
+  },
+  {
+    href: '#how_it_works',
+    text: 'home.header.how_it_works',
   },
 ]

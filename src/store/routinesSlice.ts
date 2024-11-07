@@ -244,14 +244,27 @@ const routinesSlice = createSlice({
       state.ownRoutines = filteredValues
     })
     builder.addCase(getExercises.fulfilled, (state, action) => {
-      const tempRoutine =
-        state.published.find((x) => x.id === action.payload.routineId) ||
-        state.ownRoutines.find((x) => x.id === action.payload.routineId)
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.routineId,
+      )
+
+      const tempRoutinePublished = state.published.find(
+        (x) => x.id === action.payload.routineId,
+      )
+
+      if (tempRoutinePublished) {
+        tempRoutinePublished.exercises = action.payload.response.data
+        if (!tempRoutinePublished?.exercises) {
+          tempRoutinePublished.exercises = action.payload.response.data
+        }
+      }
 
       if (tempRoutine) {
         tempRoutine.exercises = action.payload.response.data
+        if (!tempRoutine?.exercises) {
+          tempRoutine.exercises = action.payload.response.data
+        }
       }
-      console.log('paso')
     })
 
     builder.addCase(uploadRoutineImageAction.fulfilled, (state, action) => {

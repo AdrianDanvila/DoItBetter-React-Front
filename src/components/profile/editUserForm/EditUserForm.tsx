@@ -24,7 +24,7 @@ export const EditUserForm = ({ user }: EditUserFormProps) => {
   return (
     <>
       <Toolbar
-        className="p-0"
+        className="p-0 bg-transparent"
         end={
           <Button
             icon={<Pencil1Icon />}

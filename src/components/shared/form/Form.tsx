@@ -55,12 +55,14 @@ export const Form = <T extends FormikValues>({
           ))}
         </div>
         {disabled || (
-          <div className={`${className} form__actions-container`}>
+          <div className={`${className} form__actions-container pr-2`}>
             <Button
               type={ButtonType.Submit}
-              icon={<PaperPlaneIcon />}
-              severity={ButtonSeverity.Primary}>
+              className="text-sm bg-blue-500 hover:bg-blue-400 text-white w-fit"
+              icon={undefined}
+              severity={ButtonSeverity.Danger}>
               {t('form.submit') || t('form.reset')}
+              <PaperPlaneIcon className="" />
             </Button>
           </div>
         )}

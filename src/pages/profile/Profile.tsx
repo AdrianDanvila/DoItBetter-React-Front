@@ -9,6 +9,7 @@ import './profile.scss'
 import { uploadImage } from '@/api/services'
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
+import { RoutineCounters } from '@/components/shared/routineCounters/routineCounters'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { getUserInfoAction } from '@/store/userSlice'
 
@@ -79,52 +80,56 @@ export const Profile = () => {
   }, [dispatch])
 
   return (
-    <section className="profile-container">
-      <Card
-        title="Profile Info"
-        className="profile-container__data">
-        <div className="parent">
-          <div className="div1">
-            <img
-              onClick={() => {
-                if (inputRef.current) {
-                  inputRef.current.click()
-                }
-              }}
-              src={`http://localhost:8081/uploads/${user.profilePictureName}`}
-              alt="Foto de perfil"
-              style={{ width: '150px', height: '150px', borderRadius: '50%' }}
-            />
-            <input
-              style={{ display: 'none' }}
-              ref={inputRef}
-              onChange={async (e) => {
-                if (e.target.files && e.target.files[0]) {
-                  const formData = new FormData()
-                  formData.append('file', e.target.files[0])
-                  await uploadImage(formData, user.id)
-                  window.location.reload()
-                }
-              }}
-              type="file"
-              accept="image/png, image/gif, image/jpeg"
-            />
+    <section className="profile-container flex">
+      <div className="">
+        <Card
+          title="Profile Info"
+          className="">
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3">
+              <img
+                onClick={() => {
+                  if (inputRef.current) {
+                    inputRef.current.click()
+                  }
+                }}
+                src={`http://localhost:8081/uploads/${user.profilePictureName}`}
+                alt="Foto de perfil"
+                style={{ width: '150px', height: '150px', borderRadius: '50%' }}
+              />
+              <input
+                style={{ display: 'none' }}
+                ref={inputRef}
+                onChange={async (e) => {
+                  if (e.target.files && e.target.files[0]) {
+                    const formData = new FormData()
+                    formData.append('file', e.target.files[0])
+                    await uploadImage(formData, user.id)
+                    window.location.reload()
+                  }
+                }}
+                type="file"
+                accept="image/png, image/gif, image/jpeg"
+              />
+              <h2 className="text-5xl md:text-5xl px-10 gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
+                <p>Welcome back</p>
+                {user.name?.toUpperCase()}
+              </h2>
+            </div>
+            <RoutineCounters className="flex-col w-full lg:w-1/2" />
           </div>
-          <div className="div2">2</div>
-        </div>
-      </Card>
-
-      <Card
-        title="Profile Info"
-        className="profile-container__form">
-        <EditUserForm user={user} />
-      </Card>
-
-      <Card
-        title="Titulo"
-        className="profile-container__chart2 flex items-center justify-center">
-        <RoutinesTable />
-      </Card>
+        </Card>
+      </div>
+      <div className="flex flex-col lg:flex-row gap-2 pb-2">
+        <Card title="Profile Info">
+          <EditUserForm user={user} />
+        </Card>
+        <Card
+          title="Titulo"
+          className="flex items-center justify-center">
+          <RoutinesTable />
+        </Card>
+      </div>
     </section>
   )
 }
