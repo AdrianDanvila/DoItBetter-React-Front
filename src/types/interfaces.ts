@@ -25,17 +25,25 @@ export interface Routine {
   routinePicturePath?: string
   routinePictureName?: string
   exercises?: Exercise[]
+  comments?: Comment[]
   record?: []
   published?: boolean
   user_id: number
   user_name: null
 }
 
+export interface Comment {
+  id: number
+  content: string
+  user_id: number
+  user_name: string
+}
+
 export interface Exercise {
   id: number
   name: string
-  photo: string
   description: string
+  exercise: { id: number; name: string; photo: string; description: string }
   sets: number
   weight: number
   reps: number

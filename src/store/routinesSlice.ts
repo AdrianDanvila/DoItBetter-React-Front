@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { uploaRoutinedImage } from '@/api/services'
+import { addComment, uploaRoutinedImage } from '@/api/services'
 // eslint-disable-next-line no-duplicate-imports
 import {
   addRoutineExercise,
@@ -13,7 +13,6 @@ import {
   getUserRoutines,
   toggleRoutinePublished,
 } from '@/api/services'
-import { isUndefined } from '@/helpers'
 import { Exercise, Routine, RoutineExercise } from '@/types/interfaces'
 
 export interface RoutinesState {
@@ -171,27 +170,33 @@ export const togglePublishedRoutine = createAsyncThunk(
   },
 )
 
-const initialState: RoutinesState = {
-  ownRoutines: [
-    {
-      id: 1,
-      name: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      description: 'c',
-      exercises: [
-        {
-          id: 1,
-          name: 'aa',
-          photo: 'a',
-          description: 'aa',
-          sets: 0,
-          weight: 0,
-          reps: 0,
-        },
-      ],
-      user_id: 0,
-      user_name: null,
+export const addCommentAction = createAsyncThunk(
+  'routine/addCommentAction',
+  async (
+    requestData: {
+      routineId: number
+      content: string
     },
-  ],
+    { rejectWithValue },
+  ) => {
+    try {
+      const response = await addComment(
+        requestData.routineId,
+        requestData.content,
+      )
+
+      //TODO extraer a su archivo
+
+      // Si no hay error, retornamos los datos como éxito
+      return { requestData, response } // Si es exitoso, devolvemos la respuesta
+    } catch (error: any) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+const initialState: RoutinesState = {
+  ownRoutines: [],
   published: [],
 }
 
@@ -243,6 +248,16 @@ const routinesSlice = createSlice({
 
       state.ownRoutines = filteredValues
     })
+    builder.addCase(uploadRoutineImageAction.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.data.id,
+      )
+
+      if (tempRoutine) {
+        tempRoutine.routinePictureName = action.payload.data.routinePictureName
+        tempRoutine.routinePicturePath = action.payload.data.routinePicturePath
+      }
+    })
     builder.addCase(getExercises.fulfilled, (state, action) => {
       const tempRoutine = state.ownRoutines.find(
         (x) => x.id === action.payload.routineId,
@@ -264,17 +279,6 @@ const routinesSlice = createSlice({
         if (!tempRoutine?.exercises) {
           tempRoutine.exercises = action.payload.response.data
         }
-      }
-    })
-
-    builder.addCase(uploadRoutineImageAction.fulfilled, (state, action) => {
-      const tempRoutine = state.ownRoutines.find(
-        (x) => x.id === action.payload.data.id,
-      )
-
-      if (tempRoutine) {
-        tempRoutine.routinePictureName = action.payload.data.routinePictureName
-        tempRoutine.routinePicturePath = action.payload.data.routinePicturePath
       }
     })
     builder.addCase(addExercise.fulfilled, (state, action) => {
@@ -305,6 +309,20 @@ const routinesSlice = createSlice({
     builder.addCase(getPublishedRoutines.fulfilled, (state, action) => {
       state.published = action.payload.data
       // Añadir la rutina creada
+    })
+    builder.addCase(addCommentAction.fulfilled, (state, action) => {
+      const tempRoutine = state.ownRoutines.find(
+        (x) => x.id === action.payload.requestData.routineId,
+      )
+      const tempRoutinePublished = state.published.find(
+        (x) => x.id === action.payload.requestData.routineId,
+      )
+      if (tempRoutinePublished) {
+        tempRoutinePublished.comments = action.payload.response.data.comments
+      }
+      if (tempRoutine) {
+        tempRoutine.comments = action.payload.response.data.comments
+      }
     })
   },
 })

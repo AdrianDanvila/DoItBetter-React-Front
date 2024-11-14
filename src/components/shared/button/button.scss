@@ -2,43 +2,41 @@
   width: 50px;
   height: 50px;
   padding: $space-xs $space-xs;
+  border-radius: 20px;
   margin: $space-3xs $space-2xs;
+}
 
-  &--danger {
-    @include setColorSeverity($danger);
-    height: 50px;
-    padding: $space-xs $space-2xs;
-    margin: $space-3xs $space-2xs;
-  }
+.button--danger {
+  @include setColorSeverity($danger);
+  height: 50px;
+  padding: $space-xs $space-2xs;
+  margin: $space-3xs $space-2xs;
+}
 
-  &--warning {
-    @include setColorSeverity($warning);
-    height: 50px;
-    padding: $space-xs $space-2xs;
-    border-radius: 50px;
-    margin: $space-3xs $space-2xs;
-  }
+.button--warning {
+  @include setColorSeverity($warning);
+  height: 50px;
+  padding: $space-xs $space-2xs;
+  margin: $space-3xs $space-2xs;
+}
 
-  &--success {
-    @include setColorSeverity($success);
-    height: 50px;
-    padding: $space-xs $space-2xs;
-    border-radius: 50px;
-    margin: $space-3xs $space-2xs;
-  }
+.button--success {
+  @include setColorSeverity($success);
+  height: 50px;
+  padding: $space-xs $space-2xs;
+  margin: $space-3xs $space-2xs;
+}
 
-  &--info {
-    @include setColorSeverity($info);
-    height: 50px;
-    padding: $space-xs $space-2xs;
-    border-radius: 50px;
-    margin: $space-3xs $space-2xs;
-  }
+.button--info {
+  @include setColorSeverity($info);
+  height: 50px;
+  padding: $space-xs $space-2xs;
+  margin: $space-3xs $space-2xs;
+}
 
-  &--primary {
-    @include setColorSeverity($primary-9);
-    height: 50px;
-    padding: $space-xs $space-2xs;
-    margin: $space-3xs $space-2xs;
-  }
+.button--primary {
+  @include setColorSeverity($primary-9);
+  height: 50px;
+  padding: $space-xs $space-2xs;
+  margin: $space-3xs $space-2xs;
 }

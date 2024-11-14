@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { Rating } from 'primereact/rating'
 
 import foto3 from '../../../../../assets/foto3.png'
@@ -5,23 +7,36 @@ import foto3 from '../../../../../assets/foto3.png'
 import { ExerciseDetailsDialog } from '@/components/routineDetails/exerciseDetailsDialog/ExerciseDetailsDialog'
 import { DeletePopUp } from '@/components/shared/deletePopUp/DeletePopUp'
 import { useToast } from '@/components/shared/toast/useToast'
-import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { PATH } from '@/router/constants'
+import { useAppDispatch } from '@/helpers/hooks'
 import { deleteExercise } from '@/store/routinesSlice'
 import { Exercise, Routine } from '@/types/interfaces'
-
-export const ExercisesDataViewItem = (
-  exercise: Exercise,
-  routine: Routine,
-  index: number,
-) => {
+export interface ExercisesDataViewItemProps {
+  exercise2: Exercise
+  routine: Routine
+  index: number
+}
+export const ExercisesDataViewItem = ({
+  exercise2,
+  routine,
+  index,
+}: ExercisesDataViewItemProps) => {
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
-  const values = useAppSelector((state) => state)
-
+  const { t } = useTranslation()
+  const path = useParams()
+  const routineId = Number.parseInt(path.id || '0')
+  const exercise = exercise2.exercise || exercise2
   const deleteItem = async () => {
     const actionResult = await dispatch(
-      deleteExercise({ routineId: routine.id, exerciseData: exercise }),
+      deleteExercise({
+        routineId: routineId,
+        exerciseData: {
+          id: exercise.id,
+          sets: 0,
+          weight: 0,
+          reps: 0,
+        },
+      }),
     )
 
     if (deleteExercise.fulfilled.match(actionResult)) {
@@ -30,6 +45,11 @@ export const ExercisesDataViewItem = (
       showToast('error', '', '')
     }
   }
+  const sessioUser = sessionStorage.getItem('userInfo')
+  const user = sessioUser
+    ? JSON.parse(sessionStorage.getItem('userInfo') || '')
+    : ''
+
   return (
     <div
       key={index}
@@ -40,20 +60,13 @@ export const ExercisesDataViewItem = (
       />
       <div className="flex flex-col sm:flex-row justify-between items-center xl:items-start flex-1 gap-4">
         <div className="flex flex-col items-center sm:items-start gap-3 w-9/12">
-          <div className="text-2xl font-bold text-900">{exercise.name}</div>
-          <div className="font-bold text-900">{exercise.description}</div>
+          <div className="text-2xl font-bold text-900">{t(exercise.name)}</div>
+          <div className="font-bold text-900">{t(exercise.description)}</div>
           <Rating
             value={2}
             readOnly
             cancel={false}
           />
-
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-2">
-              <i className="pi pi-tag"></i>
-              <span className="font-semibold">{exercise.name}</span>
-            </span>
-          </div>
         </div>
 
         <div className="flex sm:flex-col  sm:items-end  gap-3 sm:gap-2 w-full md:w-2/12">
@@ -61,13 +74,13 @@ export const ExercisesDataViewItem = (
             Actions
           </span>
           <div className="flex ">
-            {!routine.published || routine.user_id === values.user.user.id ? (
+            {!routine.published || routine.user_id === user.id ? (
               <DeletePopUp onAccept={deleteItem} />
             ) : (
               <></>
             )}
             <ExerciseDetailsDialog
-              exercise={exercise as Exercise}
+              exercise={exercise as unknown as Exercise}
               routine={routine}
             />
           </div>

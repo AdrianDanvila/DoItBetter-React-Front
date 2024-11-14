@@ -9,75 +9,44 @@ import './profile.scss'
 import { uploadImage } from '@/api/services'
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
-import { RoutineCounters } from '@/components/shared/routineCounters/routineCounters'
-import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { getUserInfoAction } from '@/store/userSlice'
+import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
+import { useAppSelector } from '@/helpers/hooks'
 
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
   const user = useAppSelector((state) => state.user.user)
+  const routines = useAppSelector((state) => state.routines.ownRoutines)
   const inputRef = useRef<any>()
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getUserInfoAction())
 
+  useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement)
-    const textColor = documentStyle.getPropertyValue('--text-color')
-    const textColorSecondary = '#000000'
-    const surfaceBorder = documentStyle.getPropertyValue('--surface-border')
     const data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Published routines', 'Private Routines'],
       datasets: [
         {
-          label: 'First Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          borderColor: documentStyle.getPropertyValue('--blue-500'),
-          tension: 0.4,
-        },
-        {
-          label: 'Second Dataset',
-          data: [28, 48, 40, 19, 86, 27, 100],
-          fill: false,
-          borderColor: documentStyle.getPropertyValue('--pink-500'),
-          tension: 0.4,
+          data: [
+            routines.filter((routine) => routine.published).length,
+            routines.filter((routine) => !routine.published).length,
+          ],
+          backgroundColor: [
+            documentStyle.getPropertyValue('--blue-500'),
+            documentStyle.getPropertyValue('--yellow-500'),
+          ],
+          hoverBackgroundColor: [
+            documentStyle.getPropertyValue('--blue-400'),
+            documentStyle.getPropertyValue('--yellow-400'),
+          ],
         },
       ],
     }
     const options = {
-      maintainAspectRatio: false,
-      aspectRatio: 0.6,
-      plugins: {
-        legend: {
-          labels: {
-            color: textColor,
-          },
-        },
-      },
-      scales: {
-        x: {
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-          },
-        },
-        y: {
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-          },
-        },
-      },
+      cutout: '60%',
     }
 
     setChartData(data)
     setChartOptions(options)
-  }, [dispatch])
+  }, [])
 
   return (
     <section className="profile-container flex">
@@ -128,6 +97,16 @@ export const Profile = () => {
           title="Titulo"
           className="flex items-center justify-center">
           <RoutinesTable />
+        </Card>
+        <Card
+          title="Titulo"
+          className="flex items-center justify-center">
+          <Chart
+            type="doughnut"
+            data={chartData}
+            options={chartOptions}
+            className="w-full md:w-30rem"
+          />
         </Card>
       </div>
     </section>

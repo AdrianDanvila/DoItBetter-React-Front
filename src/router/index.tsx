@@ -12,6 +12,7 @@ import { PublicLayout } from '../layouts/publicLayout/PublicLayout.tsx'
 import { ROUTE_PATH } from './constants.ts'
 
 import { Auth } from '@/pages/auth/Auth.tsx'
+import { Execises } from '@/pages/exercises/Execises.tsx'
 import { Main } from '@/pages/main/Main.tsx'
 import { Profile } from '@/pages/profile/Profile.tsx'
 import { RoutinesDetails } from '@/pages/routineDetails/RoutineDetails.tsx'
@@ -44,6 +45,10 @@ export const getRouter = () =>
           <Route
             path={ROUTE_PATH.routines}
             Component={Routines}
+          />
+          <Route
+            path={ROUTE_PATH.exercises}
+            Component={Execises}
           />
           <Route
             path={

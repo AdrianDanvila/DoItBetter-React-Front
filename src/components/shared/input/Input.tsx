@@ -54,7 +54,7 @@ export const Input = ({
             <option
               key={key}
               value={option.value}>
-              {option.label}
+              {t(option.label)}
             </option>
           ))}
       </Field>

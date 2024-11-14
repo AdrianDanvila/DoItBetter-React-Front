@@ -14,8 +14,9 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     placeHolder: 'auth.form.name.placeholder',
     className: 'w-full',
     options: [
-      { value: 1, label: 'Squat' },
-      { value: 2, label: 'Curl' },
+      { value: 1, label: 'exercises.squat.name' },
+      { value: 2, label: 'exercises.biceps_curl.name' },
+      { value: 3, label: 'exercises.benchpress.name' },
     ],
     inputType: InputType.Text,
     fieldTag: FieldTag.Select,
@@ -60,9 +61,14 @@ export const VALID_EXERCISE_SCHEMA = Yup.object().shape({
 export const INITIAL_VALUES: Exercise = {
   name: '',
   description: '',
-  id: 1,
-  photo: '',
+  exercise: {
+    id: 0,
+    name: '',
+    photo: '',
+    description: '',
+  },
   sets: 0,
   weight: 0,
   reps: 0,
+  id: 0,
 }

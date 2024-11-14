@@ -14,7 +14,6 @@ import { deleteRoutine } from '@/store/routinesSlice'
 
 export const RoutineDataViewItem = (item: any) => {
   const user_id = useAppSelector((state) => state.user.user.id)
-
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const { showToast } = useToast()

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { Card } from '@/components/shared/card/Card'
-import { RoutineCounters } from '@/components/shared/routineCounters/routineCounters'
+import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
 import { RoutinesDataview } from '@/components/shared/routinesDataView/RoutineDataView'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { getPublishedRoutines } from '@/store/routinesSlice'

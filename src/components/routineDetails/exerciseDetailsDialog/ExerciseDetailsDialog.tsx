@@ -10,7 +10,6 @@ import { Dialog } from '@/components/shared/dialog/Dialog'
 import { Form } from '@/components/shared/form/Form'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { PATH } from '@/router/constants'
 import { addExercise } from '@/store/routinesSlice'
 import { Exercise, Routine } from '@/types/interfaces'
 
@@ -34,7 +33,7 @@ export const ExerciseDetailsDialog = ({
       addExercise({
         routineId: routine.id,
         exerciseData: {
-          id: exercise.id,
+          id: exercise.exercise.id,
           sets: e.sets,
           reps: e.reps,
           weight: e.weight,

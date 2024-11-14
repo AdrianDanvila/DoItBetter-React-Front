@@ -104,6 +104,18 @@
       }
     },
     "routines": {
+      "sort": {
+        "name": "Sort by name",
+        "none": "Sort by none"
+      },
+      "find": {
+        "name": "Find by name",
+        "userName": "Find by User name"
+      },
+      "switch": {
+        "publish": "publish",
+        "unpublish": "unpublish"
+      },
       "table": {
         "title": "Your routines",
         "headers": {
@@ -111,6 +123,24 @@
           "description": "Description",
           "date_created": "Date of creation",
           "actions": "Actions"
+        }
+      },
+      "details": {
+        "title": "Details",
+        "comments": {
+          "title": "Comments"
+        }
+      },
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Jhon snow",
+          "error_messages": {}
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "New Description",
+          "error_messages": {}
         }
       }
     }
@@ -168,6 +198,20 @@
     "reset": "Reset",
     "error_messages": {
       "required": "Required"
+    }
+  },
+  "exercises": {
+    "squat": {
+      "name": "Squat",
+      "description": "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up. During the descent, the hip and knee joints flex while the ankle joint dorsiflexes; conversely the hip and knee joints extend and the ankle joint plantarflexes when standing up."
+    },
+    "biceps_curl": {
+      "name": "Biceps curl",
+      "description": "Hold the barbell with both hands facing up so the wrists, elbows, and shoulders are in a straight line about shoulder-width apart. Lift the barbell toward the shoulders while bending the elbows and keeping them next to the middle of the body. Slowly lower the weight to return to the starting position."
+    },
+    "benchpress": {
+      "name": "Bench press",
+      "description": "It involves lying on a bench and pressing weight upward using either a barbell or a pair of dumbbells. During a bench press, you lower the weight down to chest level and then press upwards while extending your arms."
     }
   }
 }

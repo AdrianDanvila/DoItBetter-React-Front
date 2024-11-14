@@ -4,6 +4,7 @@ export const API_BASE_URL = {
   AUTH: '/auth',
   USER: '/user',
   ROUTINE: '/routine',
+  EXERCISE: '/exercise',
 }
 
 export const API_URL = {

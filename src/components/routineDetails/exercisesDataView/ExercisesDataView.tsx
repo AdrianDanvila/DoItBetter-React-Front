@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { DataView } from 'primereact/dataview'
 import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown'
@@ -28,14 +29,14 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
   const navigate = useNavigate()
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
-
+  const { t } = useTranslation()
   const [sortKey, setSortKey] = useState('')
   const [sortOrder, setSortOrder] = useState<0 | 1 | -1 | null | undefined>()
   const [sortField, setSortField] = useState('')
 
   const sortOptions = [
-    { label: 'sort by name', value: 'name' },
-    { label: 'sort by none', value: 'none' },
+    { label: t('main.routines.sort.name'), value: 'name' },
+    { label: t('main.routines.sort.none'), value: 'none' },
   ]
   const onSortChange = (event: DropdownChangeEvent) => {
     const value = event.value
@@ -57,21 +58,6 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
   const clickCopyButton = async () =>
     await copyRoutineById(routine.id).then(() => showToast('success', '', ''))
 
-  const listTemplate = (
-    items: any[],
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    _layout?: 'list' | 'grid' | (string & Record<string, unknown>) | undefined,
-  ) => {
-    if (!items || items.length === 0) return undefined
-
-    const list = items.map((item, index) =>
-      ExercisesDataViewItem(item, routine, index),
-    )
-
-    return (<div className="grid grid-nogutter">{list}</div>) as unknown as
-      | ReactNode[]
-      | undefined
-  }
   const cols = [
     { field: 'name', header: 'Name' },
     { field: 'description', header: 'description' },
@@ -79,19 +65,56 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
     { field: 'sets', header: 'sets' },
     { field: 'weight', header: 'weight' },
   ]
+
   const exportColumns = cols.map((col) => ({
     title: col.header,
     dataKey: col.field,
   }))
+
   const exportPdf = () => {
     import('jspdf').then((jsPDF) => {
       import('jspdf-autotable').then(() => {
         const doc = new jsPDF.default('p', 'px') as any
-
-        doc.autoTable(exportColumns, routine.exercises)
+        const exercises: any[] = []
+        // eslint-disable-next-line no-confusing-arrow
+        routine.exercises?.map((exercise) => {
+          exercises.push({
+            name: exercise.exercise
+              ? t(exercise.exercise.name)
+              : t(exercise.name),
+            description: exercise.exercise
+              ? t(exercise.exercise.description)
+              : t(exercise.description),
+            sets: exercise.sets,
+            reps: exercise.reps,
+            weight: exercise.weight,
+          })
+        })
+        doc.autoTable(exportColumns, exercises)
         doc.save(`${routine.name}.pdf`)
       })
     })
+  }
+
+  const listTemplate = (
+    items: any[],
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _layout?: 'list' | 'grid' | (string & Record<string, unknown>) | undefined,
+  ) => {
+    if (!items || items.length === 0) return undefined
+
+    const list = items.map((item, index) => (
+      <ExercisesDataViewItem
+        key={index}
+        exercise2={item}
+        routine={routine}
+        index={index}
+      />
+    ))
+
+    return (<div className="grid grid-nogutter">{list}</div>) as unknown as
+      | ReactNode[]
+      | undefined
   }
 
   return (
@@ -126,7 +149,9 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
             <>
               <div className="mx-2 flex flex-col items-center gap-1 md:flex-row">
                 <span className="mx-2">
-                  {routine.published ? 'unpublishes' : 'publishes'}
+                  {routine.published
+                    ? t('main.routines.switch.unpublish')
+                    : t('main.routines.switch.publish')}
                 </span>
                 <InputSwitch
                   checked={routine.published as boolean}
@@ -145,6 +170,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
           )
         }
       />
+
       {routine?.exercises?.length ? (
         <DataView
           sortField={sortField}
@@ -154,8 +180,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
           paginatorClassName="w-full px-0"
           paginator
           rows={5}
-          rowsPerPageOptions={[5, 10, 25, 50]}
-        />
+          rowsPerPageOptions={[5, 10, 25, 50]}></DataView>
       ) : (
         <RoutineDataViewEmpty />
       )}

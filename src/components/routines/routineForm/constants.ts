@@ -10,16 +10,16 @@ import { Routine } from '@/types/interfaces'
 export const ROUTINE_FORM_INPUTS: InputProps[] = [
   {
     id: 'name',
-    field: 'auth.form.name.label',
-    placeHolder: 'auth.form.name.placeholder',
+    field: 'main.routines.form.name.label',
+    placeHolder: 'main.routines.form.name.label',
     className: '',
     inputType: InputType.Text,
     fieldTag: FieldTag.Input,
   },
   {
     id: 'description',
-    field: 'auth.form.name.label',
-    placeHolder: 'auth.form.name.placeholder',
+    field: 'main.routines.form.description.label',
+    placeHolder: 'main.routines.form.description.label',
     className: '',
     inputType: InputType.Text,
     fieldTag: FieldTag.Input,

@@ -236,3 +236,15 @@ export const apiErrorHandler = (error: number) => {
       break
   }
 }
+
+export const addComment = (routineId: number, content: string) =>
+  axios
+    .post(`${API_BASE_URL.ROUTINE}/comment/${routineId}`, content)
+    .then((response) => response.data)
+    .catch((error) => error.data)
+
+export const getExercises = async () =>
+  await axios
+    .get(`${API_BASE_URL.EXERCISE}`)
+    .then((response) => response.data.data)
+    .catch((error) => error.data)

@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react'
-import { Button as PrimeButton } from 'primereact/button'
 
 import { Button as ButtonShad } from '@components/ui/button'
 
@@ -21,7 +20,6 @@ export const Button = ({
     ref={ref}
     size="lg"
     type={type as 'submit' | 'reset' | 'button' | undefined}
-    icon={icon}
     className={className || `button button--${severity}`}
     onClick={onClick}>
     {label}

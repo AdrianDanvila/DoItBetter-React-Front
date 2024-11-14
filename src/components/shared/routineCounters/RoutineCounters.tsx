@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { Card } from '../card/Card'
 
 import { useAppSelector } from '@/helpers/hooks'
-
-export const RoutineCounters = ({ className }) => {
+export interface RoutineCountersProps {
+  className: string
+}
+export const RoutineCounters = ({ className }: RoutineCountersProps) => {
   const values = useAppSelector((state) => state.routines)
   const { t } = useTranslation()
   const publisherRoutinesCount = values.ownRoutines.filter(

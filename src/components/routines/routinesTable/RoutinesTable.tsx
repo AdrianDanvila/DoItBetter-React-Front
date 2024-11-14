@@ -51,7 +51,7 @@ export const RoutinesTable = () => {
   return (
     <>
       <Toolbar
-        className="p-0 m-0"
+        className="p-0 m-0 bg-transparent"
         end={
           <>
             <CreateRoutineDialog />

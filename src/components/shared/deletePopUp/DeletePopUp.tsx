@@ -16,8 +16,8 @@ export const DeletePopUp = ({ onAccept, onReject }: DeletePopUpProps) => {
         message="Do you want to delete this record?"
         icon="pi pi-info-circle"
         defaultFocus="reject"
-        acceptClassName="button--danger scale-90 "
-        rejectClassName="button--success scale-90"
+        acceptClassName="button button--danger scale-90 "
+        rejectClassName="button button--success scale-90"
         acceptIcon={<CheckIcon />}
         rejectIcon={<Cross2Icon />}
         visible={isVisible}
@@ -31,7 +31,7 @@ export const DeletePopUp = ({ onAccept, onReject }: DeletePopUpProps) => {
         ref={buttonRef}
         type="button"
         icon={<TrashIcon className="icon" />}
-        className="button--danger"
+        className="button button--danger"
         onClick={() => {
           setIsVisible(true)
         }}

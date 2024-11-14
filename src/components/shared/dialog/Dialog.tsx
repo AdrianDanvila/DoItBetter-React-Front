@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 import { Dialog as PrimeDialog } from 'primereact/dialog'
 
 import { Button } from '../button/Button'
-import { ButtonSeverity, ButtonType } from '../button/types'
+import { ButtonSeverity } from '../button/types'
 
 import { DialogProps } from './types'
 

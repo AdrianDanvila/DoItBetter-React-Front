@@ -24,7 +24,7 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
       addExercise({
         routineId: routine.id,
         exerciseData: {
-          id: e.id,
+          id: e.exercise.id,
           sets: e.sets,
           reps: e.reps,
           weight: e.weight,

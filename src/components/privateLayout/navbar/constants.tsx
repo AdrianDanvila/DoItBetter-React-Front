@@ -1,4 +1,9 @@
-import { HandIcon, HomeIcon, PersonIcon } from '@radix-ui/react-icons'
+import {
+  HandIcon,
+  HomeIcon,
+  PersonIcon,
+  QuestionMarkIcon,
+} from '@radix-ui/react-icons'
 
 import { LinkData } from '@/components/shared/navbar/types'
 
@@ -22,5 +27,12 @@ export const NAVBAR_LINKS: LinkData[] = [
     icon: <PersonIcon className="navbar__section__link-container__icon" />,
     href: '/profile',
     text: 'main.navigation.profile',
+  },
+  {
+    icon: (
+      <QuestionMarkIcon className="navbar__section__link-container__icon" />
+    ),
+    href: '/exercises',
+    text: 'Exercises',
   },
 ]

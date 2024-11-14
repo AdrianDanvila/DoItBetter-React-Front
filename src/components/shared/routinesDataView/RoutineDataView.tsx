@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DataView } from 'primereact/dataview'
 import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown'
 import { Toolbar } from 'primereact/toolbar'
@@ -26,10 +27,11 @@ export const RoutinesDataview = ({
   const searchRef = useRef<HTMLInputElement>(null)
   const [sortOrder, setSortOrder] = useState<0 | 1 | -1 | null | undefined>()
   const [sortField, setSortField] = useState('')
+  const { t } = useTranslation()
 
   const sortOptions = [
-    { label: 'sort by name', value: 'name' },
-    { label: 'sort by none', value: 'none' },
+    { label: t('main.routines.sort.name'), value: 'name' },
+    { label: t('main.routines.sort.none'), value: 'none' },
   ]
   const onSortChange = (event: DropdownChangeEvent) => {
     const value = event.value
@@ -85,7 +87,9 @@ export const RoutinesDataview = ({
             <input
               ref={searchRef}
               placeholder={
-                areValuesPublished ? 'Find by user name' : 'find by name'
+                areValuesPublished
+                  ? t('main.routines.find.userName')
+                  : t('main.routines.find.name')
               }
               onChange={onSearchChange}
               className=" border-2 px-2 border-gray-400 p-dropdown p-component p-inputwrapper"

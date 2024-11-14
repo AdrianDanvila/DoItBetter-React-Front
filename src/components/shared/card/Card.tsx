@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Card as PrimeCard } from 'primereact/card'
 
 import {
   Card as ShadCard,
