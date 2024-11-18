@@ -4,71 +4,71 @@
     "header": {
       "introduction": "Introducción",
       "key_features": "Características clave",
-      "what_users_says": "lo que dicen los usuarios",
+      "what_users_says": "Qué dicen los usuarios",
       "how_it_works": "Cómo funciona",
       "login": "Iniciar sesión"
     },
     "introduction": {
-      "title": "Simplifica tus Rutinas",
-      "description": "DoItBetter te ayudará a gestionar tus rutinas de manera más efectiva. Crea algunos hábitos y más",
+      "title": "Simplifica tus rutinas",
+      "description": "DoItBetter te ayudará a gestionar tus rutinas de manera más efectiva. Crea hábitos y mucho más",
       "button": "Comenzar"
     },
     "key_features": {
       "title": "Características clave",
       "description": {
         "routines_creation": {
-          "title": "Crear Rutinas",
-          "description": "Configura y personaliza tus rutinas fácilmente",
+          "title": "Crear rutinas",
+          "description": "Configura y personaliza fácilmente tus rutinas",
           "alt": "Tarjeta de rutina"
         },
         "routine_manage": {
-          "title": "Gestionar Rutinas",
+          "title": "Gestionar rutinas",
           "description": "Gestiona tus rutinas según tu disponibilidad",
           "alt": "Tarjeta de gestión de rutinas"
         },
         "learn_from_others": {
-          "title": "Publica tus Rutinas",
+          "title": "Publica tus rutinas",
           "description": "Comparte tus rutinas con otros",
-          "alt": "Tarjeta de compartir"
+          "alt": "Tarjeta para compartir"
         }
       },
       "button": "Comenzar"
     },
     "what_users_says": {
-      "title": "Que dicen nuestros usuarios",
+      "title": "Qué dicen los usuarios",
       "user1": {
         "name": "Sarah Johnson",
-        "role": "Gerente de Marketing",
+        "role": "Gerente de marketing",
         "content": "DoItBetter ha transformado cómo gestiono mis rutinas. ¡Es intuitivo y nos ahorra horas cada semana!"
       },
       "user2": {
         "name": "David Lee",
-        "role": "Entrenador Personal",
-        "content": "Como freelancer, DoItBetter me ayuda a mantenerme organizado y profesional. A mis clientes les encanta lo fácil que es usarlo."
+        "role": "Entrenador personal",
+        "content": "Como autónomo, DoItBetter me ayuda a mantenerme organizado y profesional. A mis clientes les encanta lo fácil que es usarlo."
       },
       "user3": {
         "name": "Emily Chen",
-        "role": "Fundadora de Startup",
+        "role": "Fundadora de una startup",
         "content": "DoItBetter me ha ayudado a mejorar mi organización en el gimnasio y me ha ahorrado mucho tiempo."
       },
       "user4": {
         "name": "Michael Brown",
-        "role": "Ejecutivo de Ventas",
-        "content": "He visto un aumento del 15% en la eficiencia de mis rutinas desde que uso DoItBetter. Es un cambio de juego para los profesionales del gimnasio."
+        "role": "Ejecutivo de ventas",
+        "content": "He visto un aumento del 15% en la eficiencia de mis rutinas desde que uso DoItBetter. Es un cambio total para los profesionales del gimnasio."
       }
     },
     "how_it_works": {
-      "title": "Como Funciona",
+      "title": "Cómo funciona",
       "step1": {
         "step": "Regístrate",
-        "description": "Crea tu cuenta gratuita en DoItBetter"
+        "description": "Crea tu cuenta gratuita de DoItBetter"
       },
       "step2": {
-        "step": "Establece Rutinas",
-        "description": "Define cuándo será tu primera rutina"
+        "step": "Configura rutinas",
+        "description": "Define tu primera rutina"
       },
       "step3": {
-        "step": "Añade ejercicios",
+        "step": "Agrega ejercicios",
         "description": "Añade algunos ejercicios a tus rutinas"
       },
       "step4": {
@@ -77,9 +77,9 @@
       }
     },
     "CTA": {
-      "title": "¿Listo para Simplificar tus Rutinas?",
+      "title": "¿Listo para simplificar tus rutinas?",
       "description": "Únete a miles de profesionales que confían en DoItBetter para una gestión eficiente de rutinas.",
-      "button": "Comienza Gratis"
+      "button": "Comienza gratis"
     }
   },
   "main": {
@@ -101,9 +101,25 @@
         "title": "Número de rutinas publicadas",
         "content": "rutina publicada",
         "content_plural": "rutinas publicadas"
+      },
+      "public_routines": {
+        "title": "Rutinas públicas"
       }
     },
     "routines": {
+      "action": "Acciones",
+      "sort": {
+        "name": "Ordenar por nombre",
+        "none": "Sin ordenar"
+      },
+      "find": {
+        "name": "Buscar por nombre",
+        "userName": "Buscar por nombre de usuario"
+      },
+      "switch": {
+        "publish": "Publica tu rutina",
+        "unpublish": "Despublica tus rutinas"
+      },
       "table": {
         "title": "Tus rutinas",
         "headers": {
@@ -112,6 +128,39 @@
           "date_created": "Fecha de creación",
           "actions": "Acciones"
         }
+      },
+      "details": {
+        "title": "Detalles",
+        "comments": {
+          "title": "Comentarios"
+        }
+      },
+      "form": {
+        "title": "Crear rutina",
+        "name": {
+          "label": "Nombre",
+          "placeholder": "John Snow",
+          "error_messages": {}
+        },
+        "description": {
+          "label": "Descripción",
+          "placeholder": "Nueva descripción",
+          "error_messages": {}
+        }
+      }
+    },
+    "profile": {
+      "banner": {
+        "title": "Información clave del perfil",
+        "greeting": "Bienvenido de nuevo"
+      },
+      "edit_form": {
+        "title": "Información personal del perfil"
+      },
+      "chart": {
+        "title": "Gráfico de información de rutinas",
+        "value_1": "Rutinas publicadas",
+        "value_2": "Rutinas privadas"
       }
     }
   },
@@ -122,12 +171,12 @@
     },
     "register": {
       "title": "Bienvenido de nuevo",
-      "register_link": "¿Ya tienes una cuenta? Continúa en tu camino <a href=\"/login\">aquí</a>"
+      "register_link": "¿Ya tienes una cuenta? Continúa tu camino <a href=\"/login\">aquí</a>"
     },
     "form": {
       "name": {
         "label": "Nombre",
-        "placeholder": "Jhon Snow",
+        "placeholder": "John Snow",
         "error_messages": {}
       },
       "password": {
@@ -158,16 +207,35 @@
         "label": "Correo electrónico",
         "placeholder": "test@gmail.com",
         "error_messages": {
-          "format": "El formato del correo electrónico que has ingresado es inválido."
+          "format": "El formato del correo electrónico que ingresaste es inválido."
         }
       }
     }
   },
   "form": {
     "submit": "Enviar",
-    "reset": "Restablecer",
+    "reset": "Reiniciar",
     "error_messages": {
       "required": "Requerido"
+    }
+  },
+  "delete_pop": {
+    "message": "¿Deseas eliminar este registro?",
+    "confirm_button": "Sí",
+    "negate_button": "No"
+  },
+  "exercises": {
+    "squat": {
+      "name": "Sentadilla",
+      "description": "La sentadilla es un ejercicio de fuerza en el que el practicante baja sus caderas desde una posición de pie y luego vuelve a levantarlas. Durante el descenso, las articulaciones de la cadera y la rodilla se flexionan mientras que el tobillo se dorsiflexiona; a la inversa, las articulaciones de la cadera y la rodilla se extienden y el tobillo realiza una flexión plantar al levantarse."
+    },
+    "biceps_curl": {
+      "name": "Curl de bíceps",
+      "description": "Sujeta la barra con ambas manos mirando hacia arriba, de modo que las muñecas, los codos y los hombros estén alineados en línea recta aproximadamente al ancho de los hombros. Levanta la barra hacia los hombros mientras doblas los codos y manteniéndolos junto al centro del cuerpo. Baja el peso lentamente para regresar a la posición inicial."
+    },
+    "benchpress": {
+      "name": "Press de banca",
+      "description": "Consiste en acostarse en un banco y levantar peso hacia arriba usando una barra o un par de mancuernas. Durante el press de banca, bajas el peso hasta el nivel del pecho y luego lo empujas hacia arriba extendiendo los brazos."
     }
   }
 }

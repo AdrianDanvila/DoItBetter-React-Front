@@ -1,0 +1,241 @@
+{
+  "home": {
+    "title": "Hallo Welt",
+    "header": {
+      "introduction": "Einführung",
+      "key_features": "Hauptfunktionen",
+      "what_users_says": "Was Benutzer sagen",
+      "how_it_works": "Wie es funktioniert",
+      "login": "Anmelden"
+    },
+    "introduction": {
+      "title": "Vereinfachen Sie Ihre Routinen",
+      "description": "DoItBetter hilft Ihnen, Ihre Routinen effektiver zu verwalten. Erstellen Sie Gewohnheiten und mehr",
+      "button": "Loslegen"
+    },
+    "key_features": {
+      "title": "Hauptfunktionen",
+      "description": {
+        "routines_creation": {
+          "title": "Routinen erstellen",
+          "description": "Erstellen und passen Sie Ihre Routinen ganz einfach an",
+          "alt": "Routinenkarte"
+        },
+        "routine_manage": {
+          "title": "Routinen verwalten",
+          "description": "Verwalten Sie Ihre Routinen entsprechend Ihrer Verfügbarkeit",
+          "alt": "Karte zur Verwaltung von Routinen"
+        },
+        "learn_from_others": {
+          "title": "Veröffentlichen Sie Ihre Routinen",
+          "description": "Teilen Sie Ihre Routinen mit anderen",
+          "alt": "Teilen-Karte"
+        }
+      },
+      "button": "Loslegen"
+    },
+    "what_users_says": {
+      "title": "Was Benutzer sagen",
+      "user1": {
+        "name": "Sarah Johnson",
+        "role": "Marketing-Managerin",
+        "content": "DoItBetter hat meine Routineverwaltung revolutioniert. Es ist intuitiv und spart uns jede Woche Stunden!"
+      },
+      "user2": {
+        "name": "David Lee",
+        "role": "Personal Trainer",
+        "content": "Als Freelancer hilft mir DoItBetter, organisiert und professionell zu bleiben. Meine Kunden lieben, wie einfach es zu benutzen ist."
+      },
+      "user3": {
+        "name": "Emily Chen",
+        "role": "Start-up-Gründerin",
+        "content": "DoItBetter hat mir geholfen, meine Organisation im Fitnessstudio zu verbessern und viel Zeit zu sparen."
+      },
+      "user4": {
+        "name": "Michael Brown",
+        "role": "Vertriebsleiter",
+        "content": "Ich habe eine 15%ige Effizienzsteigerung bei meinen Routinen festgestellt, seit ich DoItBetter nutze. Es ist ein Gamechanger für Fitnessprofis."
+      }
+    },
+    "how_it_works": {
+      "title": "Wie es funktioniert",
+      "step1": {
+        "step": "Registrieren",
+        "description": "Erstellen Sie Ihr kostenloses DoItBetter-Konto"
+      },
+      "step2": {
+        "step": "Routinen einrichten",
+        "description": "Definieren Sie Ihre erste Routine"
+      },
+      "step3": {
+        "step": "Übungen hinzufügen",
+        "description": "Fügen Sie Ihrer Routine Übungen hinzu"
+      },
+      "step4": {
+        "step": "Teilen Sie es",
+        "description": "Veröffentlichen Sie Ihre Routinen"
+      }
+    },
+    "CTA": {
+      "title": "Bereit, Ihre Routinen zu vereinfachen?",
+      "description": "Schließen Sie sich Tausenden von Fachleuten an, die DoItBetter für ein effizientes Routinenmanagement nutzen.",
+      "button": "Kostenlos starten"
+    }
+  },
+  "main": {
+    "header": {
+      "introduction": "Einführung"
+    },
+    "navigation": {
+      "home": "Startseite",
+      "routines": "Routinen",
+      "profile": "Profil"
+    },
+    "main_page": {
+      "number_routines": {
+        "title": "Anzahl der erstellten Routinen",
+        "content": "erstellte Routine",
+        "content_plural": "erstellte Routinen"
+      },
+      "number_published_routines": {
+        "title": "Anzahl der veröffentlichten Routinen",
+        "content": "veröffentlichte Routine",
+        "content_plural": "veröffentlichte Routinen"
+      },
+      "public_routines": {
+        "title": "Öffentliche Routinen"
+      }
+    },
+    "routines": {
+      "action": "Aktionen",
+      "sort": {
+        "name": "Nach Namen sortieren",
+        "none": "Keine Sortierung"
+      },
+      "find": {
+        "name": "Nach Namen suchen",
+        "userName": "Nach Benutzernamen suchen"
+      },
+      "switch": {
+        "publish": "Veröffentlichen Sie Ihre Routine",
+        "unpublish": "Heben Sie die Veröffentlichung Ihrer Routinen auf"
+      },
+      "table": {
+        "title": "Ihre Routinen",
+        "headers": {
+          "name": "Name",
+          "description": "Beschreibung",
+          "date_created": "Erstellungsdatum",
+          "actions": "Aktionen"
+        }
+      },
+      "details": {
+        "title": "Details",
+        "comments": {
+          "title": "Kommentare"
+        }
+      },
+      "form": {
+        "title": "Routine erstellen",
+        "name": {
+          "label": "Name",
+          "placeholder": "John Snow",
+          "error_messages": {}
+        },
+        "description": {
+          "label": "Beschreibung",
+          "placeholder": "Neue Beschreibung",
+          "error_messages": {}
+        }
+      }
+    },
+    "profile": {
+      "banner": {
+        "title": "Wichtige Profilinformationen",
+        "greeting": "Willkommen zurück"
+      },
+      "edit_form": {
+        "title": "Persönliche Profilinformationen"
+      },
+      "chart": {
+        "title": "Routineninfo-Diagramm",
+        "value_1": "Veröffentlichte Routinen",
+        "value_2": "Private Routinen"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "register_link": "Neu hier? Starten Sie Ihre Reise <a href=\"/register\">hier</a>"
+    },
+    "register": {
+      "title": "Willkommen zurück",
+      "register_link": "Bereits ein Konto? Fahren Sie <a href=\"/login\">hier</a> fort"
+    },
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "John Snow",
+        "error_messages": {}
+      },
+      "password": {
+        "label": "Passwort",
+        "placeholder": "1234567",
+        "error_messages": {
+          "minimun": "Das Passwort muss mindestens 12 Zeichen lang sein"
+        }
+      },
+      "age": {
+        "label": "Alter",
+        "placeholder": "18",
+        "error_messages": {
+          "minimun": "Das Mindestalter beträgt 18 Jahre"
+        }
+      },
+      "weight": {
+        "label": "Gewicht (kg)",
+        "placeholder": "18",
+        "error_messages": {}
+      },
+      "height": {
+        "label": "Größe",
+        "placeholder": "1234567",
+        "error_messages": {}
+      },
+      "mail": {
+        "label": "E-Mail",
+        "placeholder": "test@gmail.com",
+        "error_messages": {
+          "format": "Das eingegebene E-Mail-Format ist ungültig."
+        }
+      }
+    }
+  },
+  "form": {
+    "submit": "Senden",
+    "reset": "Zurücksetzen",
+    "error_messages": {
+      "required": "Erforderlich"
+    }
+  },
+  "delete_pop": {
+    "message": "Möchten Sie diesen Eintrag löschen?",
+    "confirm_button": "Ja",
+    "negate_button": "Nein"
+  },
+  "exercises": {
+    "squat": {
+      "name": "Kniebeuge",
+      "description": "Eine Kniebeuge ist eine Kraftübung, bei der die Hüften aus einer stehenden Position gesenkt und dann wieder angehoben werden. Beim Abstieg beugen sich Hüft- und Kniegelenke, während das Sprunggelenk eine Dorsalflexion ausführt; umgekehrt strecken sich Hüft- und Kniegelenke und das Sprunggelenk führt eine Plantarflexion beim Aufstehen aus."
+    },
+    "biceps_curl": {
+      "name": "Bizeps-Curl",
+      "description": "Halten Sie die Hantel mit beiden Händen nach oben, sodass Handgelenke, Ellbogen und Schultern in einer geraden Linie etwa schulterbreit auseinander liegen. Heben Sie die Hantel in Richtung Schultern, während Sie die Ellbogen beugen und nah am Körper halten. Senken Sie das Gewicht langsam, um in die Ausgangsposition zurückzukehren."
+    },
+    "benchpress": {
+      "name": "Bankdrücken",
+      "description": "Dabei liegt man auf einer Bank und drückt ein Gewicht mit einer Langhantel oder Kurzhanteln nach oben. Beim Bankdrücken wird das Gewicht auf Brusthöhe gesenkt und dann durch Strecken der Arme nach oben gedrückt."
+    }
+  }
+}

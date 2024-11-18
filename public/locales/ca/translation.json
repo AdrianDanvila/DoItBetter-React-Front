@@ -1,0 +1,241 @@
+{
+  "home": {
+    "title": "Hola món",
+    "header": {
+      "introduction": "Introducció",
+      "key_features": "Característiques principals",
+      "what_users_says": "Què diuen els usuaris",
+      "how_it_works": "Com funciona",
+      "login": "Inicia sessió"
+    },
+    "introduction": {
+      "title": "Simplifica les teves rutines",
+      "description": "DoItBetter t'ajudarà a gestionar les teves rutines de manera més efectiva. Crea hàbits i molt més",
+      "button": "Comença ara"
+    },
+    "key_features": {
+      "title": "Característiques principals",
+      "description": {
+        "routines_creation": {
+          "title": "Crea rutines",
+          "description": "Configura i personalitza les teves rutines fàcilment",
+          "alt": "Targeta de rutines"
+        },
+        "routine_manage": {
+          "title": "Gestiona rutines",
+          "description": "Gestiona les teves rutines segons la teva disponibilitat",
+          "alt": "Targeta de gestió de rutines"
+        },
+        "learn_from_others": {
+          "title": "Publica les teves rutines",
+          "description": "Comparteix les teves rutines amb altres persones",
+          "alt": "Targeta de compartir"
+        }
+      },
+      "button": "Comença ara"
+    },
+    "what_users_says": {
+      "title": "Què diuen els usuaris",
+      "user1": {
+        "name": "Sarah Johnson",
+        "role": "Gerent de màrqueting",
+        "content": "DoItBetter ha transformat com gestiono les meves rutines. És intuïtiu i ens estalvia hores cada setmana!"
+      },
+      "user2": {
+        "name": "David Lee",
+        "role": "Entrenador personal",
+        "content": "Com a autònom, DoItBetter m'ajuda a estar organitzat i professional. Als meus clients els encanta com és de fàcil d'utilitzar."
+      },
+      "user3": {
+        "name": "Emily Chen",
+        "role": "Fundadora de startup",
+        "content": "DoItBetter m'ha ajudat a millorar la meva organització al gimnàs i m'ha estalviat molt de temps."
+      },
+      "user4": {
+        "name": "Michael Brown",
+        "role": "Executiu de vendes",
+        "content": "He vist un augment del 15% en l'eficiència de les meves rutines des que faig servir DoItBetter. És un canvi de joc per als professionals del gimnàs."
+      }
+    },
+    "how_it_works": {
+      "title": "Com funciona",
+      "step1": {
+        "step": "Registra't",
+        "description": "Crea el teu compte gratuït a DoItBetter"
+      },
+      "step2": {
+        "step": "Configura rutines",
+        "description": "Defineix la teva primera rutina"
+      },
+      "step3": {
+        "step": "Afegeix exercicis",
+        "description": "Afegeix exercicis a les teves rutines"
+      },
+      "step4": {
+        "step": "Comparteix-ho",
+        "description": "Publica les teves rutines"
+      }
+    },
+    "CTA": {
+      "title": "Preparat per simplificar les teves rutines?",
+      "description": "Uneix-te a milers de professionals que confien en DoItBetter per gestionar rutines de manera eficient.",
+      "button": "Comença gratuïtament"
+    }
+  },
+  "main": {
+    "header": {
+      "introduction": "Introducció"
+    },
+    "navigation": {
+      "home": "Inici",
+      "routines": "Rutines",
+      "profile": "Perfil"
+    },
+    "main_page": {
+      "number_routines": {
+        "title": "Nombre de rutines creades",
+        "content": "rutina creada",
+        "content_plural": "rutines creades"
+      },
+      "number_published_routines": {
+        "title": "Nombre de rutines publicades",
+        "content": "rutina publicada",
+        "content_plural": "rutines publicades"
+      },
+      "public_routines": {
+        "title": "Rutines públiques"
+      }
+    },
+    "routines": {
+      "action": "Accions",
+      "sort": {
+        "name": "Ordena per nom",
+        "none": "Sense ordenació"
+      },
+      "find": {
+        "name": "Cerca per nom",
+        "userName": "Cerca pel nom d'usuari"
+      },
+      "switch": {
+        "publish": "Publica la teva rutina",
+        "unpublish": "Despublica les teves rutines"
+      },
+      "table": {
+        "title": "Les teves rutines",
+        "headers": {
+          "name": "Nom",
+          "description": "Descripció",
+          "date_created": "Data de creació",
+          "actions": "Accions"
+        }
+      },
+      "details": {
+        "title": "Detalls",
+        "comments": {
+          "title": "Comentaris"
+        }
+      },
+      "form": {
+        "title": "Crea una rutina",
+        "name": {
+          "label": "Nom",
+          "placeholder": "John Snow",
+          "error_messages": {}
+        },
+        "description": {
+          "label": "Descripció",
+          "placeholder": "Nova descripció",
+          "error_messages": {}
+        }
+      }
+    },
+    "profile": {
+      "banner": {
+        "title": "Informació clau del perfil",
+        "greeting": "Benvingut de nou"
+      },
+      "edit_form": {
+        "title": "Informació personal del perfil"
+      },
+      "chart": {
+        "title": "Gràfic d'informació sobre les rutines",
+        "value_1": "Rutines publicades",
+        "value_2": "Rutines privades"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Benvingut de nou",
+      "register_link": "Ets nou? Comença el teu viatge <a href=\"/register\">aquí</a>"
+    },
+    "register": {
+      "title": "Benvingut de nou",
+      "register_link": "Ja tens un compte? Continua el teu camí <a href=\"/login\">aquí</a>"
+    },
+    "form": {
+      "name": {
+        "label": "Nom",
+        "placeholder": "John Snow",
+        "error_messages": {}
+      },
+      "password": {
+        "label": "Contrasenya",
+        "placeholder": "1234567",
+        "error_messages": {
+          "minimun": "La contrasenya ha de tenir almenys 12 caràcters"
+        }
+      },
+      "age": {
+        "label": "Edat",
+        "placeholder": "18",
+        "error_messages": {
+          "minimun": "L'edat mínima és de 18 anys"
+        }
+      },
+      "weight": {
+        "label": "Pes (kg)",
+        "placeholder": "18",
+        "error_messages": {}
+      },
+      "height": {
+        "label": "Alçada",
+        "placeholder": "1234567",
+        "error_messages": {}
+      },
+      "mail": {
+        "label": "Correu electrònic",
+        "placeholder": "test@gmail.com",
+        "error_messages": {
+          "format": "El format del correu electrònic introduït no és vàlid."
+        }
+      }
+    }
+  },
+  "form": {
+    "submit": "Envia",
+    "reset": "Reinicia",
+    "error_messages": {
+      "required": "Obligatori"
+    }
+  },
+  "delete_pop": {
+    "message": "Vols eliminar aquest registre?",
+    "confirm_button": "Sí",
+    "negate_button": "No"
+  },
+  "exercises": {
+    "squat": {
+      "name": "Esquat",
+      "description": "L'esquat és un exercici de força en què es baixen els malucs des d'una posició dempeus i després es tornen a aixecar. Durant el descens, els malucs i els genolls es flexionen mentre el turmell fa una dorsiflexió; al contrari, els malucs i els genolls s'estenen i el turmell fa una flexió plantar quan es torna a aixecar."
+    },
+    "biceps_curl": {
+      "name": "Curl de bíceps",
+      "description": "Sostén la barra amb ambdues mans cap amunt de manera que els canells, els colzes i les espatlles estiguin en línia recta a l'amplada de les espatlles. Aixeca la barra cap a les espatlles mentre flexiones els colzes mantenint-los prop del cos. Baixa el pes lentament per tornar a la posició inicial."
+    },
+    "benchpress": {
+      "name": "Press de banca",
+      "description": "Es tracta de jeure sobre un banc i empènyer un pes amb una barra llarga o manuelles cap amunt. Al press de banca, el pes es baixa a l'altura del pit i després es torna a empènyer cap amunt estirant els braços."
+    }
+  }
+}
