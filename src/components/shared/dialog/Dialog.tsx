@@ -28,7 +28,7 @@ export const Dialog = ({
     <PrimeDialog
       closable={true}
       closeOnEscape={true}
-      header={header || 'create routine'}
+      header={header}
       visible={isVisible}
       onHide={() => {
         if (!isVisible) return

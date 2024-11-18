@@ -132,7 +132,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
               options={sortOptions}
               value={sortKey}
               optionLabel="label"
-              placeholder="Sort By none"
+              placeholder={t('main.routines.sort.none')}
               onChange={onSortChange}
               className="mx-5  border-2 border-gray-400"
             />
@@ -173,6 +173,7 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
 
       {routine?.exercises?.length ? (
         <DataView
+          className="flex flex-col justify-between py-0.5 max-h-[58vh]"
           sortField={sortField}
           sortOrder={sortOrder}
           value={routine.exercises}

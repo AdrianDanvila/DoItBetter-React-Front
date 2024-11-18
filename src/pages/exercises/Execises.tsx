@@ -23,7 +23,7 @@ export const Execises = () => {
     <section className=" flex flex-col lg:flex-row gap-5 px-10">
       {exercises?.map((exercise: Exercise) => (
         <Card
-          key={exercise.exercise.id}
+          key={exercise.id}
           title={exercise.name}>
           <img
             width={300}

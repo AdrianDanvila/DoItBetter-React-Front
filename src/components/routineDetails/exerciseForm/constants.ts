@@ -62,7 +62,7 @@ export const INITIAL_VALUES: Exercise = {
   name: '',
   description: '',
   exercise: {
-    id: 0,
+    id: 1,
     name: '',
     photo: '',
     description: '',
@@ -70,5 +70,5 @@ export const INITIAL_VALUES: Exercise = {
   sets: 0,
   weight: 0,
   reps: 0,
-  id: 0,
+  id: 1,
 }

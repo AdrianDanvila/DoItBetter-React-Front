@@ -7,7 +7,15 @@ export const LANGUAGES: DropdowntData[] = [
     value: 'es',
   },
   {
-    label: 'Enghlis',
+    label: 'English',
     value: 'en',
+  },
+  {
+    label: 'Deutsch',
+    value: 'de',
+  },
+  {
+    label: 'Catala',
+    value: 'ca',
   },
 ]

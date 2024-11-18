@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Rating } from 'primereact/rating'
 import { FileTextIcon } from '@radix-ui/react-icons'
@@ -17,6 +18,7 @@ export const RoutineDataViewItem = (item: any) => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const { showToast } = useToast()
+  const { t } = useTranslation()
 
   const showDetailsButtonClickHandler = () =>
     navigate(`${window.location.pathname}/${item?.id}`)
@@ -54,11 +56,11 @@ export const RoutineDataViewItem = (item: any) => {
             </span>
           </div>
         </div>
-        <div className="flex sm:flex-col  sm:items-end  gap-3 sm:gap-2 w-full md:w-2/12">
+        <div className="flex items-center sm:flex-col    gap-3 sm:gap-2 w-full md:w-2/12">
           <span className="text-2xl font-semibold text-center w-full">
-            Actions
+            {t('main.routines.action')}
           </span>
-          <div className="flex ">
+          <div className="flex items-center justify-center">
             {(item.published && item.user_id !== user_id) || (
               <DeletePopUp onAccept={deleteItem} />
             )}

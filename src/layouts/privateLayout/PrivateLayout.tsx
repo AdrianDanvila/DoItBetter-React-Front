@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { t } from 'i18next'
 import { ExitIcon } from '@radix-ui/react-icons'
 
 import './private-layout.scss'
@@ -24,6 +24,10 @@ export const PrivateLayout = () => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const user = useAppSelector((state) => state.user.user)
+  const { t } = useTranslation()
+  const path =
+    NAVBAR_LINKS.find((item) => item.href === window.location.pathname)?.text ||
+    'Dashboard'
   useEffect(() => {
     dispatch(initialize())
     dispatch(getRoutines())
@@ -70,11 +74,7 @@ export const PrivateLayout = () => {
               <SidebarTrigger className="sticky  bg-transparent " />
             </Header>
             <h2 className="text-5xl md:text-6xl px-10 gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
-              {t(
-                NAVBAR_LINKS.find(
-                  (item) => item.href === window.location.pathname,
-                )?.text || 'Dashboard',
-              )}
+              {t(path)}
             </h2>
             <Outlet />
           </section>

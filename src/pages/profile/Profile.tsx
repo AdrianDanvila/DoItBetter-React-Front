@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Chart } from 'primereact/chart'
 
 import { Card } from '../../components/shared/card/Card'
@@ -15,6 +16,7 @@ import { useAppSelector } from '@/helpers/hooks'
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
+  const { t } = useTranslation()
   const user = useAppSelector((state) => state.user.user)
   const routines = useAppSelector((state) => state.routines.ownRoutines)
   const inputRef = useRef<any>()
@@ -22,7 +24,10 @@ export const Profile = () => {
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement)
     const data = {
-      labels: ['Published routines', 'Private Routines'],
+      labels: [
+        t('main.profile.chart.value_1'),
+        t('main.profile.chart.value_2'),
+      ],
       datasets: [
         {
           data: [
@@ -46,17 +51,18 @@ export const Profile = () => {
 
     setChartData(data)
     setChartOptions(options)
-  }, [])
+  }, [routines, t])
 
   return (
     <section className="profile-container flex">
       <div className="">
         <Card
-          title="Profile Info"
+          title={t('main.profile.banner.title')}
           className="">
           <div className="flex flex-col lg:flex-row justify-between">
-            <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3">
+            <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3 ">
               <img
+                className="hover:cursor-pointer hover:scale-105 transition-all"
                 onClick={() => {
                   if (inputRef.current) {
                     inputRef.current.click()
@@ -81,7 +87,7 @@ export const Profile = () => {
                 accept="image/png, image/gif, image/jpeg"
               />
               <h2 className="text-5xl md:text-5xl px-10 gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
-                <p>Welcome back</p>
+                <p>{t('main.profile.banner.greeting')}</p>
                 {user.name?.toUpperCase()}
               </h2>
             </div>
@@ -90,16 +96,16 @@ export const Profile = () => {
         </Card>
       </div>
       <div className="flex flex-col lg:flex-row gap-2 pb-2">
-        <Card title="Profile Info">
+        <Card title={t('main.profile.edit_form.title')}>
           <EditUserForm user={user} />
         </Card>
         <Card
-          title="Titulo"
+          title={t('main.routines.table.title')}
           className="flex items-center justify-center">
           <RoutinesTable />
         </Card>
         <Card
-          title="Titulo"
+          title={t('main.profile.chart.title')}
           className="flex items-center justify-center">
           <Chart
             type="doughnut"

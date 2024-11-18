@@ -17,7 +17,7 @@ export const Main = () => {
   return (
     <section className="routines-container">
       <RoutineCounters className="xl:flex-row" />
-      <Card title="main.routines.table.title">
+      <Card title="main.main_page.public_routines.title">
         <RoutinesDataview
           className="h-[48vh] "
           values={values.published}
