@@ -36,5 +36,11 @@
       "src": "/exercises",
       "dest": "/"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/main/:id",
+      "destination": "/"
+    }
   ]
 }
