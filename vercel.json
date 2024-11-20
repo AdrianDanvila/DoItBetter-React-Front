@@ -8,6 +8,7 @@
     { "src": "/routines", "dest": "/" },
     { "src": "/routines/:id", "dest": "/" },
     { "src": "/profile", "dest": "/" },
-    { "src": "/exercises", "dest": "/" }
+    { "src": "/exercises", "dest": "/" },
+    { "src": "/.*", "dest": "/" }
   ]
 }
