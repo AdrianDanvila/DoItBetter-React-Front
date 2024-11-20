@@ -1,45 +1,43 @@
 {
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/register",
-      "dest": "/"
-    },
-    {
-      "src": "/login",
-      "dest": "/"
-    },
-    {
-      "src": "/main",
-      "dest": "/"
-    },
-    {
-      "src": "/main/([0-9a-zA-Z]+)",
-      "dest": "/api/main-handler"
-    },
-    {
-      "src": "/routines",
-      "dest": "/"
-    },
-    {
-      "src": "/routines/([0-9a-zA-Z]+)",
-      "dest": "/"
-    },
-    {
-      "src": "/profile",
-      "dest": "/"
-    },
-    {
-      "src": "/exercises",
-      "dest": "/"
-    }
-  ],
   "rewrites": [
     {
       "source": "/main/:id",
+      "destinationination": "/"
+    },
+    {
+      "source": "/",
+      "destination": "/"
+    },
+    {
+      "source": "/register",
+      "destination": "/"
+    },
+    {
+      "source": "/login",
+      "destination": "/"
+    },
+    {
+      "source": "/main",
+      "destination": "/"
+    },
+    {
+      "source": "/main/([0-9a-zA-Z]+)",
+      "destination": "/api/main-handler"
+    },
+    {
+      "source": "/routines",
+      "destination": "/"
+    },
+    {
+      "source": "/routines/([0-9a-zA-Z]+)",
+      "destination": "/"
+    },
+    {
+      "source": "/profile",
+      "destination": "/"
+    },
+    {
+      "source": "/exercises",
       "destination": "/"
     }
   ]
