@@ -11,20 +11,20 @@
     "introduction": {
       "title": "Vereinfachen Sie Ihre Routinen",
       "description": "DoItBetter hilft Ihnen, Ihre Routinen effektiver zu verwalten. Erstellen Sie Gewohnheiten und mehr",
-      "button": "Loslegen"
+      "button": "Jetzt starten"
     },
     "key_features": {
       "title": "Hauptfunktionen",
       "description": {
         "routines_creation": {
           "title": "Routinen erstellen",
-          "description": "Erstellen und passen Sie Ihre Routinen ganz einfach an",
+          "description": "Richten Sie Ihre Routinen einfach ein und passen Sie sie an",
           "alt": "Routinenkarte"
         },
         "routine_manage": {
           "title": "Routinen verwalten",
           "description": "Verwalten Sie Ihre Routinen entsprechend Ihrer Verfügbarkeit",
-          "alt": "Karte zur Verwaltung von Routinen"
+          "alt": "Routineverwaltungskarte"
         },
         "learn_from_others": {
           "title": "Veröffentlichen Sie Ihre Routinen",
@@ -32,29 +32,29 @@
           "alt": "Teilen-Karte"
         }
       },
-      "button": "Loslegen"
+      "button": "Jetzt starten"
     },
     "what_users_says": {
       "title": "Was Benutzer sagen",
       "user1": {
         "name": "Sarah Johnson",
-        "role": "Marketing-Managerin",
-        "content": "DoItBetter hat meine Routineverwaltung revolutioniert. Es ist intuitiv und spart uns jede Woche Stunden!"
+        "role": "Marketing Managerin",
+        "content": "DoItBetter hat verändert, wie ich meine Routinen verwalte. Es ist intuitiv und spart uns jede Woche Stunden!"
       },
       "user2": {
         "name": "David Lee",
         "role": "Personal Trainer",
-        "content": "Als Freelancer hilft mir DoItBetter, organisiert und professionell zu bleiben. Meine Kunden lieben, wie einfach es zu benutzen ist."
+        "content": "Als Freiberufler hilft mir DoItBetter, organisiert und professionell zu bleiben. Meine Kunden lieben, wie einfach es zu bedienen ist."
       },
       "user3": {
         "name": "Emily Chen",
-        "role": "Start-up-Gründerin",
+        "role": "Start-up Gründerin",
         "content": "DoItBetter hat mir geholfen, meine Organisation im Fitnessstudio zu verbessern und viel Zeit zu sparen."
       },
       "user4": {
         "name": "Michael Brown",
         "role": "Vertriebsleiter",
-        "content": "Ich habe eine 15%ige Effizienzsteigerung bei meinen Routinen festgestellt, seit ich DoItBetter nutze. Es ist ein Gamechanger für Fitnessprofis."
+        "content": "Ich habe seit der Nutzung von DoItBetter eine 15%ige Steigerung der Effizienz meiner Routinen festgestellt. Ein Gamechanger für Fitnessprofis."
       }
     },
     "how_it_works": {
@@ -72,13 +72,13 @@
         "description": "Fügen Sie Ihrer Routine Übungen hinzu"
       },
       "step4": {
-        "step": "Teilen Sie es",
+        "step": "Teilen",
         "description": "Veröffentlichen Sie Ihre Routinen"
       }
     },
     "CTA": {
       "title": "Bereit, Ihre Routinen zu vereinfachen?",
-      "description": "Schließen Sie sich Tausenden von Fachleuten an, die DoItBetter für ein effizientes Routinenmanagement nutzen.",
+      "description": "Schließen Sie sich Tausenden von Profis an, die DoItBetter für effizientes Routine-Management vertrauen.",
       "button": "Kostenlos starten"
     }
   },
@@ -93,14 +93,14 @@
     },
     "main_page": {
       "number_routines": {
-        "title": "Anzahl der erstellten Routinen",
+        "title": "Anzahl erstellter Routinen",
         "content": "erstellte Routine",
         "content_plural": "erstellte Routinen"
       },
       "number_published_routines": {
-        "title": "Anzahl der veröffentlichten Routinen",
-        "content": "veröffentlichte Routine",
-        "content_plural": "veröffentlichte Routinen"
+        "title": "Anzahl veröffentlichter Routinen",
+        "content": "Veröffentlichte Routine",
+        "content_plural": "Veröffentlichte Routinen"
       },
       "public_routines": {
         "title": "Öffentliche Routinen"
@@ -114,11 +114,11 @@
       },
       "find": {
         "name": "Nach Namen suchen",
-        "userName": "Nach Benutzernamen suchen"
+        "userName": "Nach Benutzername suchen"
       },
       "switch": {
         "publish": "Veröffentlichen Sie Ihre Routine",
-        "unpublish": "Heben Sie die Veröffentlichung Ihrer Routinen auf"
+        "unpublish": "Routinen zurückziehen"
       },
       "table": {
         "title": "Ihre Routinen",
@@ -131,6 +131,16 @@
       },
       "details": {
         "title": "Details",
+        "form": {
+          "title": "Übung hinzufügen",
+          "edit_title": "Übung bearbeiten",
+          "inputs": {
+            "name": { "label": "Übungsname", "placeholder": "Übung" },
+            "sets": { "label": "Sätze", "placeholder": "4" },
+            "reps": { "label": "Wiederholungen", "placeholder": "10" },
+            "weight": { "label": "Gewicht", "placeholder": "30" }
+          }
+        },
         "comments": {
           "title": "Kommentare"
         }
@@ -155,10 +165,10 @@
         "greeting": "Willkommen zurück"
       },
       "edit_form": {
-        "title": "Persönliche Profilinformationen"
+        "title": "Persönliche Profildaten"
       },
       "chart": {
-        "title": "Routineninfo-Diagramm",
+        "title": "Routinen-Informationsdiagramm",
         "value_1": "Veröffentlichte Routinen",
         "value_2": "Private Routinen"
       }
@@ -167,11 +177,11 @@
   "auth": {
     "login": {
       "title": "Willkommen zurück",
-      "register_link": "Neu hier? Starten Sie Ihre Reise <a href=\"/register\">hier</a>"
+      "register_link": "Neu hier? Beginnen Sie Ihre Reise <a href=\"/register\">hier</a>"
     },
     "register": {
       "title": "Willkommen zurück",
-      "register_link": "Bereits ein Konto? Fahren Sie <a href=\"/login\">hier</a> fort"
+      "register_link": "Bereits ein Konto? Weiter geht’s <a href=\"/login\">hier</a>"
     },
     "form": {
       "name": {
@@ -227,15 +237,15 @@
   "exercises": {
     "squat": {
       "name": "Kniebeuge",
-      "description": "Eine Kniebeuge ist eine Kraftübung, bei der die Hüften aus einer stehenden Position gesenkt und dann wieder angehoben werden. Beim Abstieg beugen sich Hüft- und Kniegelenke, während das Sprunggelenk eine Dorsalflexion ausführt; umgekehrt strecken sich Hüft- und Kniegelenke und das Sprunggelenk führt eine Plantarflexion beim Aufstehen aus."
+      "description": "Eine Kniebeuge ist eine Kraftübung, bei der der Trainierende die Hüften aus einer stehenden Position senkt und dann wieder aufsteht. Während der Abwärtsbewegung beugen sich Hüft- und Kniegelenke, während das Sprunggelenk dorsalflexiert; umgekehrt strecken sich Hüft- und Kniegelenke und das Sprunggelenk plantarflexiert beim Aufstehen."
     },
     "biceps_curl": {
       "name": "Bizeps-Curl",
-      "description": "Halten Sie die Hantel mit beiden Händen nach oben, sodass Handgelenke, Ellbogen und Schultern in einer geraden Linie etwa schulterbreit auseinander liegen. Heben Sie die Hantel in Richtung Schultern, während Sie die Ellbogen beugen und nah am Körper halten. Senken Sie das Gewicht langsam, um in die Ausgangsposition zurückzukehren."
+      "description": "Halten Sie die Hantel mit beiden Händen nach oben gerichtet, sodass Handgelenke, Ellbogen und Schultern in einer geraden Linie etwa schulterbreit auseinander liegen. Heben Sie die Hantel in Richtung der Schultern, indem Sie die Ellbogen beugen und nah am Körper halten. Senken Sie das Gewicht langsam, um in die Ausgangsposition zurückzukehren."
     },
     "benchpress": {
       "name": "Bankdrücken",
-      "description": "Dabei liegt man auf einer Bank und drückt ein Gewicht mit einer Langhantel oder Kurzhanteln nach oben. Beim Bankdrücken wird das Gewicht auf Brusthöhe gesenkt und dann durch Strecken der Arme nach oben gedrückt."
+      "description": "Es beinhaltet das Liegen auf einer Bank und das Drücken von Gewicht nach oben mit einer Hantel oder einem Paar Kurzhanteln. Beim Bankdrücken senken Sie das Gewicht auf Brusthöhe ab und drücken es dann nach oben, indem Sie Ihre Arme strecken."
     }
   }
 }

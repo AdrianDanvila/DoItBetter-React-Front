@@ -131,6 +131,16 @@
       },
       "details": {
         "title": "Details",
+        "form": {
+          "title": "Add execise",
+          "edit_title": "Edit execise",
+          "inputs": {
+            "name": { "label": "Exercise Name", "placeholder": "Exercise" },
+            "sets": { "label": "Sets", "placeholder": "4" },
+            "reps": { "label": "Repetitions", "placeholder": "10" },
+            "weight": { "label": "Weight", "placeholder": "30" }
+          }
+        },
         "comments": {
           "title": "Comments"
         }

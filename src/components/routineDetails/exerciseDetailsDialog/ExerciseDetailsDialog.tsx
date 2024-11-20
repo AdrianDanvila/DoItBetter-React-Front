@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { PlayIcon } from '@radix-ui/react-icons'
 
 import { VALID_EXERCISE_SCHEMA } from '../exerciseForm/constants'
@@ -24,6 +25,7 @@ export const ExerciseDetailsDialog = ({
 }: ExerciseDetailsDialogProps) => {
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
+  const { t } = useTranslation()
   const values = useAppSelector((state) => state)
 
   const [isVisible, setIsVisible] = useState(false)
@@ -49,13 +51,13 @@ export const ExerciseDetailsDialog = ({
 
   return (
     <Dialog
-      header={exercise?.name}
+      header={t(exercise?.name)}
       isVisible={isVisible}
       setIsVisible={setIsVisible}
       openButtonClassname="button button--success"
       openButtonLabel=""
       openButtonIcon={<PlayIcon />}>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-1">
         <iframe
           width="100%"
           height="560"
@@ -65,9 +67,9 @@ export const ExerciseDetailsDialog = ({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen></iframe>
         {!routine.published || routine.user_id === values.user.user.id ? (
-          <Card title="Edit your excercise">
+          <Card title="main.routines.details.form.edit_title">
             <Form
-              inputContainerClassName="flex flex-row"
+              inputContainerClassName="flex flex-col "
               inputs={EXECISE_EDIT_FORM_INPUTS}
               initialValues={exercise}
               validationSchema={VALID_EXERCISE_SCHEMA}

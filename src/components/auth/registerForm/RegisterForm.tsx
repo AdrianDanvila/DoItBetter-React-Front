@@ -1,4 +1,4 @@
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { HttpStatusCode } from 'axios'
 
@@ -19,6 +19,7 @@ import { User } from '@/types/interfaces'
 
 export const RegisterForm = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const sumbitHandler = async (user: User) => {
     const responseStatus = await registerUser(user).then((data) => data.status)
     switch (responseStatus) {
@@ -52,6 +53,7 @@ export const RegisterForm = () => {
       </Card>
       <p className="my-6">
         <Trans
+          t={t}
           i18nKey="auth.register.register_link"
           components={{
             a: <a className="underline text-blue-600" />,

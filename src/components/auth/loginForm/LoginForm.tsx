@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import { Form } from '@components/shared/form/Form'
@@ -19,6 +19,7 @@ export const LoginForm = () => {
   const { showToast } = useToast()
   const [isDisabled, setIsDisabled] = useState(false)
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
   const sumbitHandler = async (user: User) => {
@@ -67,6 +68,7 @@ export const LoginForm = () => {
       </Card>
       <p className="my-6">
         <Trans
+          t={t}
           i18nKey="auth.login.register_link"
           components={{
             a: <a className="underline text-blue-600" />,

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { PlusIcon } from '@radix-ui/react-icons'
 
 import { ExerciseForm } from '../exerciseForm/ExerciseForm'
@@ -16,6 +17,7 @@ export interface AddExerciseDialog {
 export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
+  const { t } = useTranslation()
 
   const [isVisible, setIsVisible] = useState(false)
 
@@ -40,7 +42,7 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
 
   return (
     <Dialog
-      header="Add an excercise"
+      header={t('main.routines.details.form.title')}
       isVisible={isVisible}
       setIsVisible={setIsVisible}
       openButtonClassname="button button--success"

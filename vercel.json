@@ -3,6 +3,9 @@
     { "src": "/", "dest": "/" },
     { "src": "/register", "dest": "/" },
     { "src": "/login", "dest": "/" },
-    { "src": "/main", "dest": "/" }
+    { "src": "/main", "dest": "/" },
+    { "src": "/routines", "dest": "/" },
+    { "src": "/profile", "dest": "/" },
+    { "src": "/exercises", "dest": "/" }
   ]
 }
