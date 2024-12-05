@@ -56,7 +56,9 @@ export const ExercisesDataView = ({ routine }: ExerciseDataViewProps) => {
     await dispatch(togglePublishedRoutine(routine.id))
   }
   const clickCopyButton = async () =>
-    await copyRoutineById(routine.id).then(() => showToast('success', '', ''))
+    await copyRoutineById(routine.id).then(() =>
+      showToast('success', 'main.routines.details.toast.copy_succesful', ''),
+    )
 
   const cols = [
     { field: 'name', header: 'Name' },

@@ -18,9 +18,9 @@ export const RoutineForm = ({ onSumbit }: RoutineFormProps) => {
   const acceptButtonClickHandler = async (item: Routine) => {
     const resultAction = await dispatch(createRoutine(item))
     if (createRoutine.fulfilled.match(resultAction)) {
-      showToast('success', '', '')
+      showToast('success', 'main.routines.toast.create_succesful', '')
     } else if (createRoutine.rejected.match(resultAction)) {
-      showToast('error', '', '')
+      showToast('error', 'main.routines.toast.create_error', '')
     }
   }
   return (

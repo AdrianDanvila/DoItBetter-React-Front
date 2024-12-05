@@ -34,9 +34,9 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
       }),
     )
     if (addExercise.fulfilled.match(resultAction)) {
-      showToast('success', '', '')
+      showToast('success', 'main.routines.details.toast.add_succesful', '')
     } else if (addExercise.rejected.match(resultAction)) {
-      showToast('error', '', '')
+      showToast('error', 'main.routines.details.toast.add_error', '')
     }
   }
 

@@ -30,14 +30,14 @@ export const LoginForm = () => {
     switch (resultAction.payload.status) {
       case 202:
         setTimeout(() => {
-          showToast('success', 'NICE', '')
+          showToast('success', 'auth.login.toast.succesful', '')
           setTimeout(() => navigate(ROUTE_PATH.main), 1000)
         }, 1000)
         break
 
       case 401:
         setTimeout(() => {
-          showToast('error', 'Bad credentials', '')
+          showToast('error', 'auth.login.toast.bad_credential', '')
           setIsDisabled(false)
         }, 1000)
 
@@ -45,7 +45,7 @@ export const LoginForm = () => {
 
       default:
         setTimeout(() => {
-          showToast('error', 'Bad credentials', '')
+          showToast('error', 'auth.login.toast.bad_credential', '')
           setIsDisabled(false)
         }, 1000)
         break

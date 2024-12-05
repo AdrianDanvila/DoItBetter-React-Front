@@ -112,6 +112,12 @@
         "name": "Sort by name",
         "none": "Sort by none"
       },
+      "toast": {
+        "create_succesful": "Routine created succefuly",
+        "delete_succesful": "Routine deleted succefuly",
+        "delete_error": "Error on Routine delete",
+        "create_error": "Error on Routine create"
+      },
       "find": {
         "name": "Find by name",
         "userName": "Find by User name"
@@ -131,6 +137,14 @@
       },
       "details": {
         "title": "Details",
+        "toast": {
+          "add_succesful": "Exercise added succefuly",
+          "delete_succesful": "Exercise deleted succefuly",
+          "copy_succesful": "Routine copied succefuly",
+          "copy_error": "Error on Routine copy",
+          "delete_error": "Error on exercise delete",
+          "add_error": "Error on exercise add"
+        },
         "form": {
           "title": "Add execise",
           "edit_title": "Edit execise",
@@ -177,6 +191,10 @@
   "auth": {
     "login": {
       "title": "Welcome Back",
+      "toast": {
+        "succesful": "Login succesful",
+        "bad_credential": "Login not succesful, bad credentials"
+      },
       "register_link": "Are you new? Start your journy <a href=\"/register\">here</a>"
     },
     "register": {

@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import { getUserInfo, loginUser as loginApiUser } from '@/api/services'
+import {
+  getUserInfo,
+  loginUser as loginApiUser,
+  updateUserInfo,
+} from '@/api/services'
 import { User } from '@/types/interfaces'
 
 export interface userSate {
@@ -26,6 +30,18 @@ export const getUserInfoAction = createAsyncThunk(
   async (_userData, { rejectWithValue }) => {
     try {
       const response = await getUserInfo()
+      return response // Si es exitoso, devolvemos la respuesta
+    } catch (error: any) {
+      return rejectWithValue(error.message) // Si falla, devolvemos el error
+    }
+  },
+)
+
+export const updateUserInfoAction = createAsyncThunk(
+  'user/getUserInfo',
+  async (userData: User, { rejectWithValue }) => {
+    try {
+      const response = await updateUserInfo(userData)
       return response // Si es exitoso, devolvemos la respuesta
     } catch (error: any) {
       return rejectWithValue(error.message) // Si falla, devolvemos el error
@@ -58,6 +74,12 @@ const userSlice = createSlice({
     })
     builder.addCase(getUserInfoAction.fulfilled, (state, action) => {
       const userData = action.payload.data
+      sessionStorage.setItem('userInfo', JSON.stringify(userData))
+      state.user = userData
+    })
+    builder.addCase(updateUserInfoAction.fulfilled, (state, action) => {
+      const userData = action.payload.data
+      sessionStorage.setItem('userInfo', JSON.stringify(userData))
       state.user = userData
     })
   },

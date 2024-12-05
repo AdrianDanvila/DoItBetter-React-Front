@@ -40,9 +40,9 @@ export const ExercisesDataViewItem = ({
     )
 
     if (deleteExercise.fulfilled.match(actionResult)) {
-      showToast('success', '', '')
+      showToast('success', 'main.routines.details.toast.delete_succesful', '')
     } else if (deleteExercise.rejected.match(actionResult)) {
-      showToast('error', '', '')
+      showToast('error', 'main.routines.details.toast.delete_error', '')
     }
   }
   const sessioUser = sessionStorage.getItem('userInfo')

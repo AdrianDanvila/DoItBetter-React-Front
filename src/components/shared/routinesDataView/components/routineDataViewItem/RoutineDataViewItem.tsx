@@ -11,6 +11,7 @@ import { ButtonSeverity } from '@/components/shared/button/types'
 import { DeletePopUp } from '@/components/shared/deletePopUp/DeletePopUp'
 import { useToast } from '@/components/shared/toast/useToast'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { ROUTE_PATH } from '@/router/constants'
 import { deleteRoutine } from '@/store/routinesSlice'
 
 export const RoutineDataViewItem = (item: any) => {
@@ -27,9 +28,9 @@ export const RoutineDataViewItem = (item: any) => {
     const actionResult = await dispatch(deleteRoutine(item))
 
     if (deleteRoutine.fulfilled.match(actionResult)) {
-      showToast('success', '', '')
+      showToast('success', 'main.routines.toast.delete_succesful', '')
     } else if (deleteRoutine.rejected.match(actionResult)) {
-      showToast('error', '', '')
+      showToast('error', 'main.routines.toast.delete_error', '')
     }
   }
 
@@ -61,7 +62,7 @@ export const RoutineDataViewItem = (item: any) => {
             {t('main.routines.action')}
           </span>
           <div className="flex items-center justify-center">
-            {(item.published && item.user_id !== user_id) || (
+            {window.location.pathname.includes(ROUTE_PATH.main) || (
               <DeletePopUp onAccept={deleteItem} />
             )}
 

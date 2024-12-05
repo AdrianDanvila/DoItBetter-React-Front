@@ -74,6 +74,36 @@ export const getUserInfo = () =>
       return response
     })
 
+export const updateUserInfo = ({
+  id,
+  name,
+  age,
+  weight,
+  height,
+  email,
+}: User) =>
+  axios
+    .post(
+      API_URL.update,
+      {
+        id,
+        name,
+        age,
+        weight,
+        height,
+        email,
+      },
+      {
+        headers: DEFAULT_HEADERS.headers,
+      },
+    )
+    .then(function (response) {
+      return response.data
+    })
+    .catch(function (error) {
+      return error.data
+    })
+
 export const logout = () => {
   localStorage.removeItem('userToken')
   sessionStorage.removeItem('userinfo')
