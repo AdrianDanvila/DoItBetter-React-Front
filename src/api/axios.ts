@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'localhost:8081',
+  baseURL: 'https://doitbetter-spring-back.onrender.com',
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',

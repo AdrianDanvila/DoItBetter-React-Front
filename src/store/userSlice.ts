@@ -38,7 +38,7 @@ export const getUserInfoAction = createAsyncThunk(
 )
 
 export const updateUserInfoAction = createAsyncThunk(
-  'user/getUserInfo',
+  'user/updateUserInfo',
   async (userData: User, { rejectWithValue }) => {
     try {
       const response = await updateUserInfo(userData)
