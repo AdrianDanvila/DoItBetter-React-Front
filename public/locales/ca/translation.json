@@ -3,69 +3,69 @@
     "title": "Hola món",
     "header": {
       "introduction": "Introducció",
-      "key_features": "Característiques Clau",
-      "what_users_says": "Què diuen els usuaris",
-      "how_it_works": "Com Funciona",
-      "login": "Inicia Sessió"
+      "key_features": "Característiques principals",
+      "what_users_says": "El que diuen els usuaris",
+      "how_it_works": "Com funciona",
+      "login": "Iniciar sessió"
     },
     "introduction": {
-      "title": "Simplifica les teves Rutines",
-      "description": "DoItBetter t’ajudarà a gestionar les teves rutines de manera més eficient. Crea hàbits i molt més",
+      "title": "Simplifica les teves rutines",
+      "description": "DoItBetter t'ajudarà a gestionar les teves rutines de manera més eficient. Crea hàbits i molt més",
       "button": "Comença"
     },
     "key_features": {
-      "title": "Característiques Clau",
+      "title": "Característiques principals",
       "description": {
         "routines_creation": {
-          "title": "Crea Rutines",
-          "description": "Configura i personalitza les teves rutines fàcilment",
-          "alt": "Targeta de Rutina"
+          "title": "Crea rutines",
+          "description": "Configura i personalitza fàcilment les teves rutines",
+          "alt": "Targeta de rutina"
         },
         "routine_manage": {
-          "title": "Gestiona Rutines",
+          "title": "Gestiona rutines",
           "description": "Gestiona les teves rutines segons la teva disponibilitat",
-          "alt": "Targeta de Gestió de Rutines"
+          "alt": "Targeta de gestió de rutines"
         },
         "learn_from_others": {
-          "title": "Publica les teves Rutines",
+          "title": "Comparteix les teves rutines",
           "description": "Comparteix les teves rutines amb altres",
-          "alt": "Targeta de Compartir"
+          "alt": "Targeta de compartir"
         }
       },
       "button": "Comença"
     },
     "what_users_says": {
-      "title": "Què diuen els usuaris",
+      "title": "El que diuen els usuaris",
       "user1": {
         "name": "Sarah Johnson",
-        "role": "Gerent de Màrqueting",
-        "content": "DoItBetter ha transformat com gestiono les meves rutines. És intuïtiu i ens estalvia hores cada setmana!"
+        "role": "Directora de màrqueting",
+        "content": "DoItBetter ha transformat la manera en què gestiono les meves rutines. És intuïtiu i ens estalvia hores cada setmana!"
       },
       "user2": {
         "name": "David Lee",
-        "role": "Entrenador Personal",
-        "content": "Com a autònom, DoItBetter m'ajuda a mantenir-me organitzat i professional. Als meus clients els encanta com és de fàcil d’utilitzar."
+        "role": "Entrenador personal",
+        "content": "Com a freelance, DoItBetter m'ajuda a mantenir-me organitzat i professional. Als meus clients els encanta com és d' fàcil d'utilitzar."
       },
       "user3": {
         "name": "Emily Chen",
-        "role": "Fundadora d’una Startup",
-        "content": "DoItBetter m’ha ajudat a millorar la meva organització al gimnàs i m’ha estalviat molt de temps."
+        "role": "Fundadora d'una startup",
+        "content": "DoItBetter m'ha ajudat a millorar la meva organització al gimnàs i m'ha estalviat molt de temps."
       },
       "user4": {
         "name": "Michael Brown",
-        "role": "Executiu de Vendes",
+        "role": "Executiu de vendes",
         "content": "He vist un augment del 15% en l'eficiència de les meves rutines des que utilitzo DoItBetter. És un canvi total per als professionals del gimnàs."
       }
     },
     "how_it_works": {
-      "title": "Com Funciona",
+      "title": "Com funciona",
       "step1": {
-        "step": "Registra’t",
-        "description": "Crea el teu compte gratuït de DoItBetter"
+        "step": "Registra't",
+        "description": "Crea el teu compte gratuït a DoItBetter"
       },
       "step2": {
-        "step": "Configura Rutines",
-        "description": "Defineix quan realitzaràs la teva primera rutina"
+        "step": "Defineix les rutines",
+        "description": "Defineix quan serà la teva primera rutina"
       },
       "step3": {
         "step": "Afegeix exercicis",
@@ -77,9 +77,9 @@
       }
     },
     "CTA": {
-      "title": "Preparat per Simplificar les teves Rutines?",
-      "description": "Uneix-te a milers de professionals que confien en DoItBetter per gestionar les seves rutines de manera eficient.",
-      "button": "Comença Gratis"
+      "title": "Preparat per simplificar les teves rutines?",
+      "description": "Uneix-te a milers de professionals que confien en DoItBetter per a una gestió eficaç de les rutines.",
+      "button": "Comença de forma gratuïta"
     }
   },
   "main": {
@@ -103,39 +103,53 @@
         "content_plural": "Rutines publicades"
       },
       "public_routines": {
-        "title": "Rutines Públiques"
+        "title": "Rutines públiques"
       }
     },
     "routines": {
       "action": "Accions",
       "sort": {
-        "name": "Ordena per nom",
-        "none": "Sense ordre"
+        "name": "Ordenar per nom",
+        "none": "Sense ordenar"
+      },
+      "toast": {
+        "create_succesful": "Rutina creada amb èxit",
+        "delete_succesful": "Rutina eliminada amb èxit",
+        "delete_error": "Error en eliminar la rutina",
+        "create_error": "Error en crear la rutina"
       },
       "find": {
         "name": "Cerca per nom",
-        "userName": "Cerca per nom d’usuari"
+        "userName": "Cerca per nom d'usuari"
       },
       "switch": {
-        "publish": "Publica la teva Rutina",
-        "unpublish": "Despublica les teves Rutines"
+        "publish": "Publica la teva rutina",
+        "unpublish": "Despublica la teva rutina"
       },
       "table": {
-        "title": "Les teves Rutines",
+        "title": "Les teves rutines",
         "headers": {
           "name": "Nom",
           "description": "Descripció",
-          "date_created": "Data de Creació",
+          "date_created": "Data de creació",
           "actions": "Accions"
         }
       },
       "details": {
         "title": "Detalls",
+        "toast": {
+          "add_succesful": "Exercici afegit amb èxit",
+          "delete_succesful": "Exercici eliminat amb èxit",
+          "copy_succesful": "Rutina copiada amb èxit",
+          "copy_error": "Error en copiar la rutina",
+          "delete_error": "Error en eliminar l'exercici",
+          "add_error": "Error en afegir l'exercici"
+        },
         "form": {
-          "title": "Afegeix Exercici",
-          "edit_title": "Edita Exercici",
+          "title": "Afegeix exercici",
+          "edit_title": "Edita exercici",
           "inputs": {
-            "name": { "label": "Nom de l’Exercici", "placeholder": "Exercici" },
+            "name": { "label": "Nom de l'exercici", "placeholder": "Exercici" },
             "sets": { "label": "Sèries", "placeholder": "4" },
             "reps": { "label": "Repeticions", "placeholder": "10" },
             "weight": { "label": "Pes", "placeholder": "30" }
@@ -146,47 +160,51 @@
         }
       },
       "form": {
-        "title": "Crea Rutina",
+        "title": "Crea una rutina",
         "name": {
           "label": "Nom",
-          "placeholder": "John Snow",
+          "placeholder": "Jhon Snow",
           "error_messages": {}
         },
         "description": {
           "label": "Descripció",
-          "placeholder": "Nova Descripció",
+          "placeholder": "Nova descripció",
           "error_messages": {}
         }
       }
     },
     "profile": {
       "banner": {
-        "title": "Informació Clau del Perfil",
+        "title": "Informació clau del perfil",
         "greeting": "Benvingut de nou"
       },
       "edit_form": {
-        "title": "Informació Personal del Perfil"
+        "title": "Informació personal del perfil"
       },
       "chart": {
-        "title": "Gràfic d’Informació de Rutines",
-        "value_1": "Rutines Publicades",
-        "value_2": "Rutines Privades"
+        "title": "Gràfic d'informació de rutines",
+        "value_1": "Rutines publicades",
+        "value_2": "Rutines privades"
       }
     }
   },
   "auth": {
     "login": {
-      "title": "Benvingut de Nou",
+      "title": "Benvingut de nou",
+      "toast": {
+        "succesful": "Inici de sessió correcte",
+        "bad_credential": "Inici de sessió incorrecte, credencials incorrectes"
+      },
       "register_link": "Ets nou? Comença el teu viatge <a href=\"/register\">aquí</a>"
     },
     "register": {
-      "title": "Benvingut de Nou",
-      "register_link": "Ja tens un compte? Continua <a href=\"/login\">aquí</a>"
+      "title": "Benvingut de nou",
+      "register_link": "Ja tens un compte? Continua el teu camí <a href=\"/login\">aquí</a>"
     },
     "form": {
       "name": {
         "label": "Nom",
-        "placeholder": "John Snow",
+        "placeholder": "Jhon Snow",
         "error_messages": {}
       },
       "password": {
@@ -200,7 +218,7 @@
         "label": "Edat",
         "placeholder": "18",
         "error_messages": {
-          "minimun": "L’edat mínima és de 18 anys"
+          "minimun": "L'edat mínima és de 18 anys"
         }
       },
       "weight": {
@@ -214,7 +232,7 @@
         "error_messages": {}
       },
       "mail": {
-        "label": "Correu Electrònic",
+        "label": "Correu electrònic",
         "placeholder": "test@gmail.com",
         "error_messages": {
           "format": "El format del correu electrònic que has introduït no és vàlid."
@@ -223,10 +241,10 @@
     }
   },
   "form": {
-    "submit": "Envia",
-    "reset": "Restableix",
+    "submit": "Enviar",
+    "reset": "Restablir",
     "error_messages": {
-      "required": "Requerit"
+      "required": "Obligatori"
     }
   },
   "delete_pop": {
@@ -236,16 +254,16 @@
   },
   "exercises": {
     "squat": {
-      "name": "Cuaix",
-      "description": "El cuaix és un exercici de força en què el practicant baixa els malucs des d'una posició dreta i després es torna a aixecar. Durant el descens, les articulacions del maluc i els genolls es flexionen mentre el turmell es dorsiflexiona; de manera inversa, les articulacions del maluc i els genolls s’estenen i el turmell es flexiona plantarment quan es torna a aixecar."
+      "name": "Sentadilles",
+      "description": "Les sentadilles són un exercici de força en què la persona baixa les caderes des d'una posició de peu i després es torna a aixecar. Durant la baixada, les articulacions de les caderes i els genolls es flexionen mentre l'articulació del turmell es dorsiflexiona; per contra, les articulacions de les caderes i els genolls s'estenen mentre l'articulació del turmell es planta flexiona quan es torna a aixecar."
     },
     "biceps_curl": {
-      "name": "Flexió de Bíceps",
-      "description": "Agarra la barra amb ambdues mans orientades cap amunt de manera que els canells, colzes i espatlles estiguin en línia recta aproximadament a l’amplada de les espatlles. Puja la barra cap a les espatlles mentre flexiones els colzes mantenint-los al costat del cos. Baixa lentament el pes per tornar a la posició inicial."
+      "name": "Curl de bíceps",
+      "description": "Sostén la barra amb ambdues mans amb les palmes cap amunt perquè els canells, els colzes i les espatlles estiguin alineats i separats a l'amplada de les espatlles. Puja la barra cap als músculs de les espatlles mentre doblegues els colzes i els mantens prop del cos. Baixa lentament el pes fins a tornar a la posició inicial."
     },
     "benchpress": {
-      "name": "Press de Banca",
-      "description": "Implica estirar-se en una banca i empènyer el pes cap amunt utilitzant una barra o un parell de manuelles. Durant el press de banca, baixes el pes fins al nivell del pit i després l’empentes cap amunt estenent els braços."
+      "name": "Pressió de banca",
+      "description": "Consisteix a estirar-se sobre una banca i aixecar el pes cap amunt utilitzant una barra o un parell de manuelles. Durant la pressió de banca, es baixa el pes fins al nivell del pit i després s'aixeca de nou mentre s'estiren els braços."
     }
   }
 }

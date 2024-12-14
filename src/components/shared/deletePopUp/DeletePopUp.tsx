@@ -23,9 +23,7 @@ export const DeletePopUp = ({ onAccept, onReject }: DeletePopUpProps) => {
         acceptIcon={<CheckIcon />}
         rejectIcon={<Cross2Icon />}
         visible={isVisible}
-        onHide={() => {
-          setIsVisible(false)
-        }}
+        onHide={() => setIsVisible(false)}
         accept={onAccept}
         reject={onReject}
       />
@@ -34,9 +32,7 @@ export const DeletePopUp = ({ onAccept, onReject }: DeletePopUpProps) => {
         type="button"
         icon={<TrashIcon className="icon" />}
         className="button button--danger"
-        onClick={() => {
-          setIsVisible(true)
-        }}
+        onClick={() => setIsVisible(true)}
       />
     </>
   )

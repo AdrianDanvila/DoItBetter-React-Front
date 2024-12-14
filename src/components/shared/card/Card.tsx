@@ -19,15 +19,13 @@ export const Card = ({
 }: PropsWithChildren<CardProps>) => {
   const { t } = useTranslation()
   return (
-    <>
-      <ShadCard className="w-full">
-        <CardHeader>
-          <CardTitle className={`text-center text-blue-600 ${className}`}>
-            {t(title)}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>{children}</CardContent>
-      </ShadCard>
-    </>
+    <ShadCard className="w-full">
+      <CardHeader>
+        <CardTitle className={`text-center text-blue-600 ${className}`}>
+          {t(title)}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>{children}</CardContent>
+    </ShadCard>
   )
 }

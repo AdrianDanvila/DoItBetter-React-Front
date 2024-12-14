@@ -51,9 +51,9 @@ export const useTable = <T extends { id?: number }>(
     setValues(_values)
   }
 
-  const onSelectionChange = (item: T) => {
+  // eslint-disable-next-line no-confusing-arrow
+  const onSelectionChange = (item: T) =>
     item !== selectedItem ? setSelectedItem(item) : setSelectedItem(undefined)
-  }
 
   return {
     values,

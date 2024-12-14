@@ -13,9 +13,7 @@ export const ExerciseForm = ({ onSumbit }: ExerciseFormProps) => (
     inputs={EXECISE_FORM_INPUTS}
     initialValues={INITIAL_VALUES}
     validationSchema={VALID_EXERCISE_SCHEMA}
-    onSumbit={(e) => {
-      onSumbit?.(e)
-    }}
+    onSumbit={(e) => onSumbit?.(e)}
     disabled={false}
   />
 )

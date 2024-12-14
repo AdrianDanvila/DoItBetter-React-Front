@@ -27,9 +27,9 @@ export const RoutineDetailsTable = ({ routine }: RoutineDetailsTableProps) => {
 
   const { selectedItem, onSelectionChange } = useTable<Exercise>()
 
-  const onClickSwitch = async () => {
+  const onClickSwitch = async () =>
     await dispatch(togglePublishedRoutine(routine.id))
-  }
+
   const clickCopyButton = async () =>
     await copyRoutineById(routine.id).then(() => showToast('success', '', ''))
 

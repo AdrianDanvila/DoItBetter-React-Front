@@ -49,6 +49,11 @@ export const ExerciseDetailsDialog = ({
     }
   }
 
+  const onSumbitHandler = (e: Exercise) => {
+    addItem(e)
+    setIsVisible(false)
+  }
+
   return (
     <Dialog
       header={t(exercise?.name)}
@@ -73,10 +78,7 @@ export const ExerciseDetailsDialog = ({
               inputs={EXECISE_EDIT_FORM_INPUTS}
               initialValues={exercise}
               validationSchema={VALID_EXERCISE_SCHEMA}
-              onSumbit={(e) => {
-                addItem(e)
-                setIsVisible(false)
-              }}
+              onSumbit={onSumbitHandler}
               disabled={false}
             />
           </Card>

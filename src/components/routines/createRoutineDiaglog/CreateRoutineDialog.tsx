@@ -18,11 +18,7 @@ export const CreateRoutineDialog = () => {
       openButtonLabel=""
       header={t('main.routines.form.title')}
       openButtonIcon={<PlusIcon />}>
-      <RoutineForm
-        onSumbit={() => {
-          setIsVisible(false)
-        }}
-      />
+      <RoutineForm onSumbit={() => setIsVisible(false)} />
     </Dialog>
   )
 }

@@ -67,11 +67,10 @@ export const Profile = () => {
             <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3 ">
               <img
                 className="hover:cursor-pointer hover:scale-105 transition-all"
-                onClick={() => {
-                  if (inputRef.current) {
-                    inputRef.current.click()
-                  }
-                }}
+                // eslint-disable-next-line no-confusing-arrow
+                onClick={() =>
+                  inputRef.current ? inputRef.current.click() : null
+                }
                 src={`${BASE_URL}/uploads/${user.profilePictureName}`}
                 alt="Foto de perfil"
                 style={{ width: '150px', height: '150px', borderRadius: '50%' }}

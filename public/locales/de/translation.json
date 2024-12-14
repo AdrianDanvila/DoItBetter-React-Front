@@ -3,82 +3,82 @@
     "title": "Hallo Welt",
     "header": {
       "introduction": "Einführung",
-      "key_features": "Hauptfunktionen",
-      "what_users_says": "Was Benutzer sagen",
+      "key_features": "Hauptmerkmale",
+      "what_users_says": "Was die Benutzer sagen",
       "how_it_works": "Wie es funktioniert",
       "login": "Anmelden"
     },
     "introduction": {
-      "title": "Vereinfachen Sie Ihre Routinen",
-      "description": "DoItBetter hilft Ihnen, Ihre Routinen effektiver zu verwalten. Erstellen Sie Gewohnheiten und mehr",
-      "button": "Jetzt starten"
+      "title": "Vereinfache deine Routinen",
+      "description": "DoItBetter hilft dir, deine Routinen effektiver zu verwalten. Erstelle Gewohnheiten und mehr",
+      "button": "Loslegen"
     },
     "key_features": {
-      "title": "Hauptfunktionen",
+      "title": "Hauptmerkmale",
       "description": {
         "routines_creation": {
           "title": "Routinen erstellen",
-          "description": "Richten Sie Ihre Routinen einfach ein und passen Sie sie an",
-          "alt": "Routinenkarte"
+          "description": "Erstelle und passe deine Routinen ganz einfach an",
+          "alt": "Routine-Karte"
         },
         "routine_manage": {
           "title": "Routinen verwalten",
-          "description": "Verwalten Sie Ihre Routinen entsprechend Ihrer Verfügbarkeit",
-          "alt": "Routineverwaltungskarte"
+          "description": "Verwalte deine Routinen nach deiner Verfügbarkeit",
+          "alt": "Routine-Verwaltungskarte"
         },
         "learn_from_others": {
-          "title": "Veröffentlichen Sie Ihre Routinen",
-          "description": "Teilen Sie Ihre Routinen mit anderen",
+          "title": "Teile deine Routinen",
+          "description": "Teile deine Routinen mit anderen",
           "alt": "Teilen-Karte"
         }
       },
-      "button": "Jetzt starten"
+      "button": "Loslegen"
     },
     "what_users_says": {
-      "title": "Was Benutzer sagen",
+      "title": "Was die Benutzer sagen",
       "user1": {
         "name": "Sarah Johnson",
-        "role": "Marketing Managerin",
-        "content": "DoItBetter hat verändert, wie ich meine Routinen verwalte. Es ist intuitiv und spart uns jede Woche Stunden!"
+        "role": "Marketing Manager",
+        "content": "DoItBetter hat die Art und Weise, wie ich meine Routinen verwalte, verändert. Es ist intuitiv und spart uns jede Woche Stunden!"
       },
       "user2": {
         "name": "David Lee",
         "role": "Personal Trainer",
-        "content": "Als Freiberufler hilft mir DoItBetter, organisiert und professionell zu bleiben. Meine Kunden lieben, wie einfach es zu bedienen ist."
+        "content": "Als Freelancer hilft mir DoItBetter, organisiert und professionell zu bleiben. Meine Kunden lieben, wie einfach es zu benutzen ist."
       },
       "user3": {
         "name": "Emily Chen",
-        "role": "Start-up Gründerin",
-        "content": "DoItBetter hat mir geholfen, meine Organisation im Fitnessstudio zu verbessern und viel Zeit zu sparen."
+        "role": "Startup-Gründerin",
+        "content": "DoItBetter hat mir geholfen, meine Organisation im Fitnessstudio zu verbessern und mir viel Zeit gespart."
       },
       "user4": {
         "name": "Michael Brown",
-        "role": "Vertriebsleiter",
-        "content": "Ich habe seit der Nutzung von DoItBetter eine 15%ige Steigerung der Effizienz meiner Routinen festgestellt. Ein Gamechanger für Fitnessprofis."
+        "role": "Vertriebsmitarbeiter",
+        "content": "Seit ich DoItBetter benutze, habe ich eine 15%ige Steigerung der Effizienz meiner Routinen gesehen. Es ist ein Game-Changer für Fitnessprofis."
       }
     },
     "how_it_works": {
       "title": "Wie es funktioniert",
       "step1": {
-        "step": "Registrieren",
-        "description": "Erstellen Sie Ihr kostenloses DoItBetter-Konto"
+        "step": "Anmelden",
+        "description": "Erstelle dein kostenloses DoItBetter-Konto"
       },
       "step2": {
-        "step": "Routinen einrichten",
-        "description": "Definieren Sie Ihre erste Routine"
+        "step": "Routinen festlegen",
+        "description": "Definiere, wann deine erste Routine stattfinden soll"
       },
       "step3": {
         "step": "Übungen hinzufügen",
-        "description": "Fügen Sie Ihrer Routine Übungen hinzu"
+        "description": "Füge einige Übungen zu deinen Routinen hinzu"
       },
       "step4": {
-        "step": "Teilen",
-        "description": "Veröffentlichen Sie Ihre Routinen"
+        "step": "Teile es",
+        "description": "Veröffentliche deine Routinen"
       }
     },
     "CTA": {
-      "title": "Bereit, Ihre Routinen zu vereinfachen?",
-      "description": "Schließen Sie sich Tausenden von Profis an, die DoItBetter für effizientes Routine-Management vertrauen.",
+      "title": "Bereit, deine Routinen zu vereinfachen?",
+      "description": "Schließe dich Tausenden von Profis an, die DoItBetter für effizientes Routine-Management vertrauen.",
       "button": "Kostenlos starten"
     }
   },
@@ -93,12 +93,12 @@
     },
     "main_page": {
       "number_routines": {
-        "title": "Anzahl erstellter Routinen",
+        "title": "Anzahl der erstellten Routinen",
         "content": "erstellte Routine",
         "content_plural": "erstellte Routinen"
       },
       "number_published_routines": {
-        "title": "Anzahl veröffentlichter Routinen",
+        "title": "Anzahl der veröffentlichten Routinen",
         "content": "Veröffentlichte Routine",
         "content_plural": "Veröffentlichte Routinen"
       },
@@ -109,19 +109,25 @@
     "routines": {
       "action": "Aktionen",
       "sort": {
-        "name": "Nach Namen sortieren",
-        "none": "Keine Sortierung"
+        "name": "Nach Name sortieren",
+        "none": "Nicht sortieren"
+      },
+      "toast": {
+        "create_succesful": "Routine erfolgreich erstellt",
+        "delete_succesful": "Routine erfolgreich gelöscht",
+        "delete_error": "Fehler beim Löschen der Routine",
+        "create_error": "Fehler beim Erstellen der Routine"
       },
       "find": {
-        "name": "Nach Namen suchen",
+        "name": "Nach Name suchen",
         "userName": "Nach Benutzername suchen"
       },
       "switch": {
-        "publish": "Veröffentlichen Sie Ihre Routine",
-        "unpublish": "Routinen zurückziehen"
+        "publish": "Veröffentliche deine Routine",
+        "unpublish": "Entferne die Veröffentlichung deiner Routine"
       },
       "table": {
-        "title": "Ihre Routinen",
+        "title": "Deine Routinen",
         "headers": {
           "name": "Name",
           "description": "Beschreibung",
@@ -131,6 +137,14 @@
       },
       "details": {
         "title": "Details",
+        "toast": {
+          "add_succesful": "Übung erfolgreich hinzugefügt",
+          "delete_succesful": "Übung erfolgreich gelöscht",
+          "copy_succesful": "Routine erfolgreich kopiert",
+          "copy_error": "Fehler beim Kopieren der Routine",
+          "delete_error": "Fehler beim Löschen der Übung",
+          "add_error": "Fehler beim Hinzufügen der Übung"
+        },
         "form": {
           "title": "Übung hinzufügen",
           "edit_title": "Übung bearbeiten",
@@ -149,7 +163,7 @@
         "title": "Routine erstellen",
         "name": {
           "label": "Name",
-          "placeholder": "John Snow",
+          "placeholder": "Jhon snow",
           "error_messages": {}
         },
         "description": {
@@ -165,10 +179,10 @@
         "greeting": "Willkommen zurück"
       },
       "edit_form": {
-        "title": "Persönliche Profildaten"
+        "title": "Persönliche Profilinformationen"
       },
       "chart": {
-        "title": "Routinen-Informationsdiagramm",
+        "title": "Diagramm der Routineinformationen",
         "value_1": "Veröffentlichte Routinen",
         "value_2": "Private Routinen"
       }
@@ -177,16 +191,20 @@
   "auth": {
     "login": {
       "title": "Willkommen zurück",
-      "register_link": "Neu hier? Beginnen Sie Ihre Reise <a href=\"/register\">hier</a>"
+      "toast": {
+        "succesful": "Anmeldung erfolgreich",
+        "bad_credential": "Anmeldung fehlgeschlagen, falsche Anmeldeinformationen"
+      },
+      "register_link": "Bist du neu? Starte deine Reise <a href=\"/register\">hier</a>"
     },
     "register": {
       "title": "Willkommen zurück",
-      "register_link": "Bereits ein Konto? Weiter geht’s <a href=\"/login\">hier</a>"
+      "register_link": "Hast du schon ein Konto? Fahre fort <a href=\"/login\">hier</a>"
     },
     "form": {
       "name": {
         "label": "Name",
-        "placeholder": "John Snow",
+        "placeholder": "Jhon snow",
         "error_messages": {}
       },
       "password": {
@@ -217,35 +235,35 @@
         "label": "E-Mail",
         "placeholder": "test@gmail.com",
         "error_messages": {
-          "format": "Das eingegebene E-Mail-Format ist ungültig."
+          "format": "Das von dir eingegebene E-Mail-Format ist ungültig."
         }
       }
     }
   },
   "form": {
-    "submit": "Senden",
+    "submit": "Absenden",
     "reset": "Zurücksetzen",
     "error_messages": {
       "required": "Erforderlich"
     }
   },
   "delete_pop": {
-    "message": "Möchten Sie diesen Eintrag löschen?",
+    "message": "Möchtest du diesen Datensatz löschen?",
     "confirm_button": "Ja",
     "negate_button": "Nein"
   },
   "exercises": {
     "squat": {
       "name": "Kniebeuge",
-      "description": "Eine Kniebeuge ist eine Kraftübung, bei der der Trainierende die Hüften aus einer stehenden Position senkt und dann wieder aufsteht. Während der Abwärtsbewegung beugen sich Hüft- und Kniegelenke, während das Sprunggelenk dorsalflexiert; umgekehrt strecken sich Hüft- und Kniegelenke und das Sprunggelenk plantarflexiert beim Aufstehen."
+      "description": "Eine Kniebeuge ist eine Kraftübung, bei der der Trainierende die Hüften aus einer stehenden Position absenkt und dann wieder aufsteht. Während des Absenkens beugen sich die Hüft- und Kniegelenke, während das Sprunggelenk dorsalflexiert; im Gegenzug strecken sich die Hüft- und Kniegelenke und das Sprunggelenk plantarflexiert beim Aufstehen."
     },
     "biceps_curl": {
       "name": "Bizeps-Curl",
-      "description": "Halten Sie die Hantel mit beiden Händen nach oben gerichtet, sodass Handgelenke, Ellbogen und Schultern in einer geraden Linie etwa schulterbreit auseinander liegen. Heben Sie die Hantel in Richtung der Schultern, indem Sie die Ellbogen beugen und nah am Körper halten. Senken Sie das Gewicht langsam, um in die Ausgangsposition zurückzukehren."
+      "description": "Halte die Langhantel mit beiden Händen nach oben, so dass Handgelenke, Ellbogen und Schultern in einer geraden Linie etwa schulterbreit auseinander sind. Hebe die Langhantel in Richtung Schultern, während du die Ellbogen beugst und sie in der Mitte des Körpers behältst. Senke das Gewicht langsam, um in die Ausgangsposition zurückzukehren."
     },
     "benchpress": {
       "name": "Bankdrücken",
-      "description": "Es beinhaltet das Liegen auf einer Bank und das Drücken von Gewicht nach oben mit einer Hantel oder einem Paar Kurzhanteln. Beim Bankdrücken senken Sie das Gewicht auf Brusthöhe ab und drücken es dann nach oben, indem Sie Ihre Arme strecken."
+      "description": "Dabei liegt man auf einer Bank und drückt das Gewicht nach oben, entweder mit einer Langhantel oder mit Kurzhanteln. Beim Bankdrücken senkst du das Gewicht bis auf Brusthöhe und drückst es dann nach oben, während du die Arme streckst."
     }
   }
 }

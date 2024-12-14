@@ -40,6 +40,11 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
     }
   }
 
+  const onSumbitHandler = (e: Exercise) => {
+    addItem(e)
+    setIsVisible(false)
+  }
+
   return (
     <Dialog
       header={t('main.routines.details.form.title')}
@@ -48,12 +53,7 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
       openButtonClassname="button button--success"
       openButtonLabel=""
       openButtonIcon={<PlusIcon />}>
-      <ExerciseForm
-        onSumbit={(e) => {
-          addItem(e)
-          setIsVisible(false)
-        }}
-      />
+      <ExerciseForm onSumbit={onSumbitHandler} />
     </Dialog>
   )
 }

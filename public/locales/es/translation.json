@@ -3,33 +3,33 @@
     "title": "Hola Mundo",
     "header": {
       "introduction": "Introducción",
-      "key_features": "Características Clave",
+      "key_features": "Características clave",
       "what_users_says": "Lo que dicen los usuarios",
-      "how_it_works": "Cómo Funciona",
-      "login": "Iniciar Sesión"
+      "how_it_works": "Cómo funciona",
+      "login": "Iniciar sesión"
     },
     "introduction": {
-      "title": "Simplifica tus Rutinas",
-      "description": "DoItBetter te ayudará a gestionar tus rutinas de manera más efectiva. Crea hábitos y más",
+      "title": "Simplifica tus rutinas",
+      "description": "DoItBetter te ayudará a gestionar tus rutinas de manera más efectiva. Crea hábitos y mucho más",
       "button": "Comenzar"
     },
     "key_features": {
-      "title": "Características Clave",
+      "title": "Características clave",
       "description": {
         "routines_creation": {
-          "title": "Crear Rutinas",
-          "description": "Configura y personaliza tus rutinas fácilmente",
-          "alt": "Tarjeta de Rutina"
+          "title": "Crea rutinas",
+          "description": "Configura y personaliza fácilmente tus rutinas",
+          "alt": "Tarjeta de rutina"
         },
         "routine_manage": {
-          "title": "Gestionar Rutinas",
+          "title": "Gestiona rutinas",
           "description": "Gestiona tus rutinas según tu disponibilidad",
-          "alt": "Tarjeta de Gestión de Rutinas"
+          "alt": "Tarjeta de gestión de rutinas"
         },
         "learn_from_others": {
-          "title": "Publica tus Rutinas",
+          "title": "Publica tus rutinas",
           "description": "Comparte tus rutinas con otros",
-          "alt": "Tarjeta de Compartir"
+          "alt": "Tarjeta de compartir"
         }
       },
       "button": "Comenzar"
@@ -43,29 +43,29 @@
       },
       "user2": {
         "name": "David Lee",
-        "role": "Entrenador Personal",
-        "content": "Como autónomo, DoItBetter me ayuda a mantenerme organizado y profesional. A mis clientes les encanta lo fácil que es usarlo."
+        "role": "Entrenador personal",
+        "content": "Como freelancer, DoItBetter me ayuda a mantenerme organizado y profesional. A mis clientes les encanta lo fácil que es usarlo."
       },
       "user3": {
         "name": "Emily Chen",
         "role": "Fundadora de Startup",
-        "content": "DoItBetter me ha ayudado a mejorar mi organización en el gimnasio y a ahorrar mucho tiempo."
+        "content": "DoItBetter me ha ayudado a mejorar mi organización en el gimnasio y me ha ahorrado mucho tiempo."
       },
       "user4": {
         "name": "Michael Brown",
-        "role": "Ejecutivo de Ventas",
+        "role": "Ejecutivo de ventas",
         "content": "He visto un aumento del 15% en la eficiencia de mis rutinas desde que uso DoItBetter. Es un cambio total para los profesionales del gimnasio."
       }
     },
     "how_it_works": {
-      "title": "Cómo Funciona",
+      "title": "Cómo funciona",
       "step1": {
         "step": "Regístrate",
-        "description": "Crea tu cuenta gratuita de DoItBetter"
+        "description": "Crea tu cuenta gratuita en DoItBetter"
       },
       "step2": {
-        "step": "Configura Rutinas",
-        "description": "Define cuándo realizarás tu primera rutina"
+        "step": "Configura las rutinas",
+        "description": "Define cuándo será tu primera rutina"
       },
       "step3": {
         "step": "Agrega ejercicios",
@@ -77,9 +77,9 @@
       }
     },
     "CTA": {
-      "title": "¿Listo para Simplificar tus Rutinas?",
+      "title": "¿Listo para simplificar tus rutinas?",
       "description": "Únete a miles de profesionales que confían en DoItBetter para gestionar sus rutinas de manera eficiente.",
-      "button": "Empieza Gratis"
+      "button": "Comienza gratis"
     }
   },
   "main": {
@@ -103,40 +103,54 @@
         "content_plural": "Rutinas publicadas"
       },
       "public_routines": {
-        "title": "Rutinas Públicas"
+        "title": "Rutinas públicas"
       }
     },
     "routines": {
       "action": "Acciones",
       "sort": {
         "name": "Ordenar por nombre",
-        "none": "Sin orden"
+        "none": "Ordenar por ninguno"
+      },
+      "toast": {
+        "create_succesful": "Rutina creada exitosamente",
+        "delete_succesful": "Rutina eliminada exitosamente",
+        "delete_error": "Error al eliminar la rutina",
+        "create_error": "Error al crear la rutina"
       },
       "find": {
         "name": "Buscar por nombre",
         "userName": "Buscar por nombre de usuario"
       },
       "switch": {
-        "publish": "Publica tu Rutina",
-        "unpublish": "Despublica tus Rutinas"
+        "publish": "Publica tu rutina",
+        "unpublish": "Despublica tu rutina"
       },
       "table": {
-        "title": "Tus Rutinas",
+        "title": "Tus rutinas",
         "headers": {
           "name": "Nombre",
           "description": "Descripción",
-          "date_created": "Fecha de Creación",
+          "date_created": "Fecha de creación",
           "actions": "Acciones"
         }
       },
       "details": {
         "title": "Detalles",
+        "toast": {
+          "add_succesful": "Ejercicio agregado exitosamente",
+          "delete_succesful": "Ejercicio eliminado exitosamente",
+          "copy_succesful": "Rutina copiada exitosamente",
+          "copy_error": "Error al copiar la rutina",
+          "delete_error": "Error al eliminar el ejercicio",
+          "add_error": "Error al agregar el ejercicio"
+        },
         "form": {
-          "title": "Agregar Ejercicio",
-          "edit_title": "Editar Ejercicio",
+          "title": "Agregar ejercicio",
+          "edit_title": "Editar ejercicio",
           "inputs": {
             "name": {
-              "label": "Nombre del Ejercicio",
+              "label": "Nombre del ejercicio",
               "placeholder": "Ejercicio"
             },
             "sets": { "label": "Series", "placeholder": "4" },
@@ -149,47 +163,51 @@
         }
       },
       "form": {
-        "title": "Crear Rutina",
+        "title": "Crear rutina",
         "name": {
           "label": "Nombre",
-          "placeholder": "John Snow",
+          "placeholder": "Jhon snow",
           "error_messages": {}
         },
         "description": {
           "label": "Descripción",
-          "placeholder": "Nueva Descripción",
+          "placeholder": "Nueva descripción",
           "error_messages": {}
         }
       }
     },
     "profile": {
       "banner": {
-        "title": "Información Clave del Perfil",
+        "title": "Información clave del perfil",
         "greeting": "Bienvenido de nuevo"
       },
       "edit_form": {
-        "title": "Información Personal del Perfil"
+        "title": "Información personal del perfil"
       },
       "chart": {
-        "title": "Gráfico de Información de Rutinas",
-        "value_1": "Rutinas Publicadas",
-        "value_2": "Rutinas Privadas"
+        "title": "Gráfico de información de rutinas",
+        "value_1": "Rutinas publicadas",
+        "value_2": "Rutinas privadas"
       }
     }
   },
   "auth": {
     "login": {
-      "title": "Bienvenido de Nuevo",
+      "title": "Bienvenido de nuevo",
+      "toast": {
+        "succesful": "Inicio de sesión exitoso",
+        "bad_credential": "Inicio de sesión no exitoso, credenciales incorrectas"
+      },
       "register_link": "¿Eres nuevo? Comienza tu viaje <a href=\"/register\">aquí</a>"
     },
     "register": {
-      "title": "Bienvenido de Nuevo",
+      "title": "Bienvenido de nuevo",
       "register_link": "¿Ya tienes una cuenta? Continúa <a href=\"/login\">aquí</a>"
     },
     "form": {
       "name": {
         "label": "Nombre",
-        "placeholder": "John Snow",
+        "placeholder": "Jhon snow",
         "error_messages": {}
       },
       "password": {
@@ -217,10 +235,10 @@
         "error_messages": {}
       },
       "mail": {
-        "label": "Correo Electrónico",
+        "label": "Correo electrónico",
         "placeholder": "test@gmail.com",
         "error_messages": {
-          "format": "El formato del correo ingresado no es válido."
+          "format": "El formato del correo electrónico ingresado es inválido."
         }
       }
     }
@@ -233,22 +251,22 @@
     }
   },
   "delete_pop": {
-    "message": "¿Deseas eliminar este registro?",
+    "message": "¿Quieres eliminar este registro?",
     "confirm_button": "Sí",
     "negate_button": "No"
   },
   "exercises": {
     "squat": {
       "name": "Sentadilla",
-      "description": "La sentadilla es un ejercicio de fuerza en el que el practicante baja las caderas desde una posición de pie y luego se vuelve a levantar. Durante el descenso, las articulaciones de la cadera y las rodillas se flexionan mientras que el tobillo se dorsiflexiona; de manera inversa, las articulaciones de la cadera y las rodillas se extienden y el tobillo se flexiona al ponerse de pie."
+      "description": "La sentadilla es un ejercicio de fuerza en el que el practicante baja las caderas desde una posición de pie y luego se vuelve a poner de pie. Durante el descenso, las articulaciones de la cadera y la rodilla se flexionan mientras que la articulación del tobillo se dorsiflexiona; por el contrario, las articulaciones de la cadera y la rodilla se extienden y la articulación del tobillo se planta cuando se pone de pie."
     },
     "biceps_curl": {
-      "name": "Curl de Bíceps",
-      "description": "Sujeta la barra con ambas manos hacia arriba para que las muñecas, codos y hombros estén en línea recta a la altura de los hombros. Levanta la barra hacia los hombros doblando los codos y manteniéndolos junto al cuerpo. Baja el peso lentamente para regresar a la posición inicial."
+      "name": "Curl de bíceps",
+      "description": "Sujeta la barra con ambas manos hacia arriba, de modo que las muñecas, codos y hombros estén alineados a la altura de los hombros. Levanta la barra hacia los hombros mientras doblas los codos y los mantienes junto al centro del cuerpo. Baja lentamente el peso para regresar a la posición inicial."
     },
     "benchpress": {
-      "name": "Press de Banca",
-      "description": "Implica acostarse en un banco y presionar un peso hacia arriba utilizando una barra o un par de mancuernas. Durante el press de banca, bajas el peso hasta el nivel del pecho y luego lo empujas hacia arriba extendiendo los brazos."
+      "name": "Press de banca",
+      "description": "Consiste en acostarse en un banco y presionar el peso hacia arriba usando una barra o un par de mancuernas. Durante el press de banca, bajas el peso hasta el nivel del pecho y luego lo presionas hacia arriba mientras extiendes los brazos."
     }
   }
 }
