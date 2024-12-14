@@ -9,6 +9,8 @@ import './edit-user-form.scss'
 import { Button } from '@/components/shared/button/Button'
 import { ButtonSeverity } from '@/components/shared/button/types'
 import { Form } from '@/components/shared/form/Form'
+import { useAppDispatch } from '@/helpers/hooks'
+import { updateUserInfoAction } from '@/store/userSlice'
 import { User } from '@/types/interfaces'
 
 export interface EditUserFormProps {
@@ -16,10 +18,10 @@ export interface EditUserFormProps {
 }
 export const EditUserForm = ({ user }: EditUserFormProps) => {
   const [editable, setEditable] = useState<boolean>(true)
+  const dispatch = useAppDispatch()
 
-  const HandleEditClick = () => {
-    setEditable(!editable)
-  }
+  const HandleEditClick = () => setEditable(!editable)
+  const onSumbit = (userData: User) => dispatch(updateUserInfoAction(userData))
 
   return (
     <>
@@ -38,7 +40,7 @@ export const EditUserForm = ({ user }: EditUserFormProps) => {
         initialValues={user}
         validationSchema={VALID_EDIT_SCHEMA}
         inputContainerClassName="grid-cols-4 grid-rows-5 "
-        onSumbit={() => {}}
+        onSumbit={onSumbit}
         disabled={editable}
       />
     </>
