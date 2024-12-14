@@ -85,7 +85,7 @@ export const Profile = () => {
                   }
                 }}
                 type="file"
-                accept="image/png, image/gif, image/jpeg"
+                accept="image/png, image/gif, image/jpeg, image/jpg"
               />
               <h2 className="text-5xl md:text-5xl px-10 gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
                 <p>{t('main.profile.banner.greeting')}</p>
