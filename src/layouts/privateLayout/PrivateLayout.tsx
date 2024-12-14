@@ -15,6 +15,7 @@ import { Card } from '@/components/shared/card/Card'
 import { OverlayPanel } from '@/components/shared/overlayPanel/OverlayPanel'
 import { AppSidebar } from '@/components/ui/AppSidebar'
 import { SidebarTrigger } from '@/components/ui/sidebar'
+import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
 import { getRoutines } from '@/store/routinesSlice'
@@ -65,7 +66,7 @@ export const PrivateLayout = () => {
               <OverlayPanel
                 activationComponent={
                   <img
-                    src={`http://localhost:8081/uploads/${user.profilePictureName}`}
+                    src={`${BASE_URL}/${user.profilePictureName}`}
                     className=" w-7 h-7 rounded-full mx-2"
                   />
                 }>

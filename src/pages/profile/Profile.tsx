@@ -11,6 +11,7 @@ import { uploadImage } from '@/api/services'
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
 import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
+import { BASE_URL } from '@/constants/server'
 import { useAppSelector } from '@/helpers/hooks'
 
 export const Profile = () => {
@@ -68,7 +69,7 @@ export const Profile = () => {
                     inputRef.current.click()
                   }
                 }}
-                src={`http://localhost:8081/uploads/${user.profilePictureName}`}
+                src={`${BASE_URL}/${user.profilePictureName}`}
                 alt="Foto de perfil"
                 style={{ width: '150px', height: '150px', borderRadius: '50%' }}
               />

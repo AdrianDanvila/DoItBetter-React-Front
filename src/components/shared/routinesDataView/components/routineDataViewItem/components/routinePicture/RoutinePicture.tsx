@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from 'react'
 
+import { BASE_URL } from '@/constants/server'
 import { useAppDispatch } from '@/helpers/hooks'
 import { uploadRoutineImageAction } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
@@ -16,7 +17,7 @@ export const RoutinePicture = ({ routine, user_id }: RoutinePictureProps) => {
 
   return routine.published && routine.user_id !== user_id ? (
     <img
-      src={`http://localhost:8081/uploads/${routine.routinePictureName}`}
+      src={`${BASE_URL}/${routine.routinePictureName}`}
       className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all"
     />
   ) : (
@@ -25,7 +26,7 @@ export const RoutinePicture = ({ routine, user_id }: RoutinePictureProps) => {
         onClick={() => {
           inputRef.current && inputRef.current.click()
         }}
-        src={`http://localhost:8081/uploads/${routine.routinePictureName}`}
+        src={`${BASE_URL}/${routine.routinePictureName}`}
         className="w-2/12 max-h-32 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all hover:scale-105 hover:cursor-pointer "
       />
       <input

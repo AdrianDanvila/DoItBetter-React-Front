@@ -27,7 +27,7 @@ export const Execises = () => {
           title={exercise.name}>
           <img
             width={300}
-            src="http://localhost:8081/uploads/default.png"
+            src="${BASE_URL}/default.png"
             alt=""
           />
           <p>{t(exercise.name)}</p>

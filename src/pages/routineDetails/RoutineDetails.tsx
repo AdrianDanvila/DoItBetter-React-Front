@@ -7,6 +7,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { ExercisesDataView } from '@/components/routineDetails/exercisesDataView/ExercisesDataView'
 import { Card } from '@/components/shared/card/Card'
 import { Button } from '@/components/ui/button'
+import { BASE_URL } from '@/constants/server'
 import { isUndefined } from '@/helpers'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { PATH, ROUTE_PATH } from '@/router/constants'
@@ -63,7 +64,7 @@ export const RoutinesDetails = () => {
         </h2>
         <div className="flex flex-row items-center mb-6">
           <img
-            src={`http://localhost:8081/uploads/${user.profilePictureName}`}
+            src={`${BASE_URL}/${user.profilePictureName}`}
             className=" w-10 h-10 rounded-full mx-2"
           />
           <textarea
@@ -87,7 +88,7 @@ export const RoutinesDetails = () => {
                   comment.content.substring(0, 3)
                 }>
                 <img
-                  src={`http://localhost:8081/uploads/${comment.user_id}.jpg`}
+                  src={`${BASE_URL}/${comment.user_id}.jpg`}
                   className=" w-10 h-10 rounded-full mx-2 self-start my-1"
                 />
                 <div className="flex flex-col gap-1 w-11/12 justify-center">
