@@ -21,7 +21,9 @@ export const EditUserForm = ({ user }: EditUserFormProps) => {
   const dispatch = useAppDispatch()
 
   const HandleEditClick = () => setEditable(!editable)
-  const onSumbit = (userData: User) => dispatch(updateUserInfoAction(userData))
+  const onSumbit = (userData: User) => {
+    dispatch(updateUserInfoAction(userData))
+  }
 
   return (
     <>

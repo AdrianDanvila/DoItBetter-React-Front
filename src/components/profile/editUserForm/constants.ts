@@ -55,9 +55,6 @@ export const VALID_EDIT_SCHEMA = Yup.object().shape({
   email: Yup.string()
     .email('auth.form.mail.error_messages.format')
     .required('form.error_messages.required'),
-  password: Yup.string()
-    .min(12, 'auth.form.password.error_messages.minimun')
-    .required('form.error_messages.required'),
   age: Yup.number()
     .min(18, 'auth.form.age.error_messages.minimun')
     .required('form.error_messages.required'),

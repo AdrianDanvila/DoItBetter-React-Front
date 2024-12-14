@@ -61,7 +61,7 @@ export const Profile = () => {
     <section className="profile-container flex">
       <div className="">
         <Card
-          title={t('main.profile.banner.title')}
+          title="main.profile.banner.title"
           className="">
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3 ">
@@ -100,16 +100,16 @@ export const Profile = () => {
         </Card>
       </div>
       <div className="flex flex-col lg:flex-row gap-2 pb-2">
-        <Card title={t('main.profile.edit_form.title')}>
+        <Card title="main.profile.edit_form.title">
           <EditUserForm user={user} />
         </Card>
         <Card
-          title={t('main.routines.table.title')}
+          title="main.routines.table.title"
           className="flex items-center justify-center">
           <RoutinesTable />
         </Card>
         <Card
-          title={t('main.profile.chart.title')}
+          title="main.profile.chart.title"
           className="flex items-center justify-center">
           <Chart
             type="doughnut"
