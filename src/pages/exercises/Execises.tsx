@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import { API_BASE_URL } from '@/api/constants'
 import { Card } from '@/components/shared/card/Card'
+import { BASE_URL } from '@/constants/server'
 import { Exercise } from '@/types/interfaces'
 
 export const Execises = () => {
@@ -27,7 +28,7 @@ export const Execises = () => {
           title={exercise.name}>
           <img
             width={300}
-            src="${BASE_URL}/default.png"
+            src={`${BASE_URL}/uploads/default.png`}
             alt=""
           />
           <p>{t(exercise.name)}</p>

@@ -66,7 +66,7 @@ export const PrivateLayout = () => {
               <OverlayPanel
                 activationComponent={
                   <img
-                    src={`${BASE_URL}/${user.profilePictureName}`}
+                    src={`${BASE_URL}/uploads/${user.profilePictureName}`}
                     className=" w-7 h-7 rounded-full mx-2"
                   />
                 }>

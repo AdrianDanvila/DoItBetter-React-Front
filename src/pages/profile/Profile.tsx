@@ -69,7 +69,7 @@ export const Profile = () => {
                     inputRef.current.click()
                   }
                 }}
-                src={`${BASE_URL}/${user.profilePictureName}`}
+                src={`${BASE_URL}/uploads/${user.profilePictureName}`}
                 alt="Foto de perfil"
                 style={{ width: '150px', height: '150px', borderRadius: '50%' }}
               />

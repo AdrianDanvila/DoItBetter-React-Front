@@ -64,7 +64,7 @@ export const RoutinesDetails = () => {
         </h2>
         <div className="flex flex-row items-center mb-6">
           <img
-            src={`${BASE_URL}/${user.profilePictureName}`}
+            src={`${BASE_URL}/uploads/${user.profilePictureName}`}
             className=" w-10 h-10 rounded-full mx-2"
           />
           <textarea
@@ -88,7 +88,7 @@ export const RoutinesDetails = () => {
                   comment.content.substring(0, 3)
                 }>
                 <img
-                  src={`${BASE_URL}/${comment.user_id}.jpg`}
+                  src={`${BASE_URL}/uploads/${comment.user_id}.jpg`}
                   className=" w-10 h-10 rounded-full mx-2 self-start my-1"
                 />
                 <div className="flex flex-col gap-1 w-11/12 justify-center">
