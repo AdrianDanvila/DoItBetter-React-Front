@@ -18,7 +18,6 @@ import { SidebarTrigger } from '@/components/ui/sidebar'
 import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { ROUTE_PATH } from '@/router/constants'
-import { getRoutines } from '@/store/routinesSlice'
 import { initialize } from '@/store/userSlice'
 
 export const PrivateLayout = () => {
@@ -29,9 +28,9 @@ export const PrivateLayout = () => {
   const path =
     NAVBAR_LINKS.find((item) => item.href === window.location.pathname)?.text ||
     'Dashboard'
+
   useEffect(() => {
     dispatch(initialize())
-    dispatch(getRoutines())
 
     const asyncTestToken = async () => {
       if (!(await testToken())) {

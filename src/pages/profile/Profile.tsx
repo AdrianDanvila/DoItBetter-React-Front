@@ -12,7 +12,8 @@ import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
 import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
 import { BASE_URL } from '@/constants/server'
-import { useAppSelector } from '@/helpers/hooks'
+import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { getUserInfoAction } from '@/store/userSlice'
 
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
@@ -21,8 +22,10 @@ export const Profile = () => {
   const user = useAppSelector((state) => state.user.user)
   const routines = useAppSelector((state) => state.routines.ownRoutines)
   const inputRef = useRef<any>()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
+    dispatch(getUserInfoAction())
     const documentStyle = getComputedStyle(document.documentElement)
     const data = {
       labels: [

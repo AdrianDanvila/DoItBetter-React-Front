@@ -4,7 +4,7 @@ import { Card } from '@/components/shared/card/Card'
 import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
 import { RoutinesDataview } from '@/components/shared/routinesDataView/RoutineDataView'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
-import { getPublishedRoutines } from '@/store/routinesSlice'
+import { getPublishedRoutines, getRoutines } from '@/store/routinesSlice'
 
 export const Main = () => {
   const dispatch = useAppDispatch()
@@ -12,6 +12,7 @@ export const Main = () => {
 
   useEffect(() => {
     dispatch(getPublishedRoutines())
+    dispatch(getRoutines())
   }, [dispatch])
 
   return (
