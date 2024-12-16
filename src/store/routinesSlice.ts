@@ -13,6 +13,7 @@ import {
   getUserRoutines,
   toggleRoutinePublished,
 } from '@/api/services'
+import { isUndefined } from '@/helpers'
 import { Exercise, Routine, RoutineExercise } from '@/types/interfaces'
 
 export interface RoutinesState {
@@ -234,7 +235,7 @@ const routinesSlice = createSlice({
       // Añadir la rutina creada
     })
     builder.addCase(getRoutines.fulfilled, (state, action) => {
-      state.ownRoutines = action.payload.data
+      if (!isUndefined(action.payload)) state.ownRoutines = action.payload.data
       // Añadir la rutina creada
     })
     builder.addCase(deleteRoutine.fulfilled, (state, action) => {
@@ -307,7 +308,8 @@ const routinesSlice = createSlice({
       }
     })
     builder.addCase(getPublishedRoutines.fulfilled, (state, action) => {
-      state.published = action.payload.data
+      if (!isUndefined(action.payload)) state.published = action.payload.data
+
       // Añadir la rutina creada
     })
     builder.addCase(addCommentAction.fulfilled, (state, action) => {

@@ -32,6 +32,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={index}>
       <App />
     </Provider>
-    ,
   </SidebarProvider>,
 )

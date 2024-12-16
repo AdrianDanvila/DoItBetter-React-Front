@@ -7,7 +7,7 @@ import { Card } from '@/components/shared/card/Card'
 import { BASE_URL } from '@/constants/server'
 import { Exercise } from '@/types/interfaces'
 
-export const Execises = () => {
+const Execises = () => {
   const [exercises, setExercises] = useState([])
   const { t } = useTranslation()
   useEffect(() => {
@@ -38,3 +38,4 @@ export const Execises = () => {
     </section>
   )
 }
+export default Execises

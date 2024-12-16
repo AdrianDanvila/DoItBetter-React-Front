@@ -202,6 +202,10 @@
     },
     "register": {
       "title": "Bienvenido de nuevo",
+      "toast": {
+        "succesful": "Creacion de cuenta no valida",
+        "bad_credential": "Creacion de cuenta no valida, credenciales incorrectas"
+      },
       "register_link": "¿Ya tienes una cuenta? Continúa <a href=\"/login\">aquí</a>"
     },
     "form": {

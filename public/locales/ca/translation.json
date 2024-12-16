@@ -199,6 +199,10 @@
     },
     "register": {
       "title": "Benvingut de nou",
+      "toast": {
+        "succesful": "Creació de compte no vàlida",
+        "bad_credential": "Creació de compte no vàlida, credencials incorrectes"
+      },
       "register_link": "Ja tens un compte? Continua el teu camí <a href=\"/login\">aquí</a>"
     },
     "form": {

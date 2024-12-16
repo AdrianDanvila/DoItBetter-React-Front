@@ -16,7 +16,9 @@ export const Routines = () => {
 
   return (
     <section className="routines-container">
-      <Card title="main.routines.table.title">
+      <Card
+        title="main.routines.table.title"
+        className="rounded-none md:rounded-xl">
         <RoutinesDataview
           className="h-screen"
           values={values}

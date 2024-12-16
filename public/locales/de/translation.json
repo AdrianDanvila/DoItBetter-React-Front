@@ -199,6 +199,10 @@
     },
     "register": {
       "title": "Willkommen zurück",
+      "toast": {
+        "succesful": "Kontoerstellung ungültig",
+        "bad_credential": "Kontoerstellung ungültig, falsche Anmeldedaten"
+      },
       "register_link": "Hast du schon ein Konto? Fahre fort <a href=\"/login\">hier</a>"
     },
     "form": {

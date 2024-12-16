@@ -199,6 +199,10 @@
     },
     "register": {
       "title": "Welcome Back",
+      "toast": {
+        "succesful": "Account creation not valid",
+        "bad_credential": "Account creation not valid, incorrect credentials"
+      },
       "register_link": "Already have an account? Continue on your way <a href=\"/login\">here</a>"
     },
     "form": {

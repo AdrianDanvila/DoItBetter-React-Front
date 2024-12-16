@@ -1,4 +1,4 @@
-import { createContext, RefObject, useRef } from 'react'
+import { createContext, RefObject, Suspense, useRef } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import { PrimeReactProvider } from 'primereact/api'
 import { Toast } from 'primereact/toast'
@@ -14,7 +14,9 @@ function App() {
     <PrimeReactProvider>
       <Toast ref={toast} />
       <toastContext.Provider value={toast}>
-        <RouterProvider router={getRouter()}></RouterProvider>
+        <Suspense fallback={<div>a</div>}>
+          <RouterProvider router={getRouter()}></RouterProvider>
+        </Suspense>
       </toastContext.Provider>
     </PrimeReactProvider>
   )
