@@ -31,6 +31,8 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     className: '',
     inputType: InputType.Range,
     fieldTag: FieldTag.Input,
+    min: 0,
+    max: 250,
   },
   {
     id: 'height',
@@ -39,6 +41,8 @@ export const REGISTER_FORM_INPUTS: InputProps[] = [
     className: '',
     inputType: InputType.Range,
     fieldTag: FieldTag.Input,
+    min: 0,
+    max: 200,
   },
   {
     id: 'email',

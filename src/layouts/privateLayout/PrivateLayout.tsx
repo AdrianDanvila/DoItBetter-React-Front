@@ -71,7 +71,7 @@ export const PrivateLayout = () => {
                 }>
                 <Card title="hola" />
               </OverlayPanel>
-              <SidebarTrigger className="sticky  bg-transparent " />
+              <SidebarTrigger className="sticky bg-transparent " />
             </Header>
             <h2 className="text-5xl md:text-6xl px-10 gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
               {t(path)}

@@ -30,7 +30,7 @@ export const Dialog = ({
       closeOnEscape={true}
       header={header}
       visible={isVisible}
-      onHide={() => (!isVisible ? setIsVisible?.(false) : null)}>
+      onHide={() => (isVisible ? setIsVisible?.(false) : null)}>
       {children}
     </PrimeDialog>
   </>

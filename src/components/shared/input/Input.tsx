@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { SetStateAction, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { ErrorMessage, Field, useFormikContext } from 'formik'
+import { Trans, useTranslation } from 'react-i18next'
+import { ErrorMessage, Field, FormikValues, useFormikContext } from 'formik'
 
 import { FieldTag, InputProps, InputType } from './types'
 
 import './input.scss'
 
-export const Input = ({
+export const Input = <T extends FormikValues>({
   id,
   field,
   placeHolder,
@@ -16,10 +16,12 @@ export const Input = ({
   fieldTag,
   options,
   disabled,
+  min,
+  max,
 }: InputProps) => {
-  const [value, setValue] = useState()
   const { t } = useTranslation()
   const formikProps = useFormikContext()
+  const [value, setValue] = useState((formikProps.values as T)[id as keyof T])
 
   const handleChange = async (event: {
     target: { value: SetStateAction<any> }
@@ -27,6 +29,7 @@ export const Input = ({
     setValue(event.target.value)
     formikProps.setFieldValue(id, event.target.value)
   }
+
   return (
     <div
       className={`${className} input`}
@@ -35,10 +38,16 @@ export const Input = ({
         role="input__title"
         className={`${className} input__title`}
         htmlFor={id}>
-        {t(field) + ''}
-        {inputType === InputType.Range ? `${value || 0}` : ''}
+        <Trans
+          t={t}
+          i18nKey={field}
+          values={{ value: value ?? 0 }}
+        />
       </label>
+
       <Field
+        min={inputType === InputType.Range ? min || 0 : 0} // Mínimo permitido
+        max={inputType === InputType.Range ? max || 100 : 0} // Mínimo permitido
         onChange={handleChange}
         disabled={disabled}
         type={inputType}

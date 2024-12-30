@@ -102,14 +102,10 @@ export const Profile = () => {
         <Card title="main.profile.edit_form.title">
           <EditUserForm user={user} />
         </Card>
-        <Card
-          title="main.routines.table.title"
-          className="flex items-center justify-center">
+        <Card title="main.routines.table.title">
           <RoutinesTable />
         </Card>
-        <Card
-          title="main.profile.chart.title"
-          className="flex items-center justify-center">
+        <Card title="main.profile.chart.title">
           <Chart
             type="doughnut"
             data={chartData}

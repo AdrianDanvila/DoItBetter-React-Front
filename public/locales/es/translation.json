@@ -229,12 +229,12 @@
         }
       },
       "weight": {
-        "label": "Peso (kg)",
+        "label": "Peso {{value}} kg",
         "placeholder": "18",
         "error_messages": {}
       },
       "height": {
-        "label": "Altura",
+        "label": "Altura {{value}} Cm",
         "placeholder": "1234567",
         "error_messages": {}
       },

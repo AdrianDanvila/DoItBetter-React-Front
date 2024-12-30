@@ -22,4 +22,6 @@ export interface InputProps {
   fieldTag: FieldTag
   options?: { value: number; label: string }[]
   disabled?: boolean
+  min?: number
+  max?: number
 }

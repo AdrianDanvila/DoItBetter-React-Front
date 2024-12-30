@@ -6,7 +6,6 @@ import { VALID_EXERCISE_SCHEMA } from '../exerciseForm/constants'
 
 import { EXECISE_EDIT_FORM_INPUTS } from './constants'
 
-import { Card } from '@/components/shared/card/Card'
 import { Dialog } from '@/components/shared/dialog/Dialog'
 import { Form } from '@/components/shared/form/Form'
 import { useToast } from '@/components/shared/toast/useToast'
@@ -62,17 +61,12 @@ export const ExerciseDetailsDialog = ({
       openButtonClassname="button button--success"
       openButtonLabel=""
       openButtonIcon={<PlayIcon />}>
-      <div className="flex flex-row gap-1">
-        <iframe
-          width="100%"
-          height="560"
-          src="https://youtube.com/embed/0Xweg0mjlwQ?si=QbaQlgC9OwJkVQxl"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen></iframe>
-        {!routine.published || routine.user_id === values.user.user.id ? (
-          <Card title="main.routines.details.form.edit_title">
+      <div className="flex flex-col gap-5">
+        {routine.user_id === values.user.user.id ? (
+          <div className="px-2">
+            <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
+              Description
+            </h2>
             <Form
               inputContainerClassName="flex flex-col "
               inputs={EXECISE_EDIT_FORM_INPUTS}
@@ -81,10 +75,31 @@ export const ExerciseDetailsDialog = ({
               onSumbit={onSumbitHandler}
               disabled={false}
             />
-          </Card>
+          </div>
         ) : (
           <></>
         )}
+
+        <div className="px-2">
+          <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
+            Description
+          </h2>
+          <p className="pl-3">{t(exercise.description)}</p>
+        </div>
+        <div className="px-2">
+          <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
+            Example
+          </h2>
+          <iframe
+            width="100%"
+            height="560"
+            src="https://youtube.com/embed/0Xweg0mjlwQ?si=QbaQlgC9OwJkVQxl"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
       </div>
     </Dialog>
   )

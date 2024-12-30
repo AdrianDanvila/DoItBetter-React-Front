@@ -226,12 +226,12 @@
         }
       },
       "weight": {
-        "label": "Weight (kg)",
+        "label": "Weight {{value}} kg",
         "placeholder": "18",
         "error_messages": {}
       },
       "height": {
-        "label": "Height",
+        "label": "Height {{value}} Cm",
         "placeholder": "1234567",
         "error_messages": {}
       },

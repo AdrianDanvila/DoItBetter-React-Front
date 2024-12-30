@@ -40,10 +40,8 @@ export const AddExerciseDialog = ({ routine }: AddExerciseDialog) => {
     }
   }
 
-  const onSumbitHandler = (e: Exercise) => {
-    addItem(e)
-    setIsVisible(false)
-  }
+  const onSumbitHandler = (e: Exercise) =>
+    addItem(e).then(() => setIsVisible(false))
 
   return (
     <Dialog
