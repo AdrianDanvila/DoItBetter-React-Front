@@ -66,6 +66,9 @@ export const Profile = () => {
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3 ">
               <img
+                onError={(e: any) => {
+                  e.target.src = `${BASE_URL}/uploads/default.png`
+                }}
                 className="hover:cursor-pointer hover:scale-105 transition-all"
                 // eslint-disable-next-line no-confusing-arrow
                 onClick={() =>
