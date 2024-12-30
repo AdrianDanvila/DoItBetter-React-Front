@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Calendar, Clock, LinkIcon } from 'lucide-react'
 
+import mg from '@assets/foto2.png'
+
 import './home.scss'
 
 import { Footer } from '@/components/home/footer/Footer'
@@ -8,7 +10,6 @@ import { Header } from '@/components/home/header/Header'
 import TestimonialsCarousel from '@/components/shared/testimonials/testimonials'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
 const features = [
   {
     icon: Calendar,
@@ -79,7 +80,7 @@ export const Home = () => {
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative w-full max-w-md aspect-square invisible lg:visible">
                 <img
-                  src="..\src\assets\foto2.png"
+                  src={mg}
                   alt="ilu"
                 />
               </div>
