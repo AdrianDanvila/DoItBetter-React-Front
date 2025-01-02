@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { BASE_URL } from '@/constants/server'
 import { isUndefined } from '@/helpers'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { onImageLoadError } from '@/lib/utils'
 import { PATH, ROUTE_PATH } from '@/router/constants'
 import { addCommentAction, getExercises } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
@@ -64,6 +65,7 @@ export const RoutinesDetails = () => {
         </h2>
         <div className="flex flex-row items-center mb-6">
           <img
+            onError={onImageLoadError}
             src={`${BASE_URL}/uploads/${user.profilePictureName}`}
             className=" w-10 h-10 rounded-full mx-2"
           />
@@ -88,6 +90,7 @@ export const RoutinesDetails = () => {
                   comment.content.substring(0, 3)
                 }>
                 <img
+                  onError={onImageLoadError}
                   src={`${BASE_URL}/uploads/${comment.user_id}.jpg`}
                   className=" w-10 h-10 rounded-full mx-2 self-start my-1"
                 />

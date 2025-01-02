@@ -19,7 +19,9 @@ export const Card = ({
 }: PropsWithChildren<CardProps>) => {
   const { t } = useTranslation()
   return (
-    <ShadCard className={`${className} w-full rounded-none md:rounded-xl `}>
+    <ShadCard
+      className={`${className} w-full rounded-none md:rounded-xl `}
+      data-testid="testid-card">
       <CardHeader>
         <CardTitle className={`text-center text-blue-600 ${className}`}>
           {t(title)}

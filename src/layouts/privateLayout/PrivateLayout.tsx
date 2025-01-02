@@ -17,6 +17,7 @@ import { AppSidebar } from '@/components/ui/AppSidebar'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { onImageLoadError } from '@/lib/utils'
 import { ROUTE_PATH } from '@/router/constants'
 import { initialize } from '@/store/userSlice'
 
@@ -65,6 +66,7 @@ export const PrivateLayout = () => {
               <OverlayPanel
                 activationComponent={
                   <img
+                    onError={onImageLoadError}
                     src={`${BASE_URL}/uploads/${user.profilePictureName}`}
                     className=" w-7 h-7 rounded-full mx-2"
                   />

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { API_BASE_URL } from '@/api/constants'
 import { Card } from '@/components/shared/card/Card'
 import { BASE_URL } from '@/constants/server'
+import { onImageLoadError } from '@/lib/utils'
 import { Exercise } from '@/types/interfaces'
 
 const Execises = () => {
@@ -27,6 +28,7 @@ const Execises = () => {
           key={exercise.id}
           title={exercise.name}>
           <img
+            onError={onImageLoadError}
             width={300}
             src={`${BASE_URL}/uploads/default.png`}
             alt=""

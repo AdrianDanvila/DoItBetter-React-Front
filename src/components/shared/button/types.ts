@@ -10,7 +10,7 @@ export interface Buttonprops {
   text?: string
   type?: ButtonType
   label?: string
-  severity: ButtonSeverity
+  severity?: ButtonSeverity
 }
 
 export enum ButtonType {

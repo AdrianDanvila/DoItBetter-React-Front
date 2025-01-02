@@ -28,6 +28,7 @@ export const DeletePopUp = ({ onAccept, onReject }: DeletePopUpProps) => {
         reject={onReject}
       />
       <PrimeButton
+        data-testid="testid-delete-button"
         ref={buttonRef}
         type="button"
         icon={<TrashIcon className="icon" />}

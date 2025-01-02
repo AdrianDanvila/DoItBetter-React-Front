@@ -13,6 +13,7 @@ import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable
 import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
 import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
+import { onImageLoadError } from '@/lib/utils'
 import { getUserInfoAction } from '@/store/userSlice'
 
 export const Profile = () => {
@@ -66,9 +67,7 @@ export const Profile = () => {
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="flex flex-col lg:flex-row items-center px-5 py-10 gap-3 ">
               <img
-                onError={(e: any) => {
-                  e.target.src = `${BASE_URL}/uploads/default.png`
-                }}
+                onError={onImageLoadError}
                 className="hover:cursor-pointer hover:scale-105 transition-all"
                 // eslint-disable-next-line no-confusing-arrow
                 onClick={() =>

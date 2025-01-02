@@ -3,6 +3,7 @@ import { useRef } from 'react'
 
 import { BASE_URL } from '@/constants/server'
 import { useAppDispatch } from '@/helpers/hooks'
+import { onImageLoadError } from '@/lib/utils'
 import { uploadRoutineImageAction } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
 
@@ -17,12 +18,14 @@ export const RoutinePicture = ({ routine, user_id }: RoutinePictureProps) => {
 
   return routine.published && routine.user_id !== user_id ? (
     <img
+      onError={onImageLoadError}
       src={`${BASE_URL}/uploads/${routine.routinePictureName}`}
       className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all"
     />
   ) : (
     <>
       <img
+        onError={onImageLoadError}
         onClick={() => inputRef.current && inputRef.current.click()}
         src={`${BASE_URL}/uploads/${routine.routinePictureName}`}
         className="w-2/12 max-h-32 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round transition-all hover:scale-105 hover:cursor-pointer "
