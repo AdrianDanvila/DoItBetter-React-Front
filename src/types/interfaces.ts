@@ -43,7 +43,13 @@ export interface Exercise {
   id: number
   name: string
   description: string
-  exercise: { id: number; name: string; photo: string; description: string }
+  exercise: {
+    id: number
+    name: string
+    photo: string
+    description: string
+    video: string
+  }
   sets: number
   weight: number
   reps: number
