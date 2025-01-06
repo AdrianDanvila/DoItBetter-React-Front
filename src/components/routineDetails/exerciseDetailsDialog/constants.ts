@@ -12,6 +12,8 @@ export const EXECISE_EDIT_FORM_INPUTS: InputProps[] = [
     className: 'w-full',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
   {
     id: 'sets',
@@ -20,6 +22,8 @@ export const EXECISE_EDIT_FORM_INPUTS: InputProps[] = [
     className: 'w-full',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
   {
     id: 'weight',
@@ -28,5 +32,7 @@ export const EXECISE_EDIT_FORM_INPUTS: InputProps[] = [
     className: 'w-full',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
 ]

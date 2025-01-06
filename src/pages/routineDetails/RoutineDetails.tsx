@@ -12,8 +12,9 @@ import { isUndefined } from '@/helpers'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { onImageLoadError } from '@/lib/utils'
 import { PATH, ROUTE_PATH } from '@/router/constants'
-import { addCommentAction, getExercises } from '@/store/routinesSlice'
+import { addCommentAction } from '@/store/routinesSlice'
 import { Routine } from '@/types/interfaces'
+
 export const RoutinesDetails = () => {
   const values = useAppSelector((state) => state.routines)
   const user = useAppSelector((state) => state.user.user)
@@ -22,12 +23,6 @@ export const RoutinesDetails = () => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation()
   const textRef = useRef<HTMLTextAreaElement>(null)
-  useEffect(() => {
-    const fun = async () => {
-      await dispatch(getExercises(Number.parseInt(id || '0')))
-    }
-    fun()
-  }, [dispatch, id])
 
   const routine = window.location.pathname.includes(PATH.main)
     ? values.published.find(
@@ -67,7 +62,7 @@ export const RoutinesDetails = () => {
           <img
             onError={onImageLoadError}
             src={`${BASE_URL}/uploads/${user.profilePictureName}`}
-            className=" w-10 h-10 rounded-full mx-2"
+            className=" w-10 h-10 rounded-full mx-2 "
           />
           <textarea
             ref={textRef}

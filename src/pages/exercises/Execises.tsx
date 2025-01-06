@@ -27,14 +27,19 @@ const Execises = () => {
         <Card
           key={exercise.id}
           title={exercise.name}>
-          <img
-            onError={onImageLoadError}
-            width={300}
-            src={`${BASE_URL}/uploads/default.png`}
-            alt=""
-          />
-          <p>{t(exercise.name)}</p>
-          <p>{t(exercise.description)}</p>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              className="rounded-lg"
+              onError={onImageLoadError}
+              width={300}
+              src={`${BASE_URL}/uploads${exercise.photo}`}
+              alt=""
+            />
+            <div className="flex flex-col gap-4">
+              <h2 className="text-xl">{t(exercise.name)}</h2>
+              <p>{t(exercise.description)}</p>
+            </div>
+          </div>
         </Card>
       ))}
     </section>

@@ -9,6 +9,7 @@ import { EXECISE_EDIT_FORM_INPUTS } from './constants'
 import { Dialog } from '@/components/shared/dialog/Dialog'
 import { Form } from '@/components/shared/form/Form'
 import { useToast } from '@/components/shared/toast/useToast'
+import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { addExercise } from '@/store/routinesSlice'
 import { Exercise, Routine } from '@/types/interfaces'
@@ -25,7 +26,7 @@ export const ExerciseDetailsDialog = ({
   const { showToast } = useToast()
   const dispatch = useAppDispatch()
   const { t } = useTranslation()
-  const values = useAppSelector((state) => state)
+  const values = useAppSelector((state) => state.user)
 
   const [isVisible, setIsVisible] = useState(false)
 
@@ -55,14 +56,14 @@ export const ExerciseDetailsDialog = ({
 
   return (
     <Dialog
-      header={t(exercise?.name)}
+      header={t(exercise?.exercise.name)}
       isVisible={isVisible}
       setIsVisible={setIsVisible}
       openButtonClassname="button button--success"
       openButtonLabel=""
       openButtonIcon={<PlayIcon />}>
       <div className="flex flex-col gap-5">
-        {routine.user_id === values.user.user.id ? (
+        {routine.user_id === values.user.id ? (
           <div className="px-2">
             <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
               Description
@@ -84,29 +85,16 @@ export const ExerciseDetailsDialog = ({
           <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
             Description
           </h2>
-          <p className="pl-3">{t(exercise.description)}</p>
+          <p className="pl-3">{t(exercise.exercise.description)}</p>
         </div>
         <div className="px-2">
           <h2 className="text-3xl md:text-3xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full gradient-title">
             Example
           </h2>
-          <iframe
-            width="100%"
-            height="560"
-            src="https://youtube.com/embed/0Xweg0mjlwQ?si=QbaQlgC9OwJkVQxl"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            width="100%"
-            height="560"
-            src={exercise.video}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+          <img
+            className="aspect-square"
+            src={`${BASE_URL}/uploads${exercise.exercise.video}`}
+            alt=""
           />
         </div>
       </div>

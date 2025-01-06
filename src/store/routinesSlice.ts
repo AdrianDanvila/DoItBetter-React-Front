@@ -110,8 +110,6 @@ export const addExercise = createAsyncThunk(
         requestData.exerciseData,
       )
 
-      //TODO extraer a su archivo
-
       // Si no hay error, retornamos los datos como éxito
       return { requestData, response } // Si es exitoso, devolvemos la respuesta
     } catch (error: any) {

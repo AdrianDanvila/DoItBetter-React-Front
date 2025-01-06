@@ -28,6 +28,8 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     className: 'w-1/3',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
   {
     id: 'sets',
@@ -36,6 +38,8 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     className: 'w-1/3',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
   {
     id: 'weight',
@@ -44,6 +48,8 @@ export const EXECISE_FORM_INPUTS: InputProps[] = [
     className: 'w-1/4',
     inputType: InputType.Number,
     fieldTag: FieldTag.Input,
+    min: 1,
+    max: 200,
   },
 ]
 
@@ -64,9 +70,12 @@ export const INITIAL_VALUES: Exercise = {
     name: '',
     photo: '',
     description: '',
+    video: '',
   },
   sets: 0,
   weight: 0,
   reps: 0,
   id: 1,
+  video: '',
+  photo: '',
 }

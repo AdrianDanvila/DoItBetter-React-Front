@@ -47,7 +47,7 @@ export const Input = <T extends FormikValues>({
 
       <Field
         min={inputType === InputType.Range ? min || 0 : 0} // Mínimo permitido
-        max={inputType === InputType.Range ? max || 100 : 0} // Mínimo permitido
+        max={inputType === InputType.Range ? max || 100 : 100} // Mínimo permitido
         onChange={handleChange}
         disabled={disabled}
         type={inputType}

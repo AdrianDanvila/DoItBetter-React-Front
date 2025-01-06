@@ -2,14 +2,14 @@ import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { Rating } from 'primereact/rating'
 
-import foto3 from '../../../../../assets/foto3.png'
-
 import { ExerciseDetailsDialog } from '@/components/routineDetails/exerciseDetailsDialog/ExerciseDetailsDialog'
 import { DeletePopUp } from '@/components/shared/deletePopUp/DeletePopUp'
 import { useToast } from '@/components/shared/toast/useToast'
+import { BASE_URL } from '@/constants/server'
 import { useAppDispatch } from '@/helpers/hooks'
 import { deleteExercise } from '@/store/routinesSlice'
 import { Exercise, Routine } from '@/types/interfaces'
+
 export interface ExercisesDataViewItemProps {
   exercise2: Exercise
   routine: Routine
@@ -25,13 +25,14 @@ export const ExercisesDataViewItem = ({
   const { t } = useTranslation()
   const path = useParams()
   const routineId = Number.parseInt(path.id || '0')
-  const exercise = exercise2.exercise || exercise2
+  const exercise = exercise2
+
   const deleteItem = async () => {
     const actionResult = await dispatch(
       deleteExercise({
         routineId: routineId,
         exerciseData: {
-          id: exercise.id,
+          id: exercise.exercise.id,
           sets: 0,
           weight: 0,
           reps: 0,
@@ -55,13 +56,17 @@ export const ExercisesDataViewItem = ({
       key={index}
       className={`h-1/5 flex flex-col xl:flex-row xl:items-start p-4 my-4 gap-4 ${index !== 0 ? 'border-t-2 surface-border border-gray-300' : ''}`}>
       <img
-        className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
-        src={foto3}
+        className="w-2/12 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round aspect-square"
+        src={`${BASE_URL}/uploads${exercise.exercise.photo}`}
       />
       <div className="flex flex-col sm:flex-row justify-between items-center xl:items-start flex-1 gap-4">
         <div className="flex flex-col items-center sm:items-start gap-3 w-9/12">
-          <div className="text-2xl font-bold text-900">{t(exercise.name)}</div>
-          <div className="font-bold text-900">{t(exercise.description)}</div>
+          <div className="text-2xl font-bold text-900">
+            {t(exercise.exercise.name)}
+          </div>
+          <div className="font-bold text-900">
+            {t(exercise.exercise.description)}
+          </div>
           <Rating
             value={2}
             readOnly

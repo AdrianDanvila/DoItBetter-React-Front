@@ -44,11 +44,13 @@ export interface Exercise {
   name: string
   description: string
   video: string
+  photo: string
   exercise: {
     id: number
     name: string
     photo: string
     description: string
+    video: string
   }
   sets: number
   weight: number
