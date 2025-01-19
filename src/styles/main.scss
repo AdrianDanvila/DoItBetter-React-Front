@@ -57,7 +57,12 @@ html {
   background-color: white;
 }
 
+.custom-spinner .p-progress-spinner .p-progress-circle {
+  @apply stroke-blue-500; /* Cambia este valor al color de Tailwind que desees */
+}
+
 @layer base {
+  /* stylelint-disable-next-line rule-empty-line-before */
   :root {
     --radius: 0.5rem;
   }

@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Form as FormikForm, Formik, FormikValues } from 'formik'
+import { ProgressSpinner } from 'primereact/progressspinner'
 import { PaperPlaneIcon } from '@radix-ui/react-icons'
 
 import { Button } from '../button/Button'
@@ -35,13 +37,18 @@ export const Form = <T extends FormikValues>({
   disabled,
 }: FormProps<T>) => {
   const { t } = useTranslation()
+  const [isSumbiting, setIsSumbiting] = useState(false)
   return (
     <Formik
       enableReinitialize={true}
       isInitialValid
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(e) => onSumbit(e)}>
+      onSubmit={async (e) => {
+        setIsSumbiting(true)
+        await onSumbit(e)
+        setIsSumbiting(false)
+      }}>
       <FormikForm className={`${className} form`}>
         <div className={`${inputContainerClassName} form__inputs-container`}>
           {inputs?.map((input) => (
@@ -54,6 +61,11 @@ export const Form = <T extends FormikValues>({
             />
           ))}
         </div>
+        {isSumbiting && (
+          <div className="w-full justify-center flex">
+            <ProgressSpinner />
+          </div>
+        )}
         {disabled || (
           <div className={`${className} form__actions-container pr-2`}>
             <Button

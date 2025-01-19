@@ -11,6 +11,7 @@ import { uploadImage } from '@/api/services'
 import { EditUserForm } from '@/components/profile/editUserForm/EditUserForm'
 import { RoutinesTable } from '@/components/routines/routinesTable/RoutinesTable'
 import { RoutineCounters } from '@/components/shared/routineCounters/RoutineCounters'
+import { RoutineDataViewEmpty } from '@/components/shared/routinesDataView/components/routineDataViewEmpty/RoutineDataviewEmpty'
 import { BASE_URL } from '@/constants/server'
 import { useAppDispatch, useAppSelector } from '@/helpers/hooks'
 import { onImageLoadError } from '@/lib/utils'
@@ -19,6 +20,7 @@ import { getUserInfoAction } from '@/store/userSlice'
 export const Profile = () => {
   const [chartData, setChartData] = useState({})
   const [chartOptions, setChartOptions] = useState({})
+  const [hasData, setHasData] = useState({})
   const { t } = useTranslation()
   const user = useAppSelector((state) => state.user.user)
   const routines = useAppSelector((state) => state.routines.ownRoutines)
@@ -36,8 +38,8 @@ export const Profile = () => {
       datasets: [
         {
           data: [
-            routines.filter((routine) => routine.published).length,
-            routines.filter((routine) => !routine.published).length,
+            routines.filter((routine) => routine.published).length || null,
+            routines.filter((routine) => !routine.published).length || null,
           ],
           backgroundColor: [
             documentStyle.getPropertyValue('--blue-500'),
@@ -56,6 +58,7 @@ export const Profile = () => {
 
     setChartData(data)
     setChartOptions(options)
+    setHasData(data.datasets[0].data.some((value) => (value || 0) > 0))
   }, [routines, t])
 
   return (
@@ -113,12 +116,16 @@ export const Profile = () => {
           <RoutinesTable />
         </Card>
         <Card title="main.profile.chart.title">
-          <Chart
-            type="doughnut"
-            data={chartData}
-            options={chartOptions}
-            className="w-full md:w-30rem"
-          />
+          {hasData ? (
+            <Chart
+              type="doughnut"
+              data={chartData}
+              options={chartOptions}
+              className="w-full md:w-30rem"
+            />
+          ) : (
+            <RoutineDataViewEmpty />
+          )}
         </Card>
       </div>
     </section>

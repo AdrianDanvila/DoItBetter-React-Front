@@ -32,14 +32,14 @@ export const LoginForm = () => {
         setTimeout(() => {
           showToast('success', 'auth.login.toast.succesful', '')
           setTimeout(() => navigate(ROUTE_PATH.main), 1000)
-        }, 1000)
+        }, 500)
         break
 
       case 401:
         setTimeout(() => {
           showToast('error', 'auth.login.toast.bad_credential', '')
           setIsDisabled(false)
-        }, 1000)
+        }, 500)
 
         break
 
@@ -47,7 +47,7 @@ export const LoginForm = () => {
         setTimeout(() => {
           showToast('error', 'auth.login.toast.bad_credential', '')
           setIsDisabled(false)
-        }, 1000)
+        }, 500)
         break
     }
   }
